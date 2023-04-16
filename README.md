@@ -1,4 +1,4 @@
-# oskarmroz.com
+# www.oskarmroz.com
 New design for my portfolio website.
 
 ## Tools

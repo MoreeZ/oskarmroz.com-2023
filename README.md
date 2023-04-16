@@ -1,6 +1,23 @@
 # oskarmroz.com
 New design for my portfolio website.
 
+## Tools
+
+<table>
+   <tr>
+      <th>Purpose</th>
+      <th>Tools</th>
+   </tr>
+   <tr>
+      <td>Front-end</td>
+      <td>React • Astro • SCSS</td>
+   </tr>
+   <tr>
+      <td>Back-end</td>
+      <td>Cloudflare Pages</td>
+   </tr>
+</table>
+
 ## Details
 
 <table>

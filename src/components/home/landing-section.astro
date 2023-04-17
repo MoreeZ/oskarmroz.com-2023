@@ -16,8 +16,8 @@ const { title, image, icon, href, id } = Astro.props;
     <img src={image} alt="screen with programming" />
     <div class="img-mask"></div>
   </div>
-  <Icon name={icon} />
-  <h2>{title}</h2>
+  <div data-aos="zoom-in"><Icon name={icon} /></div>
+  <h2 data-aos="zoom-in">{title}</h2>
 </a>
 
 <style lang="css">

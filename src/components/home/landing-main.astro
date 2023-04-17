@@ -28,7 +28,7 @@ const SOCIALS = [
 
 <div class="landing-main" id="landing-main">
   <div class="landing-main-left">
-    <div class="typewriter monospace big-caret">
+    <div class="typewriter monospace">
       Hey there! I'm <span class="green-text">Oskar Mróz</span>, a <span
         class="green-text">Software Developer</span
       > from Ireland. I've been tinkering with code since I was 16. I'm a natural
@@ -56,15 +56,27 @@ const SOCIALS = [
     <div class="profile-card">
       <div class="img-container">
         <img src={profilePic} alt="Profile picture of Oskar Mroz" />
-        <div class="this-is-me">
+        <div
+          class="this-is-me"
+          data-aos-once="true"
+          data-aos="fade-in"
+          data-aos-delay="3000"
+        >
           <div class="text">This is me :)</div>
           <Icon name="point-arrow" />
         </div>
       </div>
       <div class="socials">
         {
-          SOCIALS.map((social) => (
-            <a class="social" href={social.link} target="_blank">
+          SOCIALS.map((social, index) => (
+            <a
+              class="social"
+              href={social.link}
+              target="_blank"
+              data-aos-once="true"
+              data-aos="fade-up"
+              data-aos-delay={100 + 100 * index}
+            >
               <Icon name={social.icon} />
               <p class="text">{social.text}</p>
             </a>
@@ -126,28 +138,27 @@ const SOCIALS = [
     --bgColor: #2d2e30;
     --lines: 574;
     --lineHeight: 28px;
-    --timePerLine: 0.1s;
+    --timePerLine: 0.12s;
     --widthCh: 60;
     --width: calc(var(--widthCh) * 1ch);
     /* do not touch the time property!!! */
     --time: calc(var(--lines) * var(--timePerLine));
     animation: grow var(--time) steps(var(--lines));
     animation-fill-mode: forwards;
-    animation-delay: 0.5s;
+    animation-delay: 1.2s;
     background: var(--bgColor);
     line-height: var(--lineHeight);
     max-height: var(--lineHeight);
     overflow: hidden;
     position: relative;
     width: var(--width);
-    /* word-break: break-all; */
   }
 
   .typewriter::before {
     content: "";
     animation: type var(--timePerLine) linear infinite,
       carriageReturn var(--time) steps(var(--lines)) var(--lines);
-    animation-delay: 0.5s;
+    animation-delay: 1.2s;
     background: var(--bgColor);
     border-left: 2px solid;
     bottom: 0;
@@ -163,7 +174,7 @@ const SOCIALS = [
   .typewriter.monospace::before {
     animation: type var(--timePerLine) steps(var(--widthCh)) infinite,
       carriageReturn var(--time) steps(var(--lines)) var(--lines);
-    animation-delay: 0.5s;
+    animation-delay: 1.2s;
   }
 
   /* DEMO */
@@ -296,6 +307,7 @@ const SOCIALS = [
   .scroll-down:hover [astro-icon] {
     animation-name: arrowPoint;
     animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
   @keyframes arrowPoint {
     0% {

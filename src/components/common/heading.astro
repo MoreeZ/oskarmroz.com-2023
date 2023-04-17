@@ -9,9 +9,16 @@ const { title } = Astro.props;
 <header>
   <h1 class="wave">
     {
-      title
-        .split("")
-        .map((char, index) => <span style={"--i:" + index + 1}>{char === " " ? <span>&nbsp;</span> : char}</span>)
+      title.split("").map((char, index) => (
+        <span
+          style={"--i:" + index + 1}
+          data-aos-once="true"
+          data-aos="fade-up"
+          data-aos-delay={600 + index * 50}
+        >
+          {char === " " ? <span>&nbsp;</span> : char}
+        </span>
+      ))
     }
   </h1>
 </header>
@@ -41,7 +48,7 @@ const { title } = Astro.props;
     display: inline-block;
     color: #e555d6;
     text-shadow: 3px 3px 0px #a1ffa8;
-    animation: animate 10s  ease-in-out infinite;
+    animation: animate 10s ease-in-out infinite;
     animation-delay: calc(0.01s * var(--i));
   }
 

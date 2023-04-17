@@ -7,8 +7,6 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-
-// AOS.init();
 ---
 
 <!DOCTYPE html>
@@ -35,6 +33,10 @@ const { title } = Astro.props;
     <Footer />
     <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      import Aos from "aos";
+      Aos.init();
+    </script>
   </body>
 </html>
 <style is:global>
@@ -55,6 +57,7 @@ const { title } = Astro.props;
   body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
   * {
     box-sizing: border-box;

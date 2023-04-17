@@ -1,0 +1,317 @@
+---
+import { Icon } from "astro-icon";
+import profilePic from "../../assets/profile-pic.jpg";
+
+const SOCIALS = [
+  {
+    icon: "github",
+    text: "Github",
+    link: "https://github.com/MoreeZ",
+  },
+  {
+    icon: "linkedin",
+    text: "Linkedin",
+    link: "https://www.linkedin.com/in/o-mroz/",
+  },
+  {
+    icon: "dribble",
+    text: "Dribble",
+    link: "https://dribbble.com/MoreeZ",
+  },
+  {
+    icon: "instagram",
+    text: "Instagram",
+    link: "https://www.instagram.com/oskar_mroz/",
+  },
+];
+---
+
+<div class="landing-main" id="landing-main">
+  <div class="landing-main-left">
+    <div class="typewriter monospace big-caret">
+      Hey there! I'm <span class="green-text">Oskar Mróz</span>, a <span
+        class="green-text">Software Developer</span
+      > from Ireland. I've been tinkering with code since I was 16. I'm a natural
+      problem-solver, so programming was like love at first sight for me. I consider
+      it not only a practical tool but also a form of art.
+      <br />
+      <br />
+      One thing that really grinds my gears is when people underestimate the importance
+      of <span class="green-text">good UI</span>. I mean, come on! It's the face
+      of your software and what ultimately sells it to the end user.
+      <br />
+      <br />
+      Aside from programming, I also have an interest in <span
+        class="green-text">photography</span
+      > and <span class="green-text">blogging</span>. If you're curious, feel
+      free to check out my latest work.
+    </div>
+    <br />
+    <br />
+    <a class="scroll-down" href="#software" data-scroll>
+      Scroll down &nbsp;<Icon name="chevron-down" />
+    </a>
+  </div>
+  <div class="landing-main-right">
+    <div class="profile-card">
+      <div class="img-container">
+        <img src={profilePic} alt="Profile picture of Oskar Mroz" />
+        <div class="this-is-me">
+          <div class="text">This is me :)</div>
+          <Icon name="point-arrow" />
+        </div>
+      </div>
+      <div class="socials">
+        {
+          SOCIALS.map((social) => (
+            <a class="social" href={social.link} target="_blank">
+              <Icon name={social.icon} />
+              <p class="text">{social.text}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .landing-main {
+    width: 100%;
+    padding: 40px 120px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .landing-main-left {
+    width: 650px;
+    height: 530px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    font-family: monospace;
+  }
+  .green-text {
+    color: #a1ffa8;
+    font-weight: 700;
+  }
+
+  @keyframes grow {
+    0% {
+      max-height: var(--lineHeight);
+    }
+    100% {
+      max-height: calc(var(--lineHeight) * var(--lines));
+    }
+  }
+
+  @keyframes carriageReturn {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: calc(var(--lineHeight) * var(--lines));
+    }
+  }
+
+  @keyframes type {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+
+  .typewriter {
+    --bgColor: #2d2e30;
+    --lines: 574;
+    --lineHeight: 28px;
+    --timePerLine: 0.1s;
+    --widthCh: 60;
+    --width: calc(var(--widthCh) * 1ch);
+    /* do not touch the time property!!! */
+    --time: calc(var(--lines) * var(--timePerLine));
+    animation: grow var(--time) steps(var(--lines));
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    background: var(--bgColor);
+    line-height: var(--lineHeight);
+    max-height: var(--lineHeight);
+    overflow: hidden;
+    position: relative;
+    width: var(--width);
+    /* word-break: break-all; */
+  }
+
+  .typewriter::before {
+    content: "";
+    animation: type var(--timePerLine) linear infinite,
+      carriageReturn var(--time) steps(var(--lines)) var(--lines);
+    animation-delay: 0.5s;
+    background: var(--bgColor);
+    border-left: 2px solid;
+    bottom: 0;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+  .typewriter.monospace {
+    font-family: monospace, monospace;
+  }
+
+  .typewriter.monospace::before {
+    animation: type var(--timePerLine) steps(var(--widthCh)) infinite,
+      carriageReturn var(--time) steps(var(--lines)) var(--lines);
+    animation-delay: 0.5s;
+  }
+
+  /* DEMO */
+  section {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+  }
+
+  section:nth-child(2) {
+    top: 10rem;
+  }
+  section:nth-child(3) {
+    top: 20rem;
+  }
+
+  /* ======== RIGHT ========== */
+  .landing-main-right {
+    position: relative;
+  }
+  .landing-main-right .profile-card {
+    width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    top: -200px;
+    right: 20px;
+  }
+
+  .landing-main-right .profile-card .img-container {
+    width: 100%;
+    position: relative;
+  }
+  .landing-main-right .profile-card .img-container img {
+    width: 100%;
+    border-radius: 1000px;
+    outline: 20px solid #232323;
+  }
+  .landing-main-right .profile-card .img-container .this-is-me {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .landing-main-right .profile-card .img-container .this-is-me .text {
+    margin-left: 70px;
+    margin-bottom: 6px;
+    font-family: "Lobster", "Montserrat", "monospace";
+    font-size: 34px;
+    color: #e555d6;
+    text-shadow: 2px 2px 0px #a1ffa8;
+  }
+
+  [astro-icon="point-arrow"] {
+    height: 60px;
+    filter: drop-shadow(3px 3px 0px #a1ffa8);
+  }
+
+  .landing-main-right .profile-card .socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 50px;
+  }
+  .landing-main-right .profile-card .socials .social {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .landing-main-right .profile-card .socials .social [astro-icon] {
+    height: 50px;
+    margin-bottom: 12px;
+    fill: #efefef;
+    transition: 300ms all;
+  }
+  .landing-main-right .profile-card .socials .social .text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 239, 239, 1) 0%,
+      rgba(239, 239, 239, 0) 82%,
+      rgba(239, 239, 239, 0) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    transition: 300ms all;
+  }
+
+  .landing-main-right .profile-card .socials .social:hover [astro-icon] {
+    fill: #a1ffa8;
+  }
+  .landing-main-right .profile-card .socials .social:hover .text {
+    background: linear-gradient(180deg, #a1ffa8 0%, #a1ffa8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .scroll-down {
+    color: #a1ffa8;
+    text-shadow: 2px 2px 0px #e555d6;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .scroll-down [astro-icon] {
+    fill: #a1ffa8;
+    height: 14px;
+    filter: drop-shadow(2px 2px 0px #e555d6);
+  }
+  .scroll-down:hover [astro-icon] {
+    animation-name: arrowPoint;
+    animation-duration: 0.4s;
+  }
+  @keyframes arrowPoint {
+    0% {
+      transform: translateY(0%);
+    }
+    25% {
+      transform: translateY(50%);
+    }
+    50% {
+      transform: translateY(0%);
+    }
+    75% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+</style>

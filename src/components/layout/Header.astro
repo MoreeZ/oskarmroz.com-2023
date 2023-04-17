@@ -1,0 +1,124 @@
+---
+import { Icon } from "astro-icon";
+
+const NAV_ITEMS = [
+  {
+    text: "Home",
+    src: "home",
+    href: "/",
+  },
+  {
+    text: "Software",
+    src: "software",
+    href: "/software-development",
+  },
+  {
+    text: "UI Design",
+    src: "ui-design",
+    href: "/ui-design",
+  },
+  {
+    text: "Photography",
+    src: "photography",
+    href: "/photography",
+  },
+  {
+    text: "Blogs",
+    src: "blogs",
+    href: "/blogs",
+  },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<div class="header-container">
+  <div class="nav-list">
+    {
+      NAV_ITEMS.map((item) => (
+        <a
+          class={
+            "nav-element " +
+            item.src +
+            (pathname === item.href ? " active" : "")
+          }
+          href={item.href}
+        >
+          <Icon name={item.src} class="nav-icon" />
+          <span class="nav-text">{item.text}</span>
+          <div class="underline" />
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<style lang="css">
+  .header-container {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 120px;
+  }
+  .nav-list {
+    display: flex;
+    gap: 40px;
+    position: relative;
+  }
+  .nav-element {
+    color: #ebebeb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .nav-element:active {
+    opacity: 0.7;
+  }
+  .nav-icon {
+    margin-right: 15px;
+    height: 26px;
+  }
+  .nav-element [astro-icon] {
+    fill: #ebebeb;
+  }
+  .active [astro-icon] {
+    fill: #a1ffa8;
+  }
+  .underline {
+    height: 3px;
+    transition: width 0.2s, background-color 0.5s;
+    margin: 0 auto;
+    background-color: transparent;
+    width: 0%;
+    background-color: #a1ffa8;
+    position: absolute;
+    bottom: -15px;
+  }
+
+  .active .underline {
+    width: 100%;
+  }
+
+  .nav-element:hover .underline {
+    background-color: #a1ffa8;
+    width: 100%;
+  }
+
+  .nav-element:active a {
+    transition: none;
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .nav-element:active .underline {
+    opacity: 0.7;
+  }
+  .nav-text {
+    font-size: 20px;
+  }
+  .active {
+    color: #a1ffa8;
+  }
+</style>

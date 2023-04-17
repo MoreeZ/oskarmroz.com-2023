@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/common/heading.astro";
+import LandingSection from "../components/home/landing-section.astro";
+import softwareDevImage from "../assets/software-dev.jpg";
+import uiDesignImage from "../assets/ui-design.jpg";
+import photographyImage from "../assets/photography.jpg";
+import blogsImage from "../assets/blogs.jpg";
+import LandingMain from "../components/home/landing-main.astro";
+---
+
+<Layout title="Oskar Mroz">
+  <Heading title="About me" />
+  <LandingMain />
+  <LandingSection
+    icon="software"
+    image={softwareDevImage}
+    title="Software Development"
+    href="/software-development"
+    id="software"
+  />
+  <LandingSection
+    icon="ui-design"
+    image={uiDesignImage}
+    title="UI Design"
+    href="/ui-design"
+    id="ui-design"
+  />
+  <LandingSection
+    icon="photography"
+    image={photographyImage}
+    title="Photography"
+    href="/photography"
+    id="photography"
+  />
+  <LandingSection
+    icon="blogs"
+    image={blogsImage}
+    title="Blogs"
+    href="/blogs"
+    id="blogs"
+  />
+</Layout>
+
+<style></style>

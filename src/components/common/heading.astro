@@ -1,0 +1,62 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header>
+  <h1 class="wave">
+    {
+      title
+        .split("")
+        .map((char, index) => <span style={"--i:" + index + 1}>{char === " " ? <span>&nbsp;</span> : char}</span>)
+    }
+  </h1>
+</header>
+
+<style lang="css">
+  header {
+    width: 100%;
+    background-color: #232323;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    padding: 0px 120px;
+  }
+
+  header h1 {
+    font-size: 70px;
+    font-weight: 600;
+  }
+
+  .wave {
+    position: relative;
+    /* -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2)); */
+  }
+
+  .wave span {
+    position: relative;
+    display: inline-block;
+    color: #e555d6;
+    text-shadow: 3px 3px 0px #a1ffa8;
+    animation: animate 10s  ease-in-out infinite;
+    animation-delay: calc(0.01s * var(--i));
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateY(0px);
+    }
+
+    2% {
+      transform: translateY(-20px);
+    }
+
+    4%,
+    100% {
+      transform: translateY(0px);
+    }
+  }
+</style>

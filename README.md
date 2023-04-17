@@ -10,7 +10,7 @@ New design for my portfolio website.
    </tr>
    <tr>
       <td>Front-end</td>
-      <td>React • Astro • SCSS</td>
+      <td>Astro</td>
    </tr>
    <tr>
       <td>Back-end</td>

@@ -1,5 +1,6 @@
 import React from "react";
 import ChevronDown from "../../icons/chevron-down.svg";
+import { Link } from "gatsby";
 
 export default function MainLeft() {
   return (
@@ -25,10 +26,10 @@ export default function MainLeft() {
       </div>
       <br />
       <br />
-      <a className="scroll-down" href="#software" data-scroll>
+      <Link className="scroll-down" to="#software">
         Scroll down &nbsp;
         <ChevronDown className="chevron-down" />
-      </a>
+      </Link>
     </div>
   );
 }

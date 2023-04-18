@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "gatsby";
+// images and icons
 import profilePic from "../../images/profile-pic.jpg";
 import PointArrowIcon from "../../icons/point-arrow.svg";
 import GithubIcon from "../../icons/github.svg";
@@ -47,9 +49,9 @@ export default function MainRight() {
         </div>
         <div className="socials">
           {SOCIALS.map((social, index) => (
-            <a
+            <Link
               className="social"
-              href={social.link}
+              to={social.link}
               target="_blank"
               data-aos-once="true"
               data-aos="fade-up"
@@ -57,7 +59,7 @@ export default function MainRight() {
             >
               {social.icon}
               <p className="text">{social.text}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

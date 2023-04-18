@@ -1,10 +1,12 @@
-import { Link } from "gatsby";
 import React from "react";
+import { Link } from "gatsby";
+// icons
 import HomeIcon from "../../icons/home.svg";
 import SoftwareIcon from "../../icons/software.svg";
 import UiDesginIcon from "../../icons/ui-design.svg";
 import PhotographyIcon from "../../icons/photography.svg";
 import BlogsIcon from "../../icons/blogs.svg";
+// styles
 import "../../styles/layout/header.scss";
 
 const NAV_ITEMS = [
@@ -41,13 +43,13 @@ export default function Header() {
     <div className="header-container">
       <div className="nav-list">
         {NAV_ITEMS.map((item, index) => (
-          <a
+          <Link
             className={
               "nav-element " +
               item.src +
               (pathname === item.href ? " active" : "")
             }
-            href={item.href}
+            to={item.href}
             data-aos-once="true"
             data-aos="fade-down"
             data-aos-delay={0 + index * 100}
@@ -55,7 +57,7 @@ export default function Header() {
             {item.icon}
             <span className="nav-text">{item.text}</span>
             <div className="underline" />
-          </a>
+          </Link>
         ))}
       </div>
       <div className="mobile-nav-list">

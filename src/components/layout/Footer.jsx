@@ -1,6 +1,7 @@
 import React from "react";
 import ChevronUp from "../../icons/chevron-up.svg";
 import "../../styles/layout/footer.scss";
+import { Link } from "gatsby";
 
 export default function Footer() {
   return (
@@ -21,10 +22,10 @@ export default function Footer() {
       </svg>
 
       <div className="funny-title">Useless Footer🔥💯</div>
-      <a className="scroll-to-top" href="/">
+      <Link className="scroll-to-top" to="/">
         <span>Take me back to the good stuff</span>
         <ChevronUp className="chevron-up" />
-      </a>
+      </Link>
       <div className="copyright">
         Copyright 2023 Oskar Mroz etc. etc. as if this meant anything.
       </div>

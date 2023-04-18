@@ -1,22 +1,36 @@
 {
-  "name": "subsequent-sphere",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "oskar-mroz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "oskar-mroz",
+  "author": "Oskar",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.6",
+    "@mdx-js/react": "^2.3.0",
     "aos": "^2.3.4",
-    "astro": "^2.3.0",
-    "astro-icon": "^0.8.0",
-    "sweet-scroll": "^4.0.0"
-  },
-  "devDependencies": {
-    "@types/aos": "^3.0.4"
+    "gatsby": "^5.8.1",
+    "gatsby-plugin-image": "^3.8.0",
+    "gatsby-plugin-manifest": "^5.8.0",
+    "gatsby-plugin-mdx": "^5.8.0",
+    "gatsby-plugin-react-svg": "^3.3.0",
+    "gatsby-plugin-sass": "^6.8.0",
+    "gatsby-plugin-sharp": "^5.8.1",
+    "gatsby-plugin-sitemap": "^6.8.0",
+    "gatsby-source-filesystem": "^5.8.0",
+    "gatsby-transformer-sharp": "^5.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-scroll": "^1.8.9",
+    "sass": "^1.62.0"
   }
 }

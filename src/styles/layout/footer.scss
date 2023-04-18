@@ -1,0 +1,169 @@
+.footer-container {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 120px;
+  background-color: #232323;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+
+  .funny-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #e555d6;
+    text-shadow: 1.5px 1.5px 0px #a1ffa8;
+  }
+  .scroll-to-top {
+    color: #a1ffa8;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+  }
+  .scroll-to-top span {
+    margin-right: 12px;
+    text-shadow: 1.5px 1.5px 0px #e555d6;
+  }
+  .scroll-to-top [astro-icon] {
+    fill: #a1ffa8;
+    height: 14px;
+    filter: drop-shadow(2px 2px 0px #e555d6);
+  }
+  .scroll-to-top:hover [astro-icon] {
+    animation-name: arrowPointUp;
+    animation-duration: 0.4s;
+  }
+  .copyright {
+    opacity: 0.5;
+    text-align: center;
+  }
+  .gradient-left,
+  .gradient-right {
+    position: absolute;
+    z-index: -1;
+    width: 25vw;
+    height: 25vw;
+    max-height: 300px;
+    max-width: 300px;
+  }
+  .gradient-left {
+    left: 0;
+    bottom: 0px;
+  }
+  .gradient-right {
+    right: 0;
+    top: 0px;
+  }
+
+  @keyframes arrowPointUp {
+    0% {
+      transform: translateY(0%);
+    }
+    25% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(0%);
+    }
+    75% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .footer-container {
+      padding: 30px 60px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .footer-container {
+      padding: 30px 30px;
+    }
+  }
+  .funny-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #e555d6;
+    text-shadow: 1.5px 1.5px 0px #a1ffa8;
+  }
+  .scroll-to-top {
+    color: #a1ffa8;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+  }
+  .scroll-to-top span {
+    margin-right: 12px;
+    text-shadow: 1.5px 1.5px 0px #e555d6;
+  }
+  .scroll-to-top .chevron-up {
+    fill: #a1ffa8;
+    height: 14px;
+    width: 18px;
+    filter: drop-shadow(2px 2px 0px #e555d6);
+  }
+  .scroll-to-top:hover .chevron-up {
+    animation-name: arrowPointUp;
+    animation-duration: 0.4s;
+  }
+  .copyright {
+    opacity: 0.5;
+    text-align: center;
+  }
+  .gradient-left,
+  .gradient-right {
+    position: absolute;
+    z-index: -1;
+    width: 25vw;
+    height: 25vw;
+    max-height: 300px;
+    max-width: 300px;
+  }
+  .gradient-left {
+    left: 0;
+    bottom: 0px;
+  }
+  .gradient-right {
+    right: 0;
+    top: 0px;
+  }
+
+  @keyframes arrowPointUp {
+    0% {
+      transform: translateY(0%);
+    }
+    25% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(0%);
+    }
+    75% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .footer-container {
+      padding: 30px 60px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .footer-container {
+      padding: 30px 30px;
+    }
+  }
+}

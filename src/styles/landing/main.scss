@@ -1,0 +1,305 @@
+.landing-main {
+  width: 100%;
+  padding: 40px 120px;
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 1339px) {
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 1000px) {
+    padding: 40px 60px;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 40px 30px;
+  }
+
+  /* =============== MAIN LEFT ================ */
+  .landing-main-left {
+    width: 650px;
+    height: 530px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    font-family: monospace;
+  }
+  .green-text {
+    color: #a1ffa8;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  @keyframes grow {
+    0% {
+      max-height: var(--lineHeight);
+    }
+    100% {
+      max-height: calc(var(--lineHeight) * var(--lines));
+    }
+  }
+
+  @keyframes carriageReturn {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: calc(var(--lineHeight) * var(--lines));
+    }
+  }
+
+  @keyframes type {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+
+  .typewriter {
+    --bgColor: #2d2e30;
+    --lines: 574;
+    --lineHeight: 28px;
+    --timePerLine: 0.12s;
+    --widthCh: 60;
+    --width: calc(var(--widthCh) * 1ch);
+    /* do not touch the time property!!! */
+    --time: calc(var(--lines) * var(--timePerLine));
+    animation: grow var(--time) steps(var(--lines));
+    animation-fill-mode: forwards;
+    animation-delay: 1.2s;
+    background: var(--bgColor);
+    line-height: var(--lineHeight);
+    max-height: var(--lineHeight);
+    overflow: hidden;
+    position: relative;
+    width: var(--width);
+  }
+
+  .typewriter::before {
+    content: "";
+    animation: type var(--timePerLine) linear infinite,
+      carriageReturn var(--time) steps(var(--lines)) var(--lines);
+    animation-delay: 1.2s;
+    background: var(--bgColor);
+    border-left: 2px solid;
+    bottom: 0;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+  .typewriter.monospace {
+    font-family: monospace, monospace;
+  }
+
+  .typewriter.monospace::before {
+    animation: type var(--timePerLine) steps(var(--widthCh)) infinite,
+      carriageReturn var(--time) steps(var(--lines)) var(--lines);
+    animation-delay: 1.2s;
+  }
+
+  /* SCROLL DOWN BUTTON */
+
+  .scroll-down {
+    color: #a1ffa8;
+    text-shadow: 2px 2px 0px #e555d6;
+    cursor: pointer;
+    text-decoration: none;
+
+    .chevron-down {
+      fill: #a1ffa8;
+      height: 14px;
+      width: 20px;
+      filter: drop-shadow(2px 2px 0px #e555d6);
+    }
+
+    &:hover .chevron-down {
+      animation-name: arrowPoint;
+      animation-duration: 0.4s;
+      animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+  }
+
+  @keyframes arrowPoint {
+    0% {
+      transform: translateY(0%);
+    }
+
+    25% {
+      transform: translateY(50%);
+    }
+
+    50% {
+      transform: translateY(0%);
+    }
+
+    75% {
+      transform: translateY(50%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @media only screen and (max-width: 1339px) {
+    .landing-main-left {
+      width: 100%;
+      height: auto;
+    }
+
+    .typewriter {
+      width: 100%;
+    }
+
+    .landing-main-left .scroll-down {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .landing-main-left {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  /* =============== MAIN RIGHT ================ */
+
+  .landing-main-right {
+    position: relative;
+
+    .profile-card {
+      width: 400px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: absolute;
+      top: -200px;
+      right: 20px;
+
+      .img-container {
+        width: 100%;
+        position: relative;
+
+        img {
+          width: 100%;
+          border-radius: 1000px;
+          outline: 20px solid #232323;
+        }
+
+        .this-is-me {
+          position: absolute;
+          top: 20px;
+          right: -50px;
+          height: 140px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .text {
+            margin-left: 70px;
+            margin-bottom: 6px;
+            font-family: "Lobster", "Montserrat", "monospace";
+            font-size: 34px;
+            color: #e555d6;
+            text-shadow: 2px 2px 0px #a1ffa8;
+          }
+        }
+      }
+    }
+  }
+
+  .point-arrow {
+    height: 60px;
+    width: 60px;
+    filter: drop-shadow(3px 3px 0px #a1ffa8);
+  }
+
+  .landing-main-right .profile-card .socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 50px;
+
+    .social {
+      cursor: pointer;
+      text-decoration: none;
+
+      .social-icon {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 12px;
+        fill: #efefef;
+        transition: 200ms all;
+      }
+
+      .text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 20px;
+        margin: auto;
+        background: linear-gradient(
+          180deg,
+          rgba(239, 239, 239, 1) 0%,
+          rgba(239, 239, 239, 0) 82%,
+          rgba(239, 239, 239, 0) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        transition: 200ms all;
+      }
+
+      &:hover {
+        .social-icon {
+          fill: #a1ffa8;
+          filter: drop-shadow(0px 0px 1.5px #a1ffa8);
+        }
+
+        .text {
+          background: linear-gradient(180deg, #a1ffa8 0%, #a1ffa8 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          filter: drop-shadow(0px 0px 2px #a1ffa8);
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1339px) {
+    .landing-main-right {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+
+      .profile-card {
+        position: static;
+        top: 0px;
+        max-width: 400px;
+        width: 100%;
+        padding: 10px;
+
+        .socials {
+          width: 100%;
+          gap: normal;
+
+          .social .social-icon {
+            height: 42px;
+            width: 42px;
+          }
+        }
+      }
+    }
+  }
+}

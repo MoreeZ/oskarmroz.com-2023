@@ -18,27 +18,29 @@ const NAV_ITEMS = [
   {
     text: "Software",
     icon: <SoftwareIcon className="nav-icon" />,
-    href: "/software-development",
+    href: "/software-development/",
   },
   {
     text: "UI Design",
     icon: <UiDesginIcon className="nav-icon" />,
-    href: "/ui-design",
+    href: "/ui-design/",
   },
   {
     text: "Photography",
     icon: <PhotographyIcon className="nav-icon" />,
-    href: "/photography",
+    href: "/photography/",
   },
   {
     text: "Blogs",
     icon: <BlogsIcon className="nav-icon" />,
-    href: "/blogs",
+    href: "/blogs/",
   },
 ];
 
 export default function Header() {
+  if (typeof window === "undefined") return null;
   const { pathname } = window.location;
+  console.log(pathname)
   return (
     <div className="header-container" name="navbar">
       <div className="nav-list">

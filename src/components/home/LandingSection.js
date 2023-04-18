@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 export default function LandingSection({ title, image, icon, href, id }) {
   return (
-    <Link className="landing-section" to={href} id={id}>
+    <Link className="landing-section" to={href} id={id} name={id}>
       <div className="bg-img-container">
         <img src={image} alt="screen with programming" />
         <div className="img-mask"></div>

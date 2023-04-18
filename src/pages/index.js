@@ -22,9 +22,7 @@ export default function IndexPage() {
   return (
     <DefaultPageLayout
       title="Oskar Mroz - Software Developer from Ireland"
-      description="Ticketl.ie offers cheap and simple ticketing for events and conferences. Get as many tickets as you like for one affordable fee. Our platform makes it easy for organizers to manage ticket sales and attendees."
-      keywords="ticketing, events, conferences, affordable, cheap, simple, organizer, manage, attendees"
-      canonical="https://ticketl.ie/"
+      description="If you're seeing this then please remind me to write this description."
     >
       <Heading title="About me" />
       <LandingMain />

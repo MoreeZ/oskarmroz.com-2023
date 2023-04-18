@@ -1,8 +1,16 @@
 import React from "react";
 import ChevronDown from "../../icons/chevron-down.svg";
 import { Link } from "gatsby";
+import { scroller } from "react-scroll";
 
 export default function MainLeft() {
+  const handleScrollDown = () => {
+    scroller.scrollTo("software", {
+      duration: 400,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
   return (
     <div className="landing-main-left">
       <div className="typewriter monospace">
@@ -26,10 +34,10 @@ export default function MainLeft() {
       </div>
       <br />
       <br />
-      <Link className="scroll-down" to="#software">
+      <button className="scroll-down" onClick={handleScrollDown}>
         Scroll down &nbsp;
         <ChevronDown className="chevron-down" />
-      </Link>
+      </button>
     </div>
   );
 }

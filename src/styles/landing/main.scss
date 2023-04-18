@@ -102,6 +102,7 @@
   /* SCROLL DOWN BUTTON */
 
   .scroll-down {
+    all: unset;
     color: #a1ffa8;
     text-shadow: 2px 2px 0px #e555d6;
     cursor: pointer;
@@ -229,6 +230,9 @@
     .social {
       cursor: pointer;
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       .social-icon {
         height: 50px;
@@ -244,7 +248,7 @@
         vertical-align: middle;
         text-align: center;
         font-size: 20px;
-        margin: auto;
+        margin: 6px auto ;
         background: linear-gradient(
           180deg,
           rgba(239, 239, 239, 1) 0%,
@@ -294,9 +298,12 @@
           width: 100%;
           gap: normal;
 
-          .social .social-icon {
-            height: 42px;
-            width: 42px;
+          .social {
+
+            .social-icon {
+              height: 42px;
+              width: 42px;
+            }
           }
         }
       }

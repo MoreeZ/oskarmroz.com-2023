@@ -40,7 +40,7 @@ const NAV_ITEMS = [
 export default function Header() {
   const { pathname } = window.location;
   return (
-    <div className="header-container">
+    <div className="header-container" name="navbar">
       <div className="nav-list">
         {NAV_ITEMS.map((item, index) => (
           <Link

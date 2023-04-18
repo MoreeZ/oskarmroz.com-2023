@@ -2,8 +2,17 @@ import React from "react";
 import ChevronUp from "../../icons/chevron-up.svg";
 import "../../styles/layout/footer.scss";
 import { Link } from "gatsby";
+import { scroller } from "react-scroll";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    scroller.scrollTo("navbar", {
+      duration: 500,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <footer className="footer-container">
       <svg
@@ -22,10 +31,10 @@ export default function Footer() {
       </svg>
 
       <div className="funny-title">Useless Footer🔥💯</div>
-      <Link className="scroll-to-top" to="/">
+      <button className="scroll-to-top" onClick={scrollToTop}>
         <span>Take me back to the good stuff</span>
         <ChevronUp className="chevron-up" />
-      </Link>
+      </button>
       <div className="copyright">
         Copyright 2023 Oskar Mroz etc. etc. as if this meant anything.
       </div>

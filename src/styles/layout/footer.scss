@@ -18,12 +18,14 @@
     text-shadow: 1.5px 1.5px 0px #a1ffa8;
   }
   .scroll-to-top {
+    all: unset;
     color: #a1ffa8;
     display: flex;
     align-items: center;
     text-decoration: none;
     position: relative;
     z-index: 1;
+    cursor: pointer;
   }
   .scroll-to-top span {
     margin-right: 12px;

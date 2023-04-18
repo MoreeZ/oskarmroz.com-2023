@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
+import DefaultPageLayout from "../components/layout/DefaultPageLayout";
+import Heading from "../components/common/Heading";
 
 export default function UIDesign() {
   return (
-    <div>ui-design</div>
-  )
+    <DefaultPageLayout
+      title="UI Design - Oskar Mroz, Ireland"
+      description="If you're seeing this then please remind me to write this description."
+    >
+      <Heading title="UI Design" />
+      {/* body */}
+    </DefaultPageLayout>
+  );
 }

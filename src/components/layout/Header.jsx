@@ -70,13 +70,13 @@ export default function Header() {
           </div>
           <div className="menu-items">
             {NAV_ITEMS.map((item, index) => (
-              <a
+              <Link
                 className={
                   "nav-element " +
                   item.src +
                   (pathname === item.href ? " active" : "")
                 }
-                href={item.href}
+                to={item.href}
                 data-aos-once="true"
                 data-aos="fade-down"
                 data-aos-delay={0 + index * 100}
@@ -84,7 +84,7 @@ export default function Header() {
                 {item.icon}
                 <span className="nav-text">{item.text}</span>
                 <div className="underline" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

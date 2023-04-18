@@ -33,7 +33,6 @@ export default function MainLeft() {
         free to check out my latest work.
       </div>
       <br />
-      <br />
       <button className="scroll-down" onClick={handleScrollDown}>
         Scroll down &nbsp;
         <ChevronDown className="chevron-down" />

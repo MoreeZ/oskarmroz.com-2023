@@ -10,7 +10,7 @@ New design for my portfolio website.
    </tr>
    <tr>
       <td>Front-end</td>
-      <td>Astro</td>
+      <td><del>Astro</del> • Gatsby • AOS • react-scroll • SCSS</td>
    </tr>
    <tr>
       <td>Back-end</td>

@@ -40,12 +40,12 @@ const NAV_ITEMS = [
 export default function Header() {
   if (typeof window === "undefined") return null;
   const { pathname } = window.location;
-  console.log(pathname)
   return (
     <div className="header-container" name="navbar">
       <div className="nav-list">
         {NAV_ITEMS.map((item, index) => (
           <Link
+            key={index}
             className={
               "nav-element " +
               item.src +
@@ -73,6 +73,7 @@ export default function Header() {
           <div className="menu-items">
             {NAV_ITEMS.map((item, index) => (
               <Link
+                key={index}
                 className={
                   "nav-element " +
                   item.src +

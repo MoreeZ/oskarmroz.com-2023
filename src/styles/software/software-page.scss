@@ -1,18 +1,10 @@
-.software-projects-list {
+.software-page {
   width: 100%;
   padding: 40px 120px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
 
   background: linear-gradient(-45deg, #2d2e30, #313133, #2e3133, #242527);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
-
-  @media only screen and (max-width: 1473px) {
-    display: flex;
-    flex-direction: column;
-  }
 
   @media only screen and (max-width: 1000px) {
     padding: 40px 60px;
@@ -22,6 +14,24 @@
   }
   @media only screen and (max-width: 600px) {
     padding: 40px 16px;
+  }
+
+  .divider-heading {
+    font-weight: 300;
+    color: #ebebeb;
+    text-transform: uppercase;
+  }
+
+  .software-projects-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @media only screen and (max-width: 1473px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 

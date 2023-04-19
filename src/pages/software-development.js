@@ -134,10 +134,13 @@ export default function SoftwareDevelopment() {
       description="If you're seeing this then please remind me to write this description."
     >
       <Heading title="Software Development" />
-      <div className="software-projects-list">
-        {PROJECTS_DATA.map((data, index) => (
-          <SoftwareCard data={data} key={index} />
-        ))}
+      <div className="software-page">
+        <h2 className="divider-heading">Current Projects</h2>
+        <div className="software-projects-list">
+          {PROJECTS_DATA.map((data, index) => (
+            <SoftwareCard data={data} key={index} />
+          ))}
+        </div>
       </div>
     </DefaultPageLayout>
   );

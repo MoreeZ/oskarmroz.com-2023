@@ -12,9 +12,15 @@
   column-gap: 0px;
   gap: 10px;
   // fancy background
-  background: linear-gradient(-45deg, #2d2e30, #313133, #2e3133, #242527);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  // background: linear-gradient(-45deg, #2d2e30, #313133, #2e3133, #242527);
+  // background-size: 400% 400%;
+  // animation: gradientShift 15s ease infinite;
+  background-color: #2d2e30;
+  opacity: 1;
+  background-image: radial-gradient(#a1ffa8 0.9px, transparent 0.9px),
+    radial-gradient(#a1ffa8 0.9px, #2d2e30 0.9px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
 
   @media only screen and (max-width: 1200px) {
     -moz-column-count: 2;

@@ -1,15 +1,53 @@
 import React from "react";
-import DefaultPageLayout from "../components/layout/DefaultPageLayout";
+import { graphql, useStaticQuery } from "gatsby";
+// components
 import Heading from "../components/common/Heading";
+import DefaultPageLayout from "../components/layout/DefaultPageLayout";
+import DesignCard from "../components/ui-design/DesignCard";
+//styles
+import "../styles/ui-design/ui-design-page.scss";
+import "../styles/ui-design/ui-design-card.scss";
+import "../styles/common/image-modal.scss";
 
 export default function UIDesign() {
+  const imageData = useStaticQuery(graphql`
+    {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "ui-design" }
+          extension: { regex: "/(png|jpeg|jpg)/" }
+        }
+        sort: {relativePath: ASC}
+      ) {
+        edges {
+          node {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(
+                width: 800
+                layout: CONSTRAINED
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                aspectRatio: 1.333
+              )
+            }
+          }
+        }
+      }
+    }
+  `);
+  const images = imageData.allFile.edges;
   return (
     <DefaultPageLayout
       title="UI Design - Oskar Mroz, Ireland"
       description="If you're seeing this then please remind me to write this description."
     >
       <Heading title="UI Design" />
-      {/* body */}
+      <div className="ui-design-page-content">
+        {images.map((image) => (
+          <DesignCard image={image} />
+        ))}
+      </div>
     </DefaultPageLayout>
   );
 }

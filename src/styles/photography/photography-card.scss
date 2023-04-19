@@ -8,19 +8,16 @@ img {
   margin-bottom: 10px;
   cursor: pointer;
   position: relative;
+  filter: brightness(100%) contrast(1);
+  -webkit-filter: brightness(100%) contrast(1);
 
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(45, 46, 48, 0.25);
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity ease-in-out 100ms;
+  &:hover img {
+    animation: brightnessAnimation 0.2s forwards;
   }
-  &:hover::after {
-    opacity: 1;
-  }
+  @keyframes brightnessAnimation {
+    to {
+      filter: brightness(120%) contrast(0.9);
+      -webkit-filter: brightness(120%) contrast(0.9);
+    }
+ }
 }

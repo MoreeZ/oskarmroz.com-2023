@@ -1,0 +1,53 @@
+.ui-design-page-content {
+  // page layout
+  // width: 100%;
+  padding: 40px 120px;
+  // content layout
+  line-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 14px;
+  // fancy background
+  background: linear-gradient(-45deg, #303133, #2d2e30, #2b2c2f);
+  background-size: 400% 400%;
+  animation: gradientShift 15s linear infinite forwards;
+  
+
+  // Responsiveness
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (max-width: 1000px) {
+    padding: 40px 60px;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 40px 30px;
+  }
+  @media only screen and (max-width: 400px) {
+    padding: 40px 16px;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@property --border-x {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0turn;
+}

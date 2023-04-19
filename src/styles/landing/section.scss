@@ -39,8 +39,20 @@
     position: absolute;
   }
 
-  &:hover .img-mask {
-    background-color: rgba(45, 46, 48, 0.8);
+  // &:hover .img-mask {
+  //   background-color: rgba(45, 46, 48, 0.8);
+  // }
+
+  img {
+    -webkit-filter: grayscale(90%);
+    -moz-filter: grayscale(90%);
+    filter: grayscale(90%);
+    transition: all 200ms ease;
+  }
+  &:hover img {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
   }
 
   .icon {

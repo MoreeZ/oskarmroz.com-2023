@@ -1,5 +1,4 @@
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 // components
 import Heading from "../components/common/Heading";
@@ -18,13 +17,14 @@ export default function Photography() {
           relativeDirectory: { eq: "photography" }
           extension: { regex: "/(png|jpeg|jpg)/" }
         }
+        sort: {relativePath: ASC}
       ) {
         edges {
           node {
             publicURL
             childImageSharp {
               gatsbyImageData(
-                width: 1000
+                width: 800
                 layout: CONSTRAINED
                 placeholder: BLURRED
                 formats: [AUTO, WEBP]
@@ -36,7 +36,6 @@ export default function Photography() {
     }
   `);
   const images = imageData.allFile.edges;
-  console.log(images);
 
   return (
     <DefaultPageLayout

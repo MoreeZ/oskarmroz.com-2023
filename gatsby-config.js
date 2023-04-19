@@ -36,18 +36,10 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "data",
-        path: "./src/data/",
-      },
-      __key: "data",
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /icons/ // See below to configure properly
+          include: /icons/
         }
       }
     }

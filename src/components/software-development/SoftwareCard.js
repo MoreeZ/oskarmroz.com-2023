@@ -11,7 +11,7 @@ export default function SoftwareCard({ data }) {
       data-aos-delay="200"
     >
       <div className="software-card-left">
-        <GatsbyImage image={image} alt={data.alt} placeholder="blurred" />
+        <GatsbyImage image={image} alt={data.alt} />
       </div>
       <div className="software-card-right">
         <h3

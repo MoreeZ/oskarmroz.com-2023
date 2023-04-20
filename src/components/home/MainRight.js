@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 // images and icons
-import profilePic from "../../images/profile-pic.jpg";
 import PointArrowIcon from "../../icons/point-arrow.svg";
 import GithubIcon from "../../icons/github.svg";
 import LinkedinIcon from "../../icons/linkedin.svg";
 import DribbleIcon from "../../icons/dribble.svg";
 import InstagramIcon from "../../icons/instagram.svg";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function MainRight() {
+
   const SOCIALS = [
     {
       icon: <GithubIcon className="social-icon" />,
@@ -31,12 +32,29 @@ export default function MainRight() {
       link: "https://www.instagram.com/oskar_mroz/",
     },
   ];
+  const {profile} = useStaticQuery(graphql`
+    {
+      profile: file(relativePath: { eq: "profile-pic.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 400
+            quality: 100
+            placeholder: BLURRED
+            layout: CONSTRAINED
+          )
+        }
+      }
+    }
+    `);
+    console.log(profile)
+  const image = getImage(profile);
 
   return (
     <div className="landing-main-right">
       <div className="profile-card">
         <div className="img-container">
-          <img src={profilePic} alt="Profile picture of Oskar Mroz" />
+          {/* <img src={profilePic} alt="Profile picture of Oskar Mroz" /> */}
+          <GatsbyImage image={image} />
           <div
             className="this-is-me"
             data-aos-once="true"

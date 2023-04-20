@@ -10,6 +10,7 @@ import "../styles/software/software-card.scss";
 // icons
 import GithubIcon from "../icons/github.svg";
 import WebIcon from "../icons/web-link.svg";
+import PlayStoreIcon from "../icons/playstore.svg";
 import LinkedinIcon from "../icons/linkedin.svg";
 import InstagramIcon from "../icons/instagram.svg";
 import TwitterLogoIcon from "../icons/twitter-logo.svg";
@@ -20,7 +21,7 @@ export default function SoftwareDevelopment() {
       clove: file(relativePath: { eq: "clove_icon.png" }) {
         childImageSharp {
           gatsbyImageData(
-            width: 150
+            width: 170
             quality: 100
             placeholder: NONE
             layout: CONSTRAINED
@@ -30,7 +31,7 @@ export default function SoftwareDevelopment() {
       ldl: file(relativePath: { eq: "ldl_logo.png" }) {
         childImageSharp {
           gatsbyImageData(
-            width: 150
+            width: 170
             quality: 100
             placeholder: NONE
             layout: CONSTRAINED
@@ -40,7 +41,37 @@ export default function SoftwareDevelopment() {
       luna: file(relativePath: { eq: "luna_logo.png" }) {
         childImageSharp {
           gatsbyImageData(
-            width: 150
+            width: 170
+            quality: 100
+            placeholder: NONE
+            layout: CONSTRAINED
+          )
+        }
+      }
+      rap: file(relativePath: { eq: "rap_icon.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 170
+            quality: 100
+            placeholder: NONE
+            layout: CONSTRAINED
+          )
+        }
+      }
+      riverpeople: file(relativePath: { eq: "riverpeople_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 170
+            quality: 100
+            placeholder: NONE
+            layout: CONSTRAINED
+          )
+        }
+      }
+      formula: file(relativePath: { eq: "formula_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 170
             quality: 100
             placeholder: NONE
             layout: CONSTRAINED
@@ -50,7 +81,7 @@ export default function SoftwareDevelopment() {
     }
   `);
 
-  const PROJECTS_DATA = [
+  const CURRENT_PROJECTS_DATA = [
     {
       image: imageData.clove,
       alt: "Clove Software Logo",
@@ -58,8 +89,10 @@ export default function SoftwareDevelopment() {
       description: (
         <>
           I am working on a startup developing and selling productivity
-          software. Some of our current products in development include
-          Trackl.ie, Taskl.ie, and Ticketl.ie.
+          software. Some of our current products in development include{" "}
+          <a href="https://trackl.ie">Trackl.ie</a>,{" "}
+          <a href="https://taskl.ie">Taskl.ie</a>, and{" "}
+          <a href="https://ticketl.ie">Ticketl.ie</a>.
         </>
       ),
       links: [
@@ -128,6 +161,134 @@ export default function SoftwareDevelopment() {
     },
   ];
 
+  const PAST_PROJECTS_DATA = [
+    {
+      image: imageData.rap,
+      alt: "Random Anime Picker App",
+      heading: "Random Anime Picker App",
+      description: (
+        <>
+          I developed an app for anime fans that helped them choose their next
+          anime from "MyAnimeList" database. It received thousands of downloads
+          and positive reviews, but stopped working due to changes in the API.
+        </>
+      ),
+      links: [
+        {
+          icon: <PlayStoreIcon />,
+          text: "Google Play",
+          link: "https://play.google.com/store/apps/details?id=com.randomanimepicker&hl=en&gl=US&pli=1",
+        },
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://randomanimepicker.web.app",
+        },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/random_anime_and_manga_picker_android",
+        },
+      ],
+    },
+    {
+      image: imageData.formula,
+      alt: "Formula Trinity Logo PNG",
+      heading: "Formula Trinity Website",
+      description: (
+        <>
+          I maintained and optimized the society website for a short period. I
+          actively updated website information. I also optimized page loading
+          times by reducing server response time.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://formulatrinity.com",
+        },
+        {
+          icon: <InstagramIcon />,
+          text: "Instagram",
+          link: "https://www.instagram.com/formulatrinity",
+        },
+      ],
+    },
+    {
+      image: imageData.riverpeople,
+      alt: "River People Logo PNG",
+      heading: "River People Ecuador Website",
+      description: (
+        <>
+          I maintained, improved and managed the company website for a period of
+          three months. During that time I drastically boosted the company web
+          presence and website search engine rankings.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://riverpeopleecuador.com",
+        },
+        {
+          icon: <InstagramIcon />,
+          text: "Instagram",
+          link: "https://www.instagram.com/riverpeopleecuador",
+        },
+      ],
+    },
+    {
+      image: null,
+      alt: "Lavista Canoa",
+      heading: "Lavista Canoa Webpage",
+      description: (
+        <>
+          A website I made for an owner of a hotel I stayed at on a beach in
+          Ecuador. The owner changed his mind after agreeing on the offer. I
+          left the project as an unfinished demo.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://lavista-demo.web.app",
+        },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/lavista",
+        },
+      ],
+    },
+    {
+      image: null,
+      alt: "missing image",
+      heading: "APM AUTOMOTIVE",
+      description: (
+        <>
+          APM AUTOMOTIVE is a website made for a small business in Poland. The
+          website was used by the owner for some time until their domain expired
+          and they decided to stop hosting it.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://apm-automotive.web.app",
+        },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/apm-automotive",
+        },
+      ],
+    },
+  ];
+
   return (
     <DefaultPageLayout
       title="Software Development - Oskar Mroz, Ireland"
@@ -137,7 +298,13 @@ export default function SoftwareDevelopment() {
       <div className="software-page">
         <h2 className="divider-heading">Current Projects</h2>
         <div className="software-projects-list">
-          {PROJECTS_DATA.map((data, index) => (
+          {CURRENT_PROJECTS_DATA.map((data, index) => (
+            <SoftwareCard data={data} key={index} />
+          ))}
+        </div>
+        <h2 className="divider-heading">Past Projects</h2>
+        <div className="software-projects-list">
+          {PAST_PROJECTS_DATA.map((data, index) => (
             <SoftwareCard data={data} key={index} />
           ))}
         </div>

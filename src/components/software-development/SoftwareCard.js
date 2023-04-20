@@ -10,9 +10,11 @@ export default function SoftwareCard({ data }) {
       data-aos-offset="-100"
       data-aos-delay="200"
     >
-      <div className="software-card-left">
-        <GatsbyImage image={image} alt={data.alt} />
-      </div>
+      {image && (
+        <div className="software-card-left">
+          <GatsbyImage image={image} alt={data.alt} />
+        </div>
+      )}
       <div className="software-card-right">
         <h3
           className="software-card-heading"

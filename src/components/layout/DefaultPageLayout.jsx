@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Footer from "./Footer";
 import Header from "./Header";
 import AOS from "aos";
+import SplashScreen from "../common/SplashScreen";
 
 export default function DefaultPageLayout({
   children,
@@ -53,6 +54,7 @@ export default function DefaultPageLayout({
       <main>{children}</main>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <Footer />
+      <SplashScreen />
     </>
   );
 }

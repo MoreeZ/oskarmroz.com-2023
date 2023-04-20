@@ -23,7 +23,7 @@ header {
     color: #e555d6;
     text-shadow: 3px 3px 0px #a1ffa8;
     animation: animate 10s ease-in-out infinite;
-    animation-delay: calc(0.01s * var(--i));
+    animation-delay: calc(0.02s * var(--i));
   }
 
   @keyframes animate {

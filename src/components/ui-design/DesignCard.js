@@ -14,6 +14,8 @@ export default function Design({ image }) {
     <>
       <div className="ui-design-card-container box" onClick={handleOpenModal}>
         <GatsbyImage image={imageData} />
+        {/* Idfk why I need 5 spans instead of 4. css doesn't target first child.. */}
+        <span className="hover-line"></span> 
         <span className="hover-line"></span>
         <span className="hover-line"></span>
         <span className="hover-line"></span>

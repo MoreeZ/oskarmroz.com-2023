@@ -8,10 +8,44 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 14px;
   // fancy background
-  background: linear-gradient(-45deg, #303133, #2d2e30, #2b2c2f);
-  background-size: 400% 400%;
-  animation: gradientShift 15s linear infinite forwards;
-  
+  // background: linear-gradient(-45deg, #303133, #2d2e30, #2b2c2f);
+  // background-size: 400% 400%;
+  // animation: gradientShift 15s linear infinite forwards;
+  background-color: #2d2e30;
+  opacity: 1;
+  background-image: linear-gradient(
+      #a1ffa8 2.4000000000000004px,
+      transparent 2.4000000000000004px
+    ),
+    linear-gradient(
+      90deg,
+      #a1ffa8 2.4000000000000004px,
+      transparent 2.4000000000000004px
+    ),
+    linear-gradient(
+      rgba(161, 255, 168, 0.5) 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(161, 255, 168, 0.5) 1.2000000000000002px,
+      #2d2e30 1.2000000000000002px
+    );
+  background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+  background-position: -2.4000000000000004px -2.4000000000000004px,
+    -2.4000000000000004px -2.4000000000000004px,
+    -1.2000000000000002px -1.2000000000000002px,
+    -1.2000000000000002px -1.2000000000000002px;
+
+  animation: animatedBackground 3s linear infinite;
+  @keyframes animatedBackground {
+    from {
+      background-position: 0px -8px;
+    }
+    to {
+      background-position: 60px -8px;
+    }
+  }
 
   // Responsiveness
   @media only screen and (max-width: 1200px) {
@@ -44,10 +78,4 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-@property --border-x {
-  syntax: "<percentage>";
-  inherits: true;
-  initial-value: 0turn;
 }

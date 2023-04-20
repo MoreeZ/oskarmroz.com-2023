@@ -36,8 +36,10 @@
     -2.4000000000000004px -2.4000000000000004px,
     -1.2000000000000002px -1.2000000000000002px,
     -1.2000000000000002px -1.2000000000000002px;
+  cursor: crosshair;
 
   animation: animatedBackground 3s linear infinite;
+
   @keyframes animatedBackground {
     from {
       background-position: 0px -8px;

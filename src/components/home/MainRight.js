@@ -46,7 +46,6 @@ export default function MainRight() {
       }
     }
     `);
-    console.log(profile)
   const image = getImage(profile);
 
   return (
@@ -54,7 +53,7 @@ export default function MainRight() {
       <div className="profile-card">
         <div className="img-container">
           {/* <img src={profilePic} alt="Profile picture of Oskar Mroz" /> */}
-          <GatsbyImage image={image} />
+          <GatsbyImage image={image} loading="eager" />
           <div
             className="this-is-me"
             data-aos-once="true"

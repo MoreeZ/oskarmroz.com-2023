@@ -17,10 +17,6 @@ export default function DefaultPageLayout({
   useEffect(() => {
     AOS.init();
   }, []);
-  console.log(
-    openGraphData?.description ||
-      "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
-  );
 
   return (
     <>
@@ -48,13 +44,16 @@ export default function DefaultPageLayout({
         {/* OPEN GRAPH PREVIEW TAGS */}
         <meta
           property="og:title"
-          content={openGraphData?.title || "Oskar Mroz - Personal Portfolio"}
+          content={openGraphData?.title || "Oskar Mroz"}
         />
         <meta property="og:site_name" content="oskarmroz.com" />
         <meta property="og:locale" content="en_US" />
         <meta
           property="og:description"
-          content="Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+          content={
+            description ||
+            "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+          }
         />
 
         <meta
@@ -63,6 +62,10 @@ export default function DefaultPageLayout({
             openGraphData?.image ||
             "https://avatars.githubusercontent.com/u/47431553"
           }
+        />
+        <meta
+          property="og:image:alt"
+          content={openGraphData?.imageAlt || "Profile picture of Oskar Mroz"}
         />
         <meta
           property="og:url"

@@ -1,24 +1,65 @@
 import * as React from "react";
-import "../styles/landing/section.scss";
+import { graphql, useStaticQuery } from "gatsby";
 // Components
 import DefaultPageLayout from "../components/layout/DefaultPageLayout";
 import Heading from "../components/common/Heading";
 import LandingMain from "../components/home/LandingMain";
 import LandingSection from "../components/home/LandingSection";
-
-// Images
-import softwareDevImage from "../images/software-dev.jpg";
-import uiDesignImage from "../images/ui-design.jpg";
-import photographyImage from "../images/photography.jpg";
-import blogsImage from "../images/blogs.jpg";
-
 // Icons
 import SoftwareIcon from "../icons/software.svg";
 import UiDesginIcon from "../icons/ui-design.svg";
 import PhotographyIcon from "../icons/photography.svg";
 import BlogsIcon from "../icons/blogs.svg";
+// Styles
+import "../styles/landing/section.scss";
 
 export default function IndexPage() {
+  const { softwareDevImage, uiDesignImage, photographyImage, blogsImage } =
+    useStaticQuery(graphql`
+      {
+        softwareDevImage: file(relativePath: { eq: "software-dev.jpg" }) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 1920
+              quality: 50
+              placeholder: BLURRED
+              layout: CONSTRAINED
+            )
+          }
+        }
+        uiDesignImage: file(relativePath: { eq: "ui-design.jpg" }) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 1920
+              quality: 50
+              placeholder: BLURRED
+              layout: CONSTRAINED
+            )
+          }
+        }
+        photographyImage: file(relativePath: { eq: "photography.jpg" }) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 1920
+              quality: 50
+              placeholder: BLURRED
+              layout: CONSTRAINED
+            )
+          }
+        }
+        blogsImage: file(relativePath: { eq: "blogs.jpg" }) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 1920
+              quality: 50
+              placeholder: BLURRED
+              layout: CONSTRAINED
+            )
+          }
+        }
+      }
+    `);
+
   return (
     <DefaultPageLayout>
       <Heading title="About me" />

@@ -13,6 +13,7 @@ export default function DefaultPageLayout({
   robots,
   openGraphData,
 }) {
+  // Initialize AOS on every page.
   useEffect(() => {
     AOS.init();
   }, []);
@@ -43,27 +44,29 @@ export default function DefaultPageLayout({
         {/* OPEN GRAPH PREVIEW TAGS */}
         <meta
           property="og:title"
-          content={openGraphData.title || "Oskar Mroz - Personal Portfolio"}
+          content={openGraphData?.title || "Oskar Mroz - Personal Portfolio"}
         />
         <meta property="og:site_name" content="oskarmroz.com" />
         <meta property="og:locale" content="en_US" />
         <meta
           property="og:description"
           content={
-            openGraphData.description ||
+            openGraphData?.description ||
             "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
           }
         />
-        <meta property="og:image" content={openGraphData.image || profilePic} />
+        <meta
+          property="og:image"
+          content={openGraphData?.image || profilePic}
+        />
         <meta
           property="og:url"
-          content={openGraphData.url || "https://oskarmroz.com"}
+          content={openGraphData?.url || "https://oskarmroz.com"}
         />
-        <meta property="og:type" content={openGraphData.type || "website"} />
+        <meta property="og:type" content={openGraphData?.type || "website"} />
       </Helmet>
       <Header />
       <main>{children}</main>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <Footer />
     </>
   );

@@ -36,13 +36,6 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "static",
-        path: `./src/static/`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {

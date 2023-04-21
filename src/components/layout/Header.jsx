@@ -70,6 +70,7 @@ export default function Header() {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
+          <h2 className="top-title">Oskar Mroz</h2>
           <div className="menu-items">
             {NAV_ITEMS.map((item, index) => (
               <Link

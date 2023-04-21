@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Footer from "./Footer";
 import Header from "./Header";
 import AOS from "aos";
-import SplashScreen from "../common/SplashScreen";
+import profilePic from "../../static/profile-pic.jpg";
 
 export default function DefaultPageLayout({
   children,
@@ -11,7 +11,7 @@ export default function DefaultPageLayout({
   description,
   keywords,
   robots,
-  canonical,
+  openGraphData,
 }) {
   useEffect(() => {
     AOS.init();
@@ -27,7 +27,7 @@ export default function DefaultPageLayout({
           name="description"
           content={
             description ||
-            "If you're seeing this then please remind me to write this description."
+            "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
           }
         />
         <meta
@@ -38,23 +38,40 @@ export default function DefaultPageLayout({
           }
         />
         <meta name="robots" content={robots || "index, follow"} />
-        <link rel="canonical" href={canonical || "https://oskarmroz.com/"} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-          rel="stylesheet"
-        ></link>
+        {openGraphData && (
+          <>
+            <meta
+              property="og:title"
+              content={openGraphData.title || "Oskar Mroz - Personal Portfolio"}
+            />
+            <meta property="og:site_name" content="oskarmroz.com" />
+            <meta property="og:locale" content="en_US" />
+            <meta
+              property="og:description"
+              content={
+                openGraphData.description ||
+                "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+              }
+            />
+            <meta
+              property="og:image"
+              content={openGraphData.image || profilePic}
+            />
+            <meta
+              property="og:url"
+              content={openGraphData.url || "https://oskarmroz.com"}
+            />
+            <meta
+              property="og:type"
+              content={openGraphData.type || "website"}
+            />
+          </>
+        )}
       </Helmet>
       <Header />
       <main>{children}</main>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <Footer />
-      <SplashScreen />
     </>
   );
 }

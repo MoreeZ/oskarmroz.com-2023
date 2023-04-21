@@ -17,7 +17,7 @@ export default function UIDesign() {
           relativeDirectory: { eq: "ui-design" }
           extension: { regex: "/(png|jpeg|jpg)/" }
         }
-        sort: {relativePath: ASC}
+        sort: { relativePath: ASC }
       ) {
         edges {
           node {
@@ -40,7 +40,7 @@ export default function UIDesign() {
   return (
     <DefaultPageLayout
       title="UI Design - Oskar Mroz, Ireland"
-      description="If you're seeing this then please remind me to write this description."
+      description="Oskar Mroz is a software developer from Ireland who values good UI design. He believes that UI is the face of the software and what ultimately sells it to the end user. Check out his UI design projects and learn more about his design principles and tools."
     >
       <Heading title="UI Design" />
       <div className="ui-design-page-content">

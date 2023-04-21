@@ -20,10 +20,7 @@ import BlogsIcon from "../icons/blogs.svg";
 
 export default function IndexPage() {
   return (
-    <DefaultPageLayout
-      title="Oskar Mroz - Software Developer from Ireland"
-      description="If you're seeing this then please remind me to write this description."
-    >
+    <DefaultPageLayout>
       <Heading title="About me" />
       <LandingMain />
       <LandingSection

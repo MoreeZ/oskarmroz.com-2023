@@ -6,7 +6,7 @@ export default function blogs() {
   return (
     <DefaultPageLayout
       title="Blogs - Oskar Mroz, Ireland"
-      description="If you're seeing this then please remind me to write this description."
+      description="Oskar Mroz is a software developer from Ireland who also loves blogging. He writes about his experiences, insights, and opinions on various topics related to software development, UI design, photography, and more. Read his latest blog posts and join the discussion."
     >
       <Heading title="Blogs" />
       {/* body */}

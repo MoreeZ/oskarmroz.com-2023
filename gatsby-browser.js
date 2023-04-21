@@ -1,5 +1,6 @@
 import "./src/styles/global/styles.scss";
 import "./src/styles/common/splash-screen.scss";
+import "./src/styles/dist/aos.css";
 
 // Splash Screen
 export const onClientEntry = () => {

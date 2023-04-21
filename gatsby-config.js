@@ -36,12 +36,29 @@ module.exports = {
       __key: "pages",
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "static",
+        path: `./src/static/`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /icons/
-        }
-      }
-    }
+          include: /icons/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:300,400,500,600,700`,
+          `Lobster`,
+        ],
+        display: "swap",
+      },
+    },
   ],
 };

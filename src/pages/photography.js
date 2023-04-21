@@ -17,7 +17,7 @@ export default function Photography() {
           relativeDirectory: { eq: "photography" }
           extension: { regex: "/(png|jpeg|jpg)/" }
         }
-        sort: {relativePath: ASC}
+        sort: { relativePath: ASC }
       ) {
         edges {
           node {
@@ -40,7 +40,7 @@ export default function Photography() {
   return (
     <DefaultPageLayout
       title="Photography - Oskar Mroz, Ireland"
-      description="If you're seeing this then please remind me to write this description."
+      description="Oskar Mroz is a software developer from Ireland who also has a passion for photography. He enjoys capturing stunning portraits, landscapes, and events with his camera. Browse his photography portfolio and see the world through his lens."
     >
       <Heading title="Photography" />
       {/* body */}

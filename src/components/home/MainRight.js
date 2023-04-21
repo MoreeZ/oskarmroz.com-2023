@@ -9,7 +9,6 @@ import InstagramIcon from "../../icons/instagram.svg";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function MainRight() {
-
   const SOCIALS = [
     {
       icon: <GithubIcon className="social-icon" />,
@@ -32,7 +31,7 @@ export default function MainRight() {
       link: "https://www.instagram.com/oskar_mroz/",
     },
   ];
-  const {profile} = useStaticQuery(graphql`
+  const { profile } = useStaticQuery(graphql`
     {
       profile: file(relativePath: { eq: "profile-pic.jpg" }) {
         childImageSharp {
@@ -45,7 +44,7 @@ export default function MainRight() {
         }
       }
     }
-    `);
+  `);
   const image = getImage(profile);
 
   return (
@@ -53,7 +52,11 @@ export default function MainRight() {
       <div className="profile-card">
         <div className="img-container">
           {/* <img src={profilePic} alt="Profile picture of Oskar Mroz" /> */}
-          <GatsbyImage image={image} loading="eager" />
+          <GatsbyImage
+            image={image}
+            alt="Profile picture of Oskar Mroz"
+            loading="eager"
+          />
           <div
             className="this-is-me"
             data-aos-once="true"
@@ -66,9 +69,10 @@ export default function MainRight() {
         </div>
         <div className="socials">
           {SOCIALS.map((social, index) => (
-            <Link
+            <a
+              key={index}
               className="social"
-              to={social.link}
+              href={social.link}
               target="_blank"
               data-aos-once="true"
               data-aos="fade-up"
@@ -76,7 +80,7 @@ export default function MainRight() {
             >
               {social.icon}
               <p className="text">{social.text}</p>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

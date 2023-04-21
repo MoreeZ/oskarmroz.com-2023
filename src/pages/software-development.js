@@ -78,6 +78,16 @@ export default function SoftwareDevelopment() {
           )
         }
       }
+      oldIcon: file(relativePath: { eq: "old_website_icon.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 170
+            quality: 100
+            placeholder: NONE
+            layout: CONSTRAINED
+          )
+        }
+      }
     }
   `);
 
@@ -192,6 +202,31 @@ export default function SoftwareDevelopment() {
       ],
     },
     {
+      image: imageData.oldIcon,
+      alt: "Old Portfolio",
+      heading: "Old Portfolio website",
+      description: (
+        <>
+          At the age of 17, I developed a portfolio using the create-react-app
+          and class components. Although these technologies are now outdated,
+          the website still maintains a visually appealing design. I included it
+          in this list due to its nice design.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://old.oskarmroz.com",
+        },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/oskarmroz-com",
+        },
+      ],
+    },
+    {
       image: imageData.formula,
       alt: "Formula Trinity Logo PNG",
       heading: "Formula Trinity Website",
@@ -265,7 +300,7 @@ export default function SoftwareDevelopment() {
     },
     {
       image: null,
-      alt: "missing image",
+      alt: "APM AUTOMOTIVE",
       heading: "APM AUTOMOTIVE",
       description: (
         <>

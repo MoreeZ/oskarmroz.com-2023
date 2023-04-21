@@ -6,8 +6,8 @@ export default function SoftwareCard({ data }) {
   return (
     <div
       className="software-card"
-      data-aos="fade-in"
-      data-aos-offset="-100"
+      data-aos="zoom-in"
+      data-aos-offset="-40"
       data-aos-delay="200"
     >
       {image && (

@@ -4,9 +4,10 @@ import "../../styles/common/heading.scss";
 export default function Heading({ title }) {
   if (typeof window === "undefined") return null;
   const { pathname } = window.location;
+  
   const titleChars = title.split("");
   return (
-    <header>
+    <header className="default-header">
       <h1 className="wave">
         {titleChars.map((char, index) => (
           <span
@@ -24,7 +25,7 @@ export default function Heading({ title }) {
         className={`zigzag-wrapper${pathname === "/" ? " landing-zigzag" : ""}`}
         style={{ "--chars": titleChars.length }}
       >
-        <div class="zigzag"></div>
+        <div className="zigzag"></div>
       </div>
     </header>
   );

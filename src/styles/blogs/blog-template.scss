@@ -1,0 +1,27 @@
+.blog-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .blog-page-topbar {
+    width: 100%;
+    height: 50px;
+    background-color: #232323;
+  }
+
+  .blog-wrapper {
+    max-width: 800px;
+    width: 800px;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+
+    .blog-header {
+    }
+
+    .blog-content {
+    }
+  }
+}

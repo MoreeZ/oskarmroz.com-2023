@@ -24,23 +24,6 @@ export default function DefaultPageLayout({
         {/* BASIC TAGS */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        {/* SEARCH ENGINE TAGS */}
-        <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
-        <meta
-          name="description"
-          content={
-            description ||
-            "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
-          }
-        />
-        <meta
-          name="keywords"
-          content={
-            keywords ||
-            "oskar, oskar mroz, software developer, ireland, designer, photography, dublin, software, engineer, computer science"
-          }
-        />
-        <meta name="robots" content={robots || "index, follow"} />
         {/* OPEN GRAPH PREVIEW TAGS */}
         <meta
           property="og:title"
@@ -72,6 +55,23 @@ export default function DefaultPageLayout({
           content={openGraphData?.url || "https://oskarmroz.com"}
         />
         <meta property="og:type" content={openGraphData?.type || "website"} />
+        {/* SEARCH ENGINE TAGS */}
+        <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
+        <meta
+          name="description"
+          content={
+            description ||
+            "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+          }
+        />
+        <meta
+          name="keywords"
+          content={
+            keywords ||
+            "oskar, oskar mroz, software developer, ireland, designer, photography, dublin, software, engineer, computer science"
+          }
+        />
+        <meta name="robots" content={robots || "index, follow"} />
       </Helmet>
       <Header />
       <main>{children}</main>

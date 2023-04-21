@@ -65,28 +65,28 @@ export default function IndexPage() {
       <Heading title="About me" />
       <LandingMain />
       <LandingSection
-        icon={<SoftwareIcon class="icon" />}
+        icon={<SoftwareIcon className="icon" />}
         image={softwareDevImage}
         title="Software Development"
         href="/software-development"
         id="software"
       />
       <LandingSection
-        icon={<UiDesginIcon class="icon" />}
+        icon={<UiDesginIcon className="icon" />}
         image={uiDesignImage}
         title="UI Design"
         href="/ui-design"
         id="ui-design"
       />
       <LandingSection
-        icon={<PhotographyIcon class="icon" />}
+        icon={<PhotographyIcon className="icon" />}
         image={photographyImage}
         title="Photography"
         href="/photography"
         id="photography"
       />
       <LandingSection
-        icon={<BlogsIcon class="icon" />}
+        icon={<BlogsIcon className="icon" />}
         image={blogsImage}
         title="Blogs"
         href="/blogs"

@@ -17,6 +17,10 @@ export default function DefaultPageLayout({
   useEffect(() => {
     AOS.init();
   }, []);
+  console.log(
+    openGraphData?.description ||
+      "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+  );
 
   return (
     <>
@@ -50,10 +54,7 @@ export default function DefaultPageLayout({
         <meta property="og:locale" content="en_US" />
         <meta
           property="og:description"
-          content={
-            openGraphData?.description ||
-            "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
-          }
+          content="Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
         />
         <meta
           property="og:image"

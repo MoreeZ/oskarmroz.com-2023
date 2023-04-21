@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Footer from "./Footer";
 import Header from "./Header";
 import AOS from "aos";
-import profilePic from "../../static/profile-pic.jpg";
+import ogImage from "../../images/profile-pic.jpg";
 
 export default function DefaultPageLayout({
   children,
@@ -57,7 +57,7 @@ export default function DefaultPageLayout({
         />
         <meta
           property="og:image"
-          content={openGraphData?.image || profilePic}
+          content={`https://oskarmroz.com${openGraphData?.image || ogImage}`}
         />
         <meta
           property="og:url"

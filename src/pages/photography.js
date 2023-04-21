@@ -8,6 +8,7 @@ import PhotoCard from "../components/photography/PhotoCard";
 import "../styles/photography/photography-page.scss";
 import "../styles/photography/photography-card.scss";
 import "../styles/common/image-modal.scss";
+import SEO from "../components/layout/SEO";
 
 export default function Photography() {
   const imageData = useStaticQuery(graphql`
@@ -38,17 +39,27 @@ export default function Photography() {
   const images = imageData.allFile.edges;
 
   return (
-    <DefaultPageLayout
-      title="Photography - Oskar Mroz, Ireland"
-      description="Oskar Mroz is a software developer from Ireland who also has a passion for photography. He enjoys capturing stunning portraits, landscapes, and events with his camera. Browse his photography portfolio and see the world through his lens."
-    >
+    <DefaultPageLayout>
       <Heading title="Photography" />
       {/* body */}
       <div className="photography-page-content">
         {images.map((image, index) => (
-          <PhotoCard image={image} key={index} alt={"Photo gallery item #" + index+1}/>
+          <PhotoCard
+            image={image}
+            key={index}
+            alt={"Photo gallery item #" + index + 1}
+          />
         ))}
       </div>
     </DefaultPageLayout>
+  );
+}
+
+export function Head() {
+  return (
+    <SEO
+      title="Photography - Oskar Mroz, Ireland"
+      description="Oskar Mroz is a software developer from Ireland who also has a passion for photography. He enjoys capturing stunning portraits, landscapes, and events with his camera. Browse his photography portfolio and see the world through his lens."
+    />
   );
 }

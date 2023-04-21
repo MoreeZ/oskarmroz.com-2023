@@ -14,6 +14,7 @@ import PlayStoreIcon from "../icons/playstore.svg";
 import LinkedinIcon from "../icons/linkedin.svg";
 import InstagramIcon from "../icons/instagram.svg";
 import TwitterLogoIcon from "../icons/twitter-logo.svg";
+import SEO from "../components/layout/SEO";
 
 export default function SoftwareDevelopment() {
   const imageData = useStaticQuery(graphql`
@@ -325,10 +326,7 @@ export default function SoftwareDevelopment() {
   ];
 
   return (
-    <DefaultPageLayout
-      title="Software Development - Oskar Mroz, Ireland"
-      description="Oskar Mroz is a software developer from Ireland who creates responsive and user-friendly websites and apps with React.js and React Native. He also has experience in backend development, databases, and cloud services. Explore his software development projects and learn more about his skills and tools."
-    >
+    <DefaultPageLayout>
       <Heading title="Software Development" />
       <div className="software-page">
         <h2 className="divider-heading">Current Projects</h2>
@@ -345,5 +343,14 @@ export default function SoftwareDevelopment() {
         </div>
       </div>
     </DefaultPageLayout>
+  );
+}
+
+export function Head() {
+  return (
+    <SEO
+      title="Software Development - Oskar Mroz, Ireland"
+      description="Oskar Mroz is a software developer from Ireland who creates responsive and user-friendly websites and apps with React.js and React Native. He also has experience in backend development, databases, and cloud services. Explore his software development projects and learn more about his skills and tools."
+    />
   );
 }

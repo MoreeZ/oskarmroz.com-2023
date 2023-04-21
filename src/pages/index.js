@@ -12,6 +12,7 @@ import PhotographyIcon from "../icons/photography.svg";
 import BlogsIcon from "../icons/blogs.svg";
 // Styles
 import "../styles/landing/section.scss";
+import SEO from "../components/layout/SEO";
 
 export default function IndexPage() {
   const { softwareDevImage, uiDesignImage, photographyImage, blogsImage } =
@@ -104,4 +105,6 @@ export default function IndexPage() {
   );
 }
 
-export const Head = () => <title>Oskar Mroz</title>;
+export function Head() {
+  return <SEO />;
+}

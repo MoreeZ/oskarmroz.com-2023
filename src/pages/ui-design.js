@@ -8,6 +8,7 @@ import DesignCard from "../components/ui-design/DesignCard";
 import "../styles/ui-design/ui-design-page.scss";
 import "../styles/ui-design/ui-design-card.scss";
 import "../styles/common/image-modal.scss";
+import SEO from "../components/layout/SEO";
 
 export default function UIDesign() {
   const imageData = useStaticQuery(graphql`
@@ -38,20 +39,26 @@ export default function UIDesign() {
   `);
   const images = imageData.allFile.edges;
   return (
-    <DefaultPageLayout
-      title="UI Design - Oskar Mroz, Ireland"
-      description="Oskar Mroz is a software developer from Ireland who values good UI design. He believes that UI is the face of the software and what ultimately sells it to the end user. Check out his UI design projects and learn more about his design principles and tools."
-    >
+    <DefaultPageLayout>
       <Heading title="UI Design" />
       <div className="ui-design-page-content">
         {images.map((image, index) => (
           <DesignCard
             image={image}
             key={index}
-            alt={"UI Design showcase image #" + index+1}
+            alt={"UI Design showcase image #" + index + 1}
           />
         ))}
       </div>
     </DefaultPageLayout>
+  );
+}
+
+export function Head() {
+  return (
+    <SEO
+      title="UI Design - Oskar Mroz, Ireland"
+      description="Oskar Mroz is a software developer from Ireland who values good UI design. He believes that UI is the face of the software and what ultimately sells it to the end user. Check out his UI design projects and learn more about his design principles and tools."
+    />
   );
 }

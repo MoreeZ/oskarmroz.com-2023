@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ImageModal from "../common/ImageModal";
 
-export default function PhotoCard({ image }) {
+export default function PhotoCard({ image, alt }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -13,11 +13,11 @@ export default function PhotoCard({ image }) {
   return (
     <>
       <div className="photo-card-container" onClick={handleOpenModal}>
-        <GatsbyImage image={imageData} />
+        <GatsbyImage image={imageData} alt={alt} />
       </div>
       <ImageModal
         imageUrl={image.node.publicURL}
-        altText="Example Image"
+        altText={"FULL SIZE " + alt}
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
       />

@@ -45,8 +45,8 @@ export default function Photography() {
       <Heading title="Photography" />
       {/* body */}
       <div className="photography-page-content">
-        {images.map((image) => (
-          <PhotoCard image={image} />
+        {images.map((image, index) => (
+          <PhotoCard image={image} key={index} alt={"Photo gallery item #" + index+1}/>
         ))}
       </div>
     </DefaultPageLayout>

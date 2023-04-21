@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ImageModal from "../common/ImageModal";
 
-export default function Design({ image }) {
+export default function DesignCard({ image, alt }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -13,7 +13,7 @@ export default function Design({ image }) {
   return (
     <>
       <div className="ui-design-card-container box" onClick={handleOpenModal}>
-        <GatsbyImage image={imageData} />
+        <GatsbyImage image={imageData} alt={alt}/>
         {/* Idfk why I need 5 spans instead of 4. css doesn't target first child.. */}
         <span className="hover-line"></span> 
         <span className="hover-line"></span>

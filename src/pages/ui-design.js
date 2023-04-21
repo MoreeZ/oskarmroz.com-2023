@@ -44,8 +44,12 @@ export default function UIDesign() {
     >
       <Heading title="UI Design" />
       <div className="ui-design-page-content">
-        {images.map((image) => (
-          <DesignCard image={image} />
+        {images.map((image, index) => (
+          <DesignCard
+            image={image}
+            key={index}
+            alt={"UI Design showcase image #" + index+1}
+          />
         ))}
       </div>
     </DefaultPageLayout>

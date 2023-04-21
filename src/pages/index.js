@@ -24,6 +24,7 @@ export default function IndexPage() {
               quality: 50
               placeholder: BLURRED
               layout: CONSTRAINED
+              formats: [WEBP, AVIF, JPG]
             )
           }
         }
@@ -34,6 +35,7 @@ export default function IndexPage() {
               quality: 50
               placeholder: BLURRED
               layout: CONSTRAINED
+              formats: [WEBP, AVIF, JPG]
             )
           }
         }
@@ -44,6 +46,7 @@ export default function IndexPage() {
               quality: 50
               placeholder: BLURRED
               layout: CONSTRAINED
+              formats: [WEBP, AVIF, JPG]
             )
           }
         }
@@ -54,6 +57,7 @@ export default function IndexPage() {
               quality: 50
               placeholder: BLURRED
               layout: CONSTRAINED
+              formats: [WEBP, AVIF, JPG]
             )
           }
         }
@@ -67,6 +71,7 @@ export default function IndexPage() {
       <LandingSection
         icon={<SoftwareIcon className="icon" />}
         image={softwareDevImage}
+        alt={"A screen with code"}
         title="Software Development"
         href="/software-development"
         id="software"
@@ -74,6 +79,7 @@ export default function IndexPage() {
       <LandingSection
         icon={<UiDesginIcon className="icon" />}
         image={uiDesignImage}
+        alt={"UI Design example"}
         title="UI Design"
         href="/ui-design"
         id="ui-design"
@@ -81,6 +87,7 @@ export default function IndexPage() {
       <LandingSection
         icon={<PhotographyIcon className="icon" />}
         image={photographyImage}
+        alt={"Japanese man street food night tokyo"}
         title="Photography"
         href="/photography"
         id="photography"
@@ -88,6 +95,7 @@ export default function IndexPage() {
       <LandingSection
         icon={<BlogsIcon className="icon" />}
         image={blogsImage}
+        alt={"typewriter hands pexels"}
         title="Blogs"
         href="/blogs"
         id="blogs"

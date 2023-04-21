@@ -1,6 +1,5 @@
 import React from "react";
 import ChevronDown from "../../icons/chevron-down.svg";
-import { Link } from "gatsby";
 import { scroller } from "react-scroll";
 
 export default function MainLeft() {

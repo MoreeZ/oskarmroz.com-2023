@@ -56,9 +56,13 @@ export default function DefaultPageLayout({
           property="og:description"
           content="Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
         />
+
         <meta
           property="og:image"
-          content={`https://oskarmroz.com${openGraphData?.image || ogImage}`}
+          content={
+            openGraphData?.image ||
+            "https://avatars.githubusercontent.com/u/47431553"
+          }
         />
         <meta
           property="og:url"

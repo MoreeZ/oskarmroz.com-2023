@@ -1,6 +1,5 @@
 import "./src/styles/global/styles.scss";
 import "./src/styles/common/splash-screen.scss";
-import "./src/styles/dist/aos.css";
 
 // Splash Screen
 export const onClientEntry = () => {
@@ -28,7 +27,8 @@ export const onRouteUpdate = () => {
     if (document.getElementById("loader-wrapper")) {
       document.getElementById("loader-wrapper").style.opacity = 0;
       document.getElementById("loader-wrapper").style.pointerEvents = "none";
-      document.getElementById("loader-wrapper").style.transition = "300ms opacity ease-in-out";
+      document.getElementById("loader-wrapper").style.transition =
+        "300ms opacity ease-in-out";
     }
   }, 500);
 };

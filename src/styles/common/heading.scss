@@ -1,75 +1,184 @@
 header {
+  width: 100%;
+  background-color: #232323;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  padding: 0px 120px;
+  position: relative;
+}
+
+header h1 {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.wave {
+  position: relative;
+  /* -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2)); */
+  z-index: 2;
+}
+
+.wave span {
+  position: relative;
+  display: inline-block;
+  color: #e555d6;
+  text-shadow: 3px 3px 0px #a1ffa8;
+  animation: waveAnimationFragment 10s ease-in-out infinite;
+  animation-delay: calc(0.02s * var(--i));
+}
+
+$height: 40px;
+$halfheight: ($height/2);
+$thickness: 120%; // increase to make the line thicker
+$offset: 4px;
+$backgroundcolor: #232323;
+$linecolor: #e555d6;
+$shadowcolor: #a1ffa8;
+
+.zigzag-wrapper {
+  flex: 1;
+  position: relative;
+  margin-top: -78px;
+  margin-left: 40px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #232323;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    padding: 0px 120px;
+    height: $height * 2;
+    flex: 1;
+    z-index: 1;
+    background: linear-gradient(90deg, transparent 0, $backgroundcolor 0);
+    // transform: translateX(100%);
+    animation: zigzagReveal 3s linear forwards;
+    animation-delay: calc(0.65s + (0.05s * var(--chars)));
   }
 
-  header h1 {
-    font-size: 70px;
-    font-weight: 600;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 2px;
+    height: 200%;
+    background-color: $backgroundcolor;
+    z-index: 1;
   }
 
-  .wave {
-    position: relative;
-    /* -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2)); */
-  }
-
-  .wave span {
-    position: relative;
-    display: inline-block;
-    color: #e555d6;
-    text-shadow: 3px 3px 0px #a1ffa8;
-    animation: animate 10s ease-in-out infinite;
-    animation-delay: calc(0.02s * var(--i));
-  }
-
-  @keyframes animate {
+  @keyframes zigzagReveal {
     0% {
-      transform: translateY(0px);
-    }
-
-    1% {
-      transform: translateY(-25px);
-    }
-    3% {
-      transform: translateY(0px);
+      transform: translateX(0px);
     }
 
     100% {
-      transform: translateY(0px);
+      transform: translateX(1500px);
     }
   }
-  @media only screen and (max-width: 1090px) {
-    header h1 {
-      font-size: 54px;
+  .zigzag {
+    background: $backgroundcolor;
+    position: relative;
+    height: $height;
+    z-index: 0;
+    filter: drop-shadow(3px 3px 0px $shadowcolor);
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      height: ($height - $offset);
+      top: $thickness;
+      background: linear-gradient(
+            -135deg,
+            $linecolor $halfheight,
+            transparent 0
+          )
+          0 $halfheight,
+        linear-gradient(135deg, $linecolor $halfheight, transparent 0) 0
+          $halfheight;
+      background-position: top left;
+      background-repeat: repeat-x;
+      background-size: $height $height;
+    }
+    &:after {
+      height: $height;
+      top: 100%;
+      background: linear-gradient(
+            -135deg,
+            $backgroundcolor $halfheight,
+            transparent 0
+          )
+          0 $halfheight,
+        linear-gradient(135deg, $backgroundcolor $halfheight, transparent 0) 0
+          $halfheight;
+      background-position: top left;
+      background-repeat: repeat-x;
+      background-size: $height $height;
     }
   }
-  @media only screen and (max-width: 1000px) {
-    header {
-      padding: 0px 60px;
-      height: 130px;
-    }
-    header h1 {
-      font-size: 50px;
-      font-weight: 600;
-    }
+}
+
+.landing-zigzag {
+  padding-right: 100px;
+  &::after {
+    right: 98px;
   }
-  @media only screen and (max-width: 800px) {
-    header h1 {
-      font-size: 40px;
-    }
+}
+
+@keyframes waveAnimationFragment {
+  0% {
+    transform: translateY(0px);
   }
-  @media only screen and (max-width: 600px) {
-    header {
-      padding: 0px 30px;
-      height: 110px;
-    }
-    header h1 {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 600;
-    }
+
+  1% {
+    transform: translateY(-25px);
   }
+  3% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+@media only screen and (max-width: 1090px) {
+  header h1 {
+    font-size: 54px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  header {
+    padding: 0px 60px;
+    height: 130px;
+  }
+  header h1 {
+    font-size: 50px;
+    font-weight: 600;
+  }
+}
+@media only screen and (max-width: 800px) {
+  header h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 0px 30px;
+    height: 110px;
+  }
+  header h1 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+  }
+  $height: 40px;
+}

@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-between;
 
-  @media only screen and (max-width: 1339px) {}
+  @media only screen and (max-width: 1339px) {
+  }
 
   @media only screen and (max-width: 1050px) {
     flex-direction: column;
@@ -184,6 +185,7 @@
 
   .landing-main-right {
     position: relative;
+    z-index: 1;
 
     .profile-card {
       width: 400px;
@@ -225,7 +227,7 @@
             font-family: "Lobster", "Montserrat", "monospace";
             font-size: 34px;
             color: #e555d6;
-            text-shadow: 2px 2px 0px #a1ffa8;
+            text-shadow: 2px 2px 0px #a1ffa8, 1px 1px 5px #0003;
           }
         }
       }
@@ -266,10 +268,12 @@
         text-align: center;
         font-size: 20px;
         margin: 6px auto;
-        background: linear-gradient(180deg,
-            rgba(239, 239, 239, 1) 0%,
-            rgba(239, 239, 239, 0) 82%,
-            rgba(239, 239, 239, 0) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(239, 239, 239, 1) 0%,
+          rgba(239, 239, 239, 0) 82%,
+          rgba(239, 239, 239, 0) 100%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;

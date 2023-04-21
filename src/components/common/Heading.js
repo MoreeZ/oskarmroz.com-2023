@@ -2,10 +2,13 @@ import React from "react";
 import "../../styles/common/heading.scss";
 
 export default function Heading({ title }) {
+  if (typeof window === "undefined") return null;
+  const { pathname } = window.location;
+  const titleChars = title.split("");
   return (
     <header>
       <h1 className="wave">
-        {title.split("").map((char, index) => (
+        {titleChars.map((char, index) => (
           <span
             key={index}
             style={{ "--i": index + 1 }}
@@ -17,6 +20,12 @@ export default function Heading({ title }) {
           </span>
         ))}
       </h1>
+      <div
+        className={`zigzag-wrapper${pathname === "/" ? " landing-zigzag" : ""}`}
+        style={{ "--chars": titleChars.length }}
+      >
+        <div class="zigzag"></div>
+      </div>
     </header>
   );
 }

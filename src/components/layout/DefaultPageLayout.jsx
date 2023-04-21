@@ -20,8 +20,10 @@ export default function DefaultPageLayout({
   return (
     <>
       <Helmet>
+        {/* BASIC TAGS */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        {/* SEARCH ENGINE TAGS */}
         <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
         <meta
           name="description"
@@ -38,35 +40,26 @@ export default function DefaultPageLayout({
           }
         />
         <meta name="robots" content={robots || "index, follow"} />
-        {openGraphData && (
-          <>
-            <meta
-              property="og:title"
-              content={openGraphData.title || "Oskar Mroz - Personal Portfolio"}
-            />
-            <meta property="og:site_name" content="oskarmroz.com" />
-            <meta property="og:locale" content="en_US" />
-            <meta
-              property="og:description"
-              content={
-                openGraphData.description ||
-                "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
-              }
-            />
-            <meta
-              property="og:image"
-              content={openGraphData.image || profilePic}
-            />
-            <meta
-              property="og:url"
-              content={openGraphData.url || "https://oskarmroz.com"}
-            />
-            <meta
-              property="og:type"
-              content={openGraphData.type || "website"}
-            />
-          </>
-        )}
+        {/* OPEN GRAPH PREVIEW TAGS */}
+        <meta
+          property="og:title"
+          content={openGraphData.title || "Oskar Mroz - Personal Portfolio"}
+        />
+        <meta property="og:site_name" content="oskarmroz.com" />
+        <meta property="og:locale" content="en_US" />
+        <meta
+          property="og:description"
+          content={
+            openGraphData.description ||
+            "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+          }
+        />
+        <meta property="og:image" content={openGraphData.image || profilePic} />
+        <meta
+          property="og:url"
+          content={openGraphData.url || "https://oskarmroz.com"}
+        />
+        <meta property="og:type" content={openGraphData.type || "website"} />
       </Helmet>
       <Header />
       <main>{children}</main>

@@ -10,21 +10,20 @@
   .blog-card-preview {
     width: 150px;
     height: 150px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #232323;
-    border: #161616 2px solid;
     position: absolute;
     align-self: center;
     top: -75px;
     border-radius: 1000px;
     img {
-      margin-left: -2px;
-      width: 154px;
-      height: 154px;
+      width: 150px;
+      height: 150px;
       line-height: 0;
+      border: #161616 2px solid;
+      border-radius: 1000px;
     }
   }
 
@@ -41,11 +40,12 @@
       font-size: 2rem;
       color: #ebebeb;
       margin-top: 10px;
+      margin-bottom: 15px;
     }
 
     .blog-card-description {
       font-size: 1.1rem;
-      color: #dcdcdc;
+      color: #cdcdcd;
       margin-bottom: 24px;
     }
 

@@ -3,6 +3,8 @@ img {
   /* Just in case there are inline attributes */
   width: 100%;
   height: auto;
+  line-height: 0;
+  margin-top: 0;
 }
 .photo-card-container {
   margin-bottom: 10px;

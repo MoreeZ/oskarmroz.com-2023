@@ -47,7 +47,10 @@ export function Head({
     <SEO
       title={blogData.title}
       description={blogData.description}
-      openGraphData={{ image: blogData.featuredImage.publicURL }}
+      openGraphData={{
+        image: blogData.featuredImage.publicURL,
+        title: blogData.title,
+      }}
     />
   );
 }

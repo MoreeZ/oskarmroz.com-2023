@@ -27,7 +27,7 @@ export default function Blogs() {
               childImageSharp {
                 gatsbyImageData(
                   quality: 100
-                  height: 150
+                  height: 160
                   aspectRatio: 1
                   layout: CONSTRAINED
                   placeholder: BLURRED

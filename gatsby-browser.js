@@ -31,5 +31,5 @@ export const onRouteUpdate = () => {
       document.getElementById("loader-wrapper").style.transition =
         "300ms opacity ease-in-out";
     }
-  }, 500);
+  }, 1000);
 };

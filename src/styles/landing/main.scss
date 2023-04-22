@@ -88,7 +88,7 @@
 
   .typewriter::before {
     content: "";
-    animation: type var(--timePerLine) linear infinite,
+    animation: type var(--timePerLine) linear forwards,
       carriageReturn var(--time) steps(var(--lines)) var(--lines);
     animation-delay: 1.2s;
     background: var(--bgColor);
@@ -204,7 +204,16 @@
         position: relative;
         box-sizing: border-box;
         border-radius: 1000px;
-        outline: 20px solid #232323;
+        &::after {
+          content: "";
+          position: absolute;
+          top: -19px; // border: 2px + offset: 1px
+          right: -19px; // border: 2px + offset: 1px
+          bottom: -19px; // border: 2px + offset: 1px
+          left: -19px; // border: 2px + offset: 1px
+          border: 20px solid #232323;
+          border-radius: 1000px; // border—radius: 6px + offset: 1px
+        }
 
         img {
           width: 100%;
@@ -220,6 +229,7 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          z-index: 1;
 
           .text {
             margin-left: 70px;

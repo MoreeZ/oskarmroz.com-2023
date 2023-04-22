@@ -21,7 +21,7 @@ export default function DefaultPageLayout({ children }) {
     };
   }, []);
 
-  if (!state.isLoaded) return <SplashScreen />;
+  if (!state?.isLoaded) return <SplashScreen />;
   return (
     <>
       <Header />

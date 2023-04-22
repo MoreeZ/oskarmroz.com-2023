@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import ChevronRight from "../../icons/chevron-right.svg";
 
 export default function BlogCard({ data }) {
-  console.log(data);
   const image = getImage(data.previewImage);
   return (
     <div className="blog-card">

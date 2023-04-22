@@ -41,7 +41,6 @@ export default function Blogs() {
     }
   `);
 
-  console.log(blogsData);
   return (
     <DefaultPageLayout>
       <Heading title="Blogs" />

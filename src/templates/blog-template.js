@@ -10,7 +10,6 @@ export default function Blogs({ data, children }) {
     frontmatter: { title, date, author, featuredImage },
   } = data.mdx;
 
-  console.log(featuredImage);
   return (
     <div className="blog-page">
       <div className="blog-page-topbar">Oskar Mroz</div>
@@ -42,7 +41,6 @@ export function Head({
     mdx: { frontmatter: blogData },
   },
 }) {
-  console.log("DLETE ME:", blogData);
   return (
     <SEO
       title={blogData.title}
@@ -50,6 +48,7 @@ export function Head({
       openGraphData={{
         image: blogData.featuredImage.publicURL,
         title: blogData.title,
+        type: "article"
       }}
     />
   );

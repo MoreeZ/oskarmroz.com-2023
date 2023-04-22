@@ -1,6 +1,15 @@
+// global styles
 import "./src/styles/global/styles.scss";
 import "./src/styles/common/splash-screen.scss";
 import "./src/styles/dist/aos.css";
+
+// Global state
+import React from "react";
+import GlobalContextProvider from "./src/context/GlobalContextProvider";
+
+export const wrapRootElement = ({ element }) => {
+  return <GlobalContextProvider>{element}</GlobalContextProvider>;
+};
 
 // Splash Screen
 export const onClientEntry = () => {
@@ -29,7 +38,7 @@ export const onRouteUpdate = () => {
       document.getElementById("loader-wrapper").style.opacity = 0;
       document.getElementById("loader-wrapper").style.pointerEvents = "none";
       document.getElementById("loader-wrapper").style.transition =
-        "300ms opacity ease-in-out";
+        "200ms opacity ease-in-out";
     }
   }, 1000);
 };

@@ -1,23 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import AOS from "aos";
 import SplashScreen from "../common/SplashScreen";
-import { useState } from "react";
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../context/GlobalContextProvider";
 
 export default function DefaultPageLayout({ children }) {
-  const [loadApp, setLoadApp] = useState(false);
+  const dispatch = useContext(GlobalDispatchContext);
+  const state = useContext(GlobalStateContext);
   // Initialize AOS on every page.
   useEffect(() => {
     AOS.init();
-    let timer1 = setTimeout(() => setLoadApp(true), 700);
+    let timer1 = setTimeout(() => dispatch({ type: "SET_ISLOADED" }), 700);
 
     return () => {
       clearTimeout(timer1);
     };
   }, []);
 
-  if (!loadApp) return <SplashScreen />;
+  if (!state.isLoaded) return <SplashScreen />;
   return (
     <>
       <Header />

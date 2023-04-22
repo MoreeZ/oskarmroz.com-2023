@@ -26,6 +26,7 @@
   text-shadow: 3px 3px 0px #a1ffa8;
   animation: waveAnimationFragment 10s ease-in-out infinite;
   animation-delay: calc(0.02s * var(--i));
+  transform: translateY(0px);
 }
 
 $height: 40px;

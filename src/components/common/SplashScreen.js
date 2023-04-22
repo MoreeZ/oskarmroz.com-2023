@@ -7,7 +7,7 @@ export default function SplashScreen() {
       <BeatLoader
         color="white"
         loading={true}
-        size={"10vw"}
+        size={"5vw"}
         aria-label="Loading"
         data-testid="loader"
       />

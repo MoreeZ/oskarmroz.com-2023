@@ -5,16 +5,13 @@
   // content layout
   line-height: 0;
   -webkit-column-count: 3;
-  -webkit-column-gap: 0px;
+  -webkit-column-gap: 3px;
   -moz-column-count: 3;
-  -moz-column-gap: 0px;
+  -moz-column-gap: 3px;
   column-count: 3;
-  column-gap: 0px;
-  gap: 10px;
-  // fancy background
-  // background: linear-gradient(-45deg, #2d2e30, #313133, #2e3133, #242527);
-  // background-size: 400% 400%;
-  // animation: gradientShift 15s ease infinite;
+  column-gap: 10px;
+
+  // fancy bg
   background-color: #2d2e30;
   opacity: 1;
   background-image: radial-gradient(#a1ffa8 0.9px, transparent 0.9px),

@@ -2,16 +2,15 @@
 img {
   /* Just in case there are inline attributes */
   width: 100%;
-  height: auto;
   line-height: 0;
-  margin-top: 0;
+  display: flex;
 }
 .photo-card-container {
-  margin-bottom: 10px;
   cursor: pointer;
   position: relative;
   filter: brightness(100%) contrast(1);
   -webkit-filter: brightness(100%) contrast(1);
+  padding-bottom: 10px;
 
   &:hover img {
     animation: brightnessAnimation 0.2s forwards;
@@ -21,5 +20,5 @@ img {
       filter: brightness(120%) contrast(0.9);
       -webkit-filter: brightness(120%) contrast(0.9);
     }
- }
+  }
 }

@@ -1,0 +1,106 @@
+.blog-card {
+  position: relative;
+  padding-top: 75px;
+  background-color: #232323;
+  border: #161616 2px solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+
+  .blog-card-preview {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #232323;
+    border: #161616 2px solid;
+    position: absolute;
+    align-self: center;
+    top: -75px;
+    border-radius: 1000px;
+    img {
+      margin-left: -2px;
+      width: 154px;
+      height: 154px;
+      line-height: 0;
+    }
+  }
+
+  .blog-card-content {
+    padding: 0 30px;
+    padding-bottom: 30px;
+
+    .blog-card-date {
+      color: #8e8e8e;
+      margin-top: 10px;
+    }
+
+    .blog-card-title {
+      font-size: 2rem;
+      color: #ebebeb;
+      margin-top: 10px;
+    }
+
+    .blog-card-description {
+      font-size: 1.1rem;
+      color: #dcdcdc;
+      margin-bottom: 24px;
+    }
+
+    .blog-card-button {
+      color: #a1ffa8;
+      text-shadow: 2px 2px 0px #e555d6;
+      font-size: 1.3rem;
+      .chevron-right {
+        fill: #a1ffa8;
+        height: 20px;
+        width: 14px;
+        margin-left: 8px;
+        margin-bottom: -4px;
+        filter: drop-shadow(2px 2px 0px #e555d6);
+      }
+      &:hover .chevron-right {
+        animation-name: arrowPointRightAnim;
+        animation-duration: 0.4s;
+        animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      }
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .blog-card-content {
+      .blog-card-title {
+        font-size: 1.8rem;
+        margin-top: 10px;
+      }
+
+      .blog-card-description {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@keyframes arrowPointRightAnim {
+  0% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(50%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  75% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

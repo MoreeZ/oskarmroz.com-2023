@@ -1,5 +1,6 @@
 # www.oskarmroz.com
-New design for my portfolio website.
+
+New portfolio website: https://oskarmroz.com
 
 ## Tools
 
@@ -10,7 +11,7 @@ New design for my portfolio website.
    </tr>
    <tr>
       <td>Front-end</td>
-      <td><del>Astro</del> • Gatsby • AOS • react-scroll • SCSS</td>
+      <td><del>Astro</del> • Gatsby • AOS • react-scroll • SCSS • gatsby-plugin-mdx</td>
    </tr>
    <tr>
       <td>Back-end</td>
@@ -46,6 +47,7 @@ New design for my portfolio website.
     ```shell
     yarn start
     ```
+
 2.  **Other commands.**
 
     Build production
@@ -65,7 +67,7 @@ New design for my portfolio website.
     ```shell
     yarn test
     ```
-    
+
 3.  **Gatsby info**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)

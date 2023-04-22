@@ -4,25 +4,24 @@ exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
     query getAllBlogs {
       allMdx {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-            internal {
-              contentFilePath
-            }
+        nodes {
+          frontmatter {
+            title
+            slug
+          }
+          internal {
+            contentFilePath
           }
         }
       }
     }
   `);
-  const postTemplate = path.resolve("./src/templates/blogs.js");
-  data.allMdx.edges.forEach((edge) => {
+  const postTemplate = path.resolve("./src/templates/blog-template.js");
+  data.allMdx.nodes.forEach((node) => {
     actions.createPage({
-      path: "/blogs/" + edge.node.frontmatter.slug,
-      component: `${postTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
-      context: { slug: edge.node.frontmatter.slug },
+      path: "/blogs/" + node.frontmatter.slug,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: { slug: node.frontmatter.slug },
     });
   });
 };

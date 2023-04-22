@@ -1,0 +1,38 @@
+---
+title: My Personal Programming Journey
+description: Get inspired to start your programming journey with our personal story of going from novice to successful developer. Learn how we overcame challenges, found motivation, and grew our skills. Start your own path to programming success today!
+previewImage: preview.jpg
+featuredImage: featured.png
+author: Oskar Mroz
+slug: my-personal-programming-journey
+readTime: 3 min
+date: 2023-04-21
+---
+
+## the essential guide to gatsby mdx
+
+Lorem ipsum dolor amet 3 wolf moon viral scenester, lyft _shaman master cleanse_ actually letterpress mustache pork belly fingerstache. Williamsburg hoodie brooklyn, microdosing cloud bread irony tacos waistcoat raw denim meggings health goth celiac church-key. Bespoke slow-carb pinterest shaman man braid heirloom selvage brunch semiotics franzen chia messenger bag everyday carry lumbersexual. Heirloom viral mustache tote bag snackwave selfies aesthetic sriracha. **Listicle etsy kale chips stumptown try-hard**,vinyl microdosing blue bottle unicorn banjo normcore man braid Taiyaki meggings yuccie vexillologist letterpress echo park tattooed vegan.
+
+`<h1>intentional h1</h1>`
+
+
+```js
+import { MDXProvider } from "@mdx-js/react"
+import CodeBlock from './path/to/CodeBlock'; // The wrapper you created in step 2
+
+const components = {
+  pre: CodeBlock
+}
+
+const MdxBlock: React.FunctionComponent<Props> = (props) => {
+  return <MDXProvider components={components}>
+      <MDXRenderer>{props.mdx.body}</MDXRenderer>
+    </MDXProvider>
+}
+export default MdxBlock;
+```
+
+![Hopper The Rabbit](./profile-pic.jpg)
+
+Lorem ipsum dolor amet 3 wolf moon viral scenester, 
+lyft shaman master cleanse actually letterpress mustache pork belly fingerstache. Williamsburg hoodie brooklyn, microdosing cloud bread irony tacos waistcoat raw denim meggings health goth celiac church-key. Bespoke slow-carb pinterest shaman man braid heirloom selvage brunch semiotics franzen chia messenger bag everyday carry lumbersexual. Heirloom viral mustache tote bag snackwave selfies aesthetic sriracha. Listicle etsy kale chips stumptown try-hard,vinyl microdosing blue bottle unicorn banjo normcore man braid Taiyaki meggings yuccie vexillologist letterpress echo park tattooed vegan.

@@ -1,0 +1,26 @@
+import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import ChevronRight from "../../icons/chevron-right.svg";
+
+export default function BlogCard({ data }) {
+  console.log(data);
+  const image = getImage(data.previewImage);
+  return (
+    <div className="blog-card">
+      <div className="blog-card-preview">
+        <GatsbyImage image={image} alt={data.alt} />
+      </div>
+      <div className="blog-card-content">
+        <div className="blog-card-date">
+          {new Date(data.date).toDateString()}
+        </div>
+        <h3 className="blog-card-title">{data.title}</h3>
+        <p className="blog-card-description">{data.description}</p>
+        <Link className="blog-card-button" to={`/blogs/${data.slug}`}>
+          READ MORE <ChevronRight className="chevron-right" />
+        </Link>
+      </div>
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\dell-xps\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add gatsby-plugin-prismjs
+  C:\Program Files\nodejs\node.exe C:\Users\dell-xps\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add prism-react-renderer/themes/github
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\dell-xps\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Curl\curl-7.87.0_6-win64-mingw\bin;C:\Program Files\WireGuard\;C:\Users\dell-xps\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dell-xps\AppData\Local\Programs\Python\Python311\;C:\Users\dell-xps\AppData\Local\Microsoft\WindowsApps;C:\Users\dell-xps\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell-xps\AppData\Roaming\npm;C:\Users\dell-xps\AppData\Roaming\nvm;C:\Program Files\nodejs
@@ -14,8 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/gatsby-plugin-prismjs: Not found
-      at params.callback [as _callback] (C:\Users\dell-xps\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+  Error: https://registry.yarnpkg.com/prism-react-renderer%2fthemes/github: Request "https://registry.yarnpkg.com/prism-react-renderer%2fthemes/github" returned a 405
+      at params.callback [as _callback] (C:\Users\dell-xps\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66154:18)
       at self.callback (C:\Users\dell-xps\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
       at Request.emit (node:events:513:28)
       at Request.<anonymous> (C:\Users\dell-xps\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
@@ -59,12 +59,16 @@ npm manifest:
       "gatsby-plugin-sharp": "^5.9.0",
       "gatsby-plugin-sitemap": "^6.8.0",
       "gatsby-remark-autolink-headers": "^6.9.0",
+      "gatsby-remark-images": "^7.9.0",
+      "gatsby-remark-prismjs": "^7.9.0",
       "gatsby-source-filesystem": "^5.8.0",
       "gatsby-transformer-remark": "^6.9.0",
       "gatsby-transformer-sharp": "^5.9.0",
+      "prism": "^4.1.2",
+      "prism-react-renderer": "^1.3.5",
+      "prismjs": "^1.29.0",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
-      "react-helmet": "^6.1.0",
       "react-scroll": "^1.8.9",
       "sass": "^1.62.0"
     }
@@ -3376,6 +3380,11 @@ Lockfile:
       snake-case "^3.0.4"
       tslib "^2.0.3"
   
+  change-emitter@^0.1.2:
+    version "0.1.6"
+    resolved "https://registry.yarnpkg.com/change-emitter/-/change-emitter-0.1.6.tgz#e8b2fe3d7f1ab7d69a32199aff91ea6931409515"
+    integrity sha512-YXzt1cQ4a2jqazhcuSWEOc1K2q8g9H6eWNsyZgi640LDzRWVQ2eDe+Y/kVdftH+vYdPF2rgDb3dLdpxE1jvAxw==
+  
   character-entities-html4@^1.0.0:
     version "1.1.4"
     resolved "https://registry.yarnpkg.com/character-entities-html4/-/character-entities-html4-1.1.4.tgz#0e64b0a3753ddbf1fdc044c5fd01d0199a02e125"
@@ -3420,6 +3429,31 @@ Lockfile:
     version "0.7.0"
     resolved "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz"
     integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+  
+  cheerio-select@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/cheerio-select/-/cheerio-select-2.1.0.tgz#4d8673286b8126ca2a8e42740d5e3c4884ae21b4"
+    integrity sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==
+    dependencies:
+      boolbase "^1.0.0"
+      css-select "^5.1.0"
+      css-what "^6.1.0"
+      domelementtype "^2.3.0"
+      domhandler "^5.0.3"
+      domutils "^3.0.1"
+  
+  cheerio@^1.0.0-rc.10:
+    version "1.0.0-rc.12"
+    resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.12.tgz#788bf7466506b1c6bf5fae51d24a2c4d62e47683"
+    integrity sha512-VqR8m68vM46BNnuZ5NtnGBKIE/DfN0cRIzg9n40EIq9NOv90ayxLBXA8fXC5gquFRGJSTRqBq25Jt2ECLR431Q==
+    dependencies:
+      cheerio-select "^2.1.0"
+      dom-serializer "^2.0.0"
+      domhandler "^5.0.3"
+      domutils "^3.0.1"
+      htmlparser2 "^8.0.1"
+      parse5 "^7.0.0"
+      parse5-htmlparser2-tree-adapter "^7.0.0"
   
   "chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.2, chokidar@^3.5.3:
     version "3.5.3"
@@ -3754,6 +3788,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.30.1.tgz"
     integrity sha512-nXBEVpmUnNRhz83cHd9JRQC52cTMcuXAmR56+9dSMpRdpeA4I1PX6yjmhd71Eyc/wXNsdBdUDIj1QTIeZpU5Tg==
   
+  core-js@^1.0.0:
+    version "1.2.7"
+    resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+    integrity sha512-ZiPp9pZlgxpWRu0M+YWbm6+aQ84XEfH1JRXvfOc/fILWI0VKhLC2LX13X1NYq4fULzLMq7Hfh43CSo2/aIaUPA==
+  
   core-js@^3.22.3:
     version "3.30.1"
     resolved "https://registry.npmjs.org/core-js/-/core-js-3.30.1.tgz"
@@ -3878,6 +3917,17 @@ Lockfile:
       domutils "^2.8.0"
       nth-check "^2.0.1"
   
+  css-select@^5.1.0:
+    version "5.1.0"
+    resolved "https://registry.yarnpkg.com/css-select/-/css-select-5.1.0.tgz#b8ebd6554c3637ccc76688804ad3f6a6fdaea8a6"
+    integrity sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==
+    dependencies:
+      boolbase "^1.0.0"
+      css-what "^6.1.0"
+      domhandler "^5.0.2"
+      domutils "^3.0.1"
+      nth-check "^2.0.1"
+  
   css-selector-parser@^1.0.0:
     version "1.4.1"
     resolved "https://registry.npmjs.org/css-selector-parser/-/css-selector-parser-1.4.1.tgz"
@@ -3891,7 +3941,7 @@ Lockfile:
       mdn-data "2.0.14"
       source-map "^0.6.1"
   
-  css-what@^6.0.1:
+  css-what@^6.0.1, css-what@^6.1.0:
     version "6.1.0"
     resolved "https://registry.npmjs.org/css-what/-/css-what-6.1.0.tgz"
     integrity sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==
@@ -4338,6 +4388,13 @@ Lockfile:
     version "1.0.2"
     resolved "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz"
     integrity sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==
+  
+  encoding@^0.1.11:
+    version "0.1.13"
+    resolved "https://registry.yarnpkg.com/encoding/-/encoding-0.1.13.tgz#56574afdd791f54a8e9b2785c0582a2d26210fa9"
+    integrity sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==
+    dependencies:
+      iconv-lite "^0.6.2"
   
   end-of-stream@^1.1.0, end-of-stream@^1.4.1:
     version "1.4.4"
@@ -5036,6 +5093,19 @@ Lockfile:
     resolved "https://registry.npmjs.org/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz"
     integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
   
+  fbjs@^0.8.1:
+    version "0.8.18"
+    resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.18.tgz#9835e0addb9aca2eff53295cd79ca1cfc7c9662a"
+    integrity sha512-EQaWFK+fEPSoibjNy8IxUtaFOMXcWsY0JaVrQoZR9zC8N2Ygf9iDITPWjUTVIax95b6I742JFLqASHfsag/vKA==
+    dependencies:
+      core-js "^1.0.0"
+      isomorphic-fetch "^2.1.1"
+      loose-envify "^1.0.0"
+      object-assign "^4.1.0"
+      promise "^7.1.1"
+      setimmediate "^1.0.5"
+      ua-parser-js "^0.7.30"
+  
   fbjs@^3.0.0:
     version "3.0.4"
     resolved "https://registry.npmjs.org/fbjs/-/fbjs-3.0.4.tgz"
@@ -5589,6 +5659,31 @@ Lockfile:
       github-slugger "^1.5.0"
       lodash "^4.17.21"
       mdast-util-to-string "^2.0.0"
+      unist-util-visit "^2.0.3"
+  
+  gatsby-remark-images@^7.9.0:
+    version "7.9.0"
+    resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-7.9.0.tgz#5d3d11d9e983c82f4960889a2dce5e4acbbb8565"
+    integrity sha512-sSQP5BUZ3UmgOuEtkyghYPqyKvgWG0QmP6Lpvnt0F2+bpj59crRfG2qDzRYFUbJ6JlQNLneitY76W/ynnRFsOg==
+    dependencies:
+      "@babel/runtime" "^7.20.13"
+      chalk "^4.1.2"
+      cheerio "^1.0.0-rc.10"
+      gatsby-core-utils "^4.9.0"
+      is-relative-url "^3.0.0"
+      lodash "^4.17.21"
+      mdast-util-definitions "^4.0.0"
+      query-string "^6.14.1"
+      unist-util-select "^3.0.4"
+      unist-util-visit-parents "^3.1.1"
+  
+  gatsby-remark-prismjs@^7.9.0:
+    version "7.9.0"
+    resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-7.9.0.tgz#b0b1156c8d7b2c8d5b75bc3e2cb046b64b8f8b08"
+    integrity sha512-SSOO3FxIERCL+GmGMxDz0GRXj6UiCWIlKOBY32HZGQ7a1RctW5wVKFe14l4FbD85yyBA14+9TbTUKhyFd4vNIw==
+    dependencies:
+      "@babel/runtime" "^7.20.13"
+      parse-numeric-range "^1.3.0"
       unist-util-visit "^2.0.3"
   
   gatsby-script@^2.8.0:
@@ -6362,6 +6457,11 @@ Lockfile:
       capital-case "^1.0.4"
       tslib "^2.0.3"
   
+  hoist-non-react-statics@^1.0.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
+    integrity sha512-r8huvKK+m+VraiRipdZYc+U4XW43j6OFG/oIafe7GfDbRpCduRoX9JI/DRxqgtBSCeL+et6N6ibZoedHS2NyOQ==
+  
   hosted-git-info@^3.0.8:
     version "3.0.8"
     resolved "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.8.tgz"
@@ -6389,7 +6489,7 @@ Lockfile:
       domutils "^2.5.2"
       entities "^2.0.0"
   
-  htmlparser2@^8.0.0:
+  htmlparser2@^8.0.0, htmlparser2@^8.0.1:
     version "8.0.2"
     resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-8.0.2.tgz#f002151705b383e62433b5cf466f5b716edaec21"
     integrity sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==
@@ -6442,6 +6542,13 @@ Lockfile:
     integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
     dependencies:
       safer-buffer ">= 2.1.2 < 3"
+  
+  iconv-lite@^0.6.2:
+    version "0.6.3"
+    resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
+    integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
+    dependencies:
+      safer-buffer ">= 2.1.2 < 3.0.0"
   
   icss-utils@^5.0.0, icss-utils@^5.1.0:
     version "5.1.0"
@@ -6858,7 +6965,7 @@ Lockfile:
     dependencies:
       protocols "^2.0.1"
   
-  is-stream@^1.1.0:
+  is-stream@^1.0.1, is-stream@^1.1.0:
     version "1.1.0"
     resolved "https://registry.npmjs.org/is-stream/-/is-stream-1.1.0.tgz"
     integrity sha512-uQPm8kcs47jx38atAcWTVxyltQYoPT68y9aWYdV6yWXSyW8mzSat0TL6CiWdZeCdF3KrAvpVtnHbTv4RN+rqdQ==
@@ -6977,6 +7084,14 @@ Lockfile:
     version "3.0.1"
     resolved "https://registry.npmjs.org/isobject/-/isobject-3.0.1.tgz"
     integrity sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==
+  
+  isomorphic-fetch@^2.1.1:
+    version "2.2.1"
+    resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
+    integrity sha512-9c4TNAKYXM5PRyVcwUZrF3W09nQ+sO7+jydgs4ZGW9dhsLG2VOlISJABombdQqQRXCwuYG3sYV/puGf5rp0qmA==
+    dependencies:
+      node-fetch "^1.0.1"
+      whatwg-fetch ">=0.10.0"
   
   javascript-stringify@^2.0.1:
     version "2.1.0"
@@ -8356,6 +8471,14 @@ Lockfile:
     dependencies:
       whatwg-url "^5.0.0"
   
+  node-fetch@^1.0.1:
+    version "1.7.3"
+    resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
+    integrity sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ==
+    dependencies:
+      encoding "^0.1.11"
+      is-stream "^1.0.1"
+  
   node-fetch@^2.6.8:
     version "2.6.9"
     resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.9.tgz"
@@ -8764,6 +8887,11 @@ Lockfile:
       unist-util-modify-children "^2.0.0"
       unist-util-visit-children "^1.0.0"
   
+  parse-numeric-range@^1.3.0:
+    version "1.3.0"
+    resolved "https://registry.yarnpkg.com/parse-numeric-range/-/parse-numeric-range-1.3.0.tgz#7c63b61190d61e4d53a1197f0c83c47bb670ffa3"
+    integrity sha512-twN+njEipszzlMJd4ONUYgSfZPDxgHhT9Ahed5uTigpQn90FggW4SA/AIPq/6a149fTbE9qBEcSwE3FAEp6wQQ==
+  
   parse-path@^7.0.0:
     version "7.0.0"
     resolved "https://registry.npmjs.org/parse-path/-/parse-path-7.0.0.tgz"
@@ -8783,10 +8911,25 @@ Lockfile:
     dependencies:
       parse-path "^7.0.0"
   
+  parse5-htmlparser2-tree-adapter@^7.0.0:
+    version "7.0.0"
+    resolved "https://registry.yarnpkg.com/parse5-htmlparser2-tree-adapter/-/parse5-htmlparser2-tree-adapter-7.0.0.tgz#23c2cc233bcf09bb7beba8b8a69d46b08c62c2f1"
+    integrity sha512-B77tOZrqqfUfnVcOrUvfdLbz4pu4RopLD/4vmu3HUPswwTA8OH0EMW9BlWR2B0RCoiZRAHEUu7IxeP1Pd1UU+g==
+    dependencies:
+      domhandler "^5.0.2"
+      parse5 "^7.0.0"
+  
   parse5@^6.0.0:
     version "6.0.1"
     resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
     integrity sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==
+  
+  parse5@^7.0.0:
+    version "7.1.2"
+    resolved "https://registry.yarnpkg.com/parse5/-/parse5-7.1.2.tgz#0736bebbfd77793823240a23b7fc5e010b7f8e32"
+    integrity sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==
+    dependencies:
+      entities "^4.4.0"
   
   parseurl@^1.3.3, parseurl@~1.3.3:
     version "1.3.3"
@@ -9232,6 +9375,36 @@ Lockfile:
       lodash "^4.17.20"
       renderkid "^2.0.4"
   
+  prism-react-renderer@^1.3.5:
+    version "1.3.5"
+    resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.3.5.tgz#786bb69aa6f73c32ba1ee813fbe17a0115435085"
+    integrity sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==
+  
+  prism-react@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/prism-react/-/prism-react-1.0.2.tgz#c568c534760f738330295c633f647395afa972f4"
+    integrity sha512-OoBo0kX55Fi+M4oGuYQ+AkU4/xSvB357mLXbYGP3j4oi4RtsdY5Rn3ViJ6gGU8IkZKs5cnmF7IteWWwUFyVd7Q==
+    dependencies:
+      recompose "^0.22.0"
+  
+  prism-redux@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/prism-redux/-/prism-redux-1.0.2.tgz#3dbb5463c9527812cf890d1b1ba29c8d902f82ed"
+    integrity sha512-e1DGRK+V/dxL6n6M25Py1QrAQLHkeueXyNxDTURT1y+KAMwSJdnlNvGU3ZLY2RIaA+ZdFTc9oTvTSR+mS88VyQ==
+  
+  prism@^4.1.2:
+    version "4.1.2"
+    resolved "https://registry.yarnpkg.com/prism/-/prism-4.1.2.tgz#783dbc08c4dd20ea3ba7679135ca41d57deb2496"
+    integrity sha512-SsqrfKkYKYEYz/7RRET2KVZd9O22Rnj3331Al06ClLMycKWoM+MpfrjQrKuHGoIJ9IOy+k27kPEFnqPoAeFZpA==
+    dependencies:
+      prism-react "^1.0.2"
+      prism-redux "^1.0.2"
+  
+  prismjs@^1.29.0:
+    version "1.29.0"
+    resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+    integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
+  
   probe-image-size@^7.2.3:
     version "7.2.3"
     resolved "https://registry.npmjs.org/probe-image-size/-/probe-image-size-7.2.3.tgz"
@@ -9457,21 +9630,6 @@ Lockfile:
     resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
     integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
   
-  react-fast-compare@^3.1.1:
-    version "3.2.1"
-    resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.1.tgz"
-    integrity sha512-xTYf9zFim2pEif/Fw16dBiXpe0hoy5PxcD8+OwBnTtNLfIm3g6WxhKNurY+6OmdH1u6Ta/W/Vl6vjbYP1MFnDg==
-  
-  react-helmet@^6.1.0:
-    version "6.1.0"
-    resolved "https://registry.npmjs.org/react-helmet/-/react-helmet-6.1.0.tgz"
-    integrity sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
-    dependencies:
-      object-assign "^4.1.1"
-      prop-types "^15.7.2"
-      react-fast-compare "^3.1.1"
-      react-side-effect "^2.1.0"
-  
   react-is@^16.13.1:
     version "16.13.1"
     resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -9498,11 +9656,6 @@ Lockfile:
       acorn "^6.2.1"
       loose-envify "^1.1.0"
       neo-async "^2.6.1"
-  
-  react-side-effect@^2.1.0:
-    version "2.1.2"
-    resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.2.tgz"
-    integrity sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==
   
   react@^18.2.0:
     version "18.2.0"
@@ -9553,6 +9706,16 @@ Lockfile:
     integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
     dependencies:
       picomatch "^2.2.1"
+  
+  recompose@^0.22.0:
+    version "0.22.0"
+    resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.22.0.tgz#f099d18385882ca41d9eec891718dadddc3204ef"
+    integrity sha512-QjNK/CgNg6wa7sqaQelgkRdl7ktIYbOV4xp0m2n8TexmHI5h3gjOc5a6nNQhtH3Js63hGZ1HfvJ3DUErrvZ2yg==
+    dependencies:
+      change-emitter "^0.1.2"
+      fbjs "^0.8.1"
+      hoist-non-react-statics "^1.0.0"
+      symbol-observable "^1.0.4"
   
   recursive-readdir@^2.2.2:
     version "2.2.3"
@@ -9973,7 +10136,7 @@ Lockfile:
       get-intrinsic "^1.1.3"
       is-regex "^1.1.4"
   
-  "safer-buffer@>= 2.1.2 < 3":
+  "safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0":
     version "2.1.2"
     resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
     integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
@@ -10701,6 +10864,11 @@ Lockfile:
     dependencies:
       tslib "^2.0.3"
   
+  symbol-observable@^1.0.4:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+    integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+  
   table@^6.0.9:
     version "6.8.1"
     resolved "https://registry.npmjs.org/table/-/table-6.8.1.tgz"
@@ -11167,7 +11335,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/unist-util-visit-children/-/unist-util-visit-children-1.1.4.tgz#e8a087e58a33a2815f76ea1901c15dec2cb4b432"
     integrity sha512-sA/nXwYRCQVRwZU2/tQWUqJ9JSFM1X3x7JIOsIgSzrFHcfVt6NkzDtKzyxg2cZWkCwGF9CO8x4QNZRJRMK8FeQ==
   
-  unist-util-visit-parents@^3.0.0:
+  unist-util-visit-parents@^3.0.0, unist-util-visit-parents@^3.1.1:
     version "3.1.1"
     resolved "https://registry.npmjs.org/unist-util-visit-parents/-/unist-util-visit-parents-3.1.1.tgz"
     integrity sha512-1KROIZWo6bcMrZEwiH2UrXDyalAa0uqzWCxCJj6lPOvTve2WkfgCytoDTPaMnodXh1WrXOq0haVYHj99ynJlsg==
@@ -11460,6 +11628,11 @@ Lockfile:
       terser-webpack-plugin "^5.3.7"
       watchpack "^2.4.0"
       webpack-sources "^3.2.3"
+  
+  whatwg-fetch@>=0.10.0:
+    version "3.6.2"
+    resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+    integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
   
   whatwg-url@^5.0.0:
     version "5.0.0"

@@ -1,18 +1,40 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import "../styles/blogs/blog-template.scss";
 import "prismjs/themes/prism-okaidia.min.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 import SEO from "../components/layout/SEO";
+import GithubIcon from "../icons/github.svg";
 
 export default function Blogs({ data, children }) {
   const {
+    internal,
     frontmatter: { title, date, author, featuredImage },
   } = data.mdx;
+  const localPath = [
+    ...internal.contentFilePath.split("/oskarmroz.com-2023/"),
+  ].pop();
+  console.log(localPath);
 
   return (
     <div className="blog-page">
-      <div className="blog-page-topbar">Oskar Mroz</div>
+      <div className="blog-page-topbar">
+        <Link to="/" className="oskar-mroz">
+          Oskar Mroz
+        </Link>
+        <div className="socials">
+          <a
+            href={
+              "https://github.com/MoreeZ/oskarmroz.com-2023/blob/main/" +
+              localPath
+            }
+            target="_blank"
+            rel="noopener"
+          >
+            <GithubIcon className="social-icon" />
+          </a>
+        </div>
+      </div>
 
       <div className="blog-wrapper">
         <header className="blog-header">
@@ -48,7 +70,7 @@ export function Head({
       openGraphData={{
         image: blogData.featuredImage.publicURL,
         title: blogData.title,
-        type: "article"
+        type: "article",
       }}
     />
   );
@@ -71,6 +93,9 @@ export const query = graphql`
             gatsbyImageData(width: 800)
           }
         }
+      }
+      internal {
+        contentFilePath
       }
     }
   }

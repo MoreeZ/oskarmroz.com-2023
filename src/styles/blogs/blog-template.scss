@@ -1,3 +1,5 @@
+$secondayColor: #e555d6;
+
 .blog-page {
   display: flex;
   flex-direction: column;
@@ -10,7 +12,20 @@
     display: flex;
     align-items: center;
     padding: 0 7%;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    .oskar-mroz {
+      color: white;
+      text-decoration: none;
+    }
+
+    .socials a {
+      color: white;
+      text-decoration: underline;
+    }
+    .socials svg {
+      fill: #ebebeb;
+    }
   }
 
   .blog-wrapper {
@@ -30,7 +45,7 @@
 
     .blog-header {
       h1 {
-        font-size: 3.8rem;
+        font-size: 3.2rem;
       }
       .subtitle {
         display: flex;
@@ -52,21 +67,91 @@
     .blog-content {
       width: 100%;
       color: #ebebeb;
+
+      blockquote {
+        background-color: #272822;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding: 0.2em 20px;
+        padding-left: 40px;
+        position: relative;
+        border-left: #a1ffa8 3px solid;
+        font-style: italic;
+      }
+
+      table {
+        min-width: 100%;
+        tr {
+          margin: 0;
+          padding: 0;
+          border: none;
+          border-spacing: 0px;
+          th {
+            background-color: #272822;
+            outline: #a7a7a7 1px solid;
+            padding: 7px 15px;
+          }
+          td {
+            outline: #a7a7a7 1px solid;
+            padding: 7px 15px;
+          }
+          &:nth-child(even) {
+            background-color: #363835;
+          }
+          &:nth-child(odd) {
+            background-color: #303330;
+          }
+        }
+      }
+
+      hr {
+        width: 100%;
+        border-color: #8e8e8e;
+        margin-top: 18px;
+      }
+
       p {
         line-height: 24px;
       }
 
       h1 {
-        font-size: 3.8rem;
+        font-size: 2.8rem;
       }
       h2 {
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
       h3 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
       }
       h4 {
         font-size: 1.2rem;
+      }
+
+      ul,
+      ol {
+        li {
+          line-height: 24px;
+
+          &::marker {
+            font-weight: 600;
+            color: #a1ffa8;
+
+            li::marker {
+              color: $secondayColor;
+            }
+          }
+        }
+      }
+
+      a {
+        color: #a1ffa8;
+        line-height: 24px;
+
+        svg {
+          fill: #a1ffa8;
+        }
       }
     }
   }

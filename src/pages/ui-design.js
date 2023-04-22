@@ -57,7 +57,7 @@ export default function UIDesign() {
 export function Head() {
   return (
     <SEO
-      title="UI Design - Oskar Mroz, Ireland"
+      title="UI Design: Oskar Mroz, Ireland"
       description="Oskar Mroz is a software developer from Ireland who values good UI design. He believes that UI is the face of the software and what ultimately sells it to the end user. Check out his UI design projects and learn more about his design principles and tools."
     />
   );

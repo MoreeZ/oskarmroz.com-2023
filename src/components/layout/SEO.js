@@ -9,19 +9,39 @@ export default function SEO({
 }) {
   return (
     <>
-      {/* BASIC TAGS */}
+      {/* ========== BASIC TAGS ========== */}
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width" />
-      {/* OPEN GRAPH PREVIEW TAGS */}
+
+      {/* ========== SEARCH ENGINE TAGS ========== */}
+      <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
+      <meta
+        name="description"
+        content={
+          description ||
+          "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+        }
+      />
+      <meta
+        name="keywords"
+        content={
+          keywords ||
+          "oskar, oskar mroz, software developer, ireland, designer, photography, dublin, software, engineer, computer science"
+        }
+      />
+      <meta name="robots" content={robots || "index, follow"} />
+
+      {/* ========== OPEN GRAPH PREVIEW TAGS ========== */}
       <meta
         property="og:title"
-        content={openGraphData?.title || "Oskar Mroz"}
+        content={openGraphData?.title || title || "Oskar Mroz"}
       />
       <meta property="og:site_name" content="oskarmroz.com" />
       <meta property="og:locale" content="en_US" />
       <meta
         property="og:description"
         content={
+          openGraphData?.description ||
           description ||
           "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
         }
@@ -43,23 +63,6 @@ export default function SEO({
         content={openGraphData?.url || "https://oskarmroz.com"}
       />
       <meta property="og:type" content={openGraphData?.type || "website"} />
-      {/* SEARCH ENGINE TAGS */}
-      <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
-      <meta
-        name="description"
-        content={
-          description ||
-          "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
-        }
-      />
-      <meta
-        name="keywords"
-        content={
-          keywords ||
-          "oskar, oskar mroz, software developer, ireland, designer, photography, dublin, software, engineer, computer science"
-        }
-      />
-      <meta name="robots" content={robots || "index, follow"} />
     </>
   );
 }

@@ -8,7 +8,7 @@ export default function SoftwareCard({ data }) {
       className="software-card"
       data-aos="zoom-in"
       data-aos-offset="-40"
-      data-aos-delay="200"
+      data-aos-delay="100"
     >
       {image && (
         <div className="software-card-left">
@@ -18,17 +18,11 @@ export default function SoftwareCard({ data }) {
       <div className="software-card-right">
         <h3
           className="software-card-heading"
-          data-aos-anchor=".software-card"
-          data-aos="fade-in"
-          data-aos-delay="400"
         >
           {data.heading}
         </h3>
         <p
           className="software-card-description"
-          data-aos-anchor=".software-card"
-          data-aos="fade-in"
-          data-aos-delay="500"
         >
           {data.description}
         </p>

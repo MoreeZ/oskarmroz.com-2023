@@ -14,7 +14,7 @@ export default function Heading({ title }) {
             key={index}
             style={{ "--i": index + 1 }}
             data-aos-once="true"
-            data-aos="fade-up"
+            data-aos="fade-in"
             data-aos-delay={600 + index * 50}
           >
             {char === " " ? <span>&nbsp;</span> : char}

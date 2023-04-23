@@ -18,13 +18,13 @@ export default function Blogs({ data, children }) {
   return (
     <div className="blog-page">
       <div className="blog-page-topbar">
-        <Link to="/" className="oskar-mroz">
-          {"<- my website"}
+        <Link to="/blogs/" className="oskar-mroz">
+          {"<- more blogs"}
         </Link>
         <div className="socials">
           <a
             href={
-              "https://github.com/MoreeZ/oskarmroz.com-2023/blob/main" +
+              "https://github.com/MoreeZ/oskarmroz.com-2023/blob/main/" +
               localPath
             }
             target="_blank"
@@ -52,9 +52,10 @@ export default function Blogs({ data, children }) {
             />
           )}
         </header>
-        <hr />
         <main className="blog-content">{children}</main>
       </div>
+
+      <footer>Copyright 2023 Oskar Mroz</footer>
     </div>
   );
 }
@@ -91,13 +92,19 @@ export const query = graphql`
         featuredImage {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 800)
+            gatsbyImageData(
+              quality: 100
+              webpOptions: { quality: 100 }
+              width: 800
+              placeholder: BLURRED
+            )
           }
         }
       }
       internal {
         contentFilePath
       }
+      tableOfContents(maxDepth: 2)
     }
   }
 `;

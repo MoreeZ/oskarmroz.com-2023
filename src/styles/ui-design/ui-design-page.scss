@@ -1,16 +1,14 @@
 .ui-design-page-content {
-  // page layout
-  // width: 100%;
   padding: 40px 120px;
   // content layout
   line-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 14px;
-  // fancy background
-  // background: linear-gradient(-45deg, #303133, #2d2e30, #2b2c2f);
-  // background-size: 400% 400%;
-  // animation: gradientShift 15s linear infinite forwards;
+
+
+  // ================ fancy background ================
+
   background-color: #2d2e30;
   opacity: 1;
   background-image: linear-gradient(

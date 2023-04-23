@@ -14,7 +14,7 @@ export default function Blogs() {
     allMdx: { nodes: blogsData },
   } = useStaticQuery(graphql`
     {
-      allMdx {
+      allMdx(sort: { frontmatter: { date: DESC } }) {
         nodes {
           frontmatter {
             slug

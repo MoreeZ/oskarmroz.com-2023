@@ -24,7 +24,17 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
+              linkImagesToOriginal: false,
+              quality: 100,
+              withWebp: { quality: 100 }
             },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_self",
+              rel: "nofollow"
+            }
           },
           {
             resolve: `gatsby-remark-prismjs`,

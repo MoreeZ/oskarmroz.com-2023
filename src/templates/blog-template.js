@@ -22,7 +22,7 @@ export default function Blogs({ data, children }) {
     <div className="blog-page">
       <div className="blog-page-topbar">
         <Link to="/" className="oskar-mroz">
-          Oskar Mroz
+          {"<- my website"} 
         </Link>
         <div className="socials">
           <a
@@ -42,9 +42,11 @@ export default function Blogs({ data, children }) {
         <header className="blog-header">
           <h1>{title}</h1>
           <div className="subtitle">
-            <div className="blog-author">{author}</div>
+            <div className="blog-author">
+              <em>{author}</em>
+            </div>
             <div className="blog-date">
-              Published: {new Date(date).toDateString()}
+              <em>Published: {new Date(date).toDateString()}</em>
             </div>
           </div>
           {featuredImage && (

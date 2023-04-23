@@ -12,22 +12,19 @@ export default function Blogs({ data, children }) {
     frontmatter: { title, date, author, featuredImage },
   } = data.mdx;
   const localPath = [
-    ...internal.contentFilePath.split(
-      "/oskarmroz.com-2023/opt/buildhome/repo/"
-    ),
+    ...internal.contentFilePath.split("/opt/buildhome/repo/"),
   ].pop();
-  console.log(internal.contentFilePath);
 
   return (
     <div className="blog-page">
       <div className="blog-page-topbar">
         <Link to="/" className="oskar-mroz">
-          {"<- my website"} 
+          {"<- my website"}
         </Link>
         <div className="socials">
           <a
             href={
-              "https://github.com/MoreeZ/oskarmroz.com-2023/blob/main " +
+              "https://github.com/MoreeZ/oskarmroz.com-2023/blob/main" +
               localPath
             }
             target="_blank"

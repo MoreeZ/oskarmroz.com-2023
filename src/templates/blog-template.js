@@ -16,7 +16,7 @@ export default function Blogs({ data, children }) {
       "/oskarmroz.com-2023/opt/buildhome/repo/"
     ),
   ].pop();
-  console.log(localPath);
+  console.log(internal.contentFilePath);
 
   return (
     <div className="blog-page">

@@ -7,12 +7,9 @@ img {
 .ui-design-card-container {
   cursor: pointer;
   position: relative;
-  // border: #a1ffa8 3px solid;
-  // box-shadow: 3px 3px 0px #e555d6;
-  transition: transform  150ms linear, box-shadow 150ms linear;
+  transition: transform 150ms linear, box-shadow 150ms linear;
   transition-delay: 0ms;
-  // background-color: #e555d6;
-    box-shadow: 0px 0px 10px #0009;
+  box-shadow: 0px 0px 10px #0009;
 
   &:hover {
     z-index: 1;
@@ -29,13 +26,13 @@ img {
     display: block;
     box-sizing: border-box;
   }
-  
-  .hover-line:nth-child(5),
+
+  .hover-line:nth-child(1),
   .hover-line:nth-child(4) {
     transform: rotate(180deg);
   }
-  &:hover .hover-line:nth-child(2):before,
-  &:hover .hover-line:nth-child(4):before {
+
+  &:hover .hover-line:nth-child(even):before {
     content: "";
     position: absolute;
     width: 3px;
@@ -43,8 +40,8 @@ img {
     background: #e555d6;
     animation: hoverLinesY 300ms ease-out;
   }
-  &:hover .hover-line:nth-child(5):before,
-  &:hover .hover-line:nth-child(3):before {
+
+  &:hover .hover-line:nth-child(odd):before {
     content: "";
     position: absolute;
     background-color: pink;

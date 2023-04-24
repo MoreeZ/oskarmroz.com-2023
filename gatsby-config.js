@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -26,15 +27,15 @@ module.exports = {
               maxWidth: 800,
               linkImagesToOriginal: false,
               quality: 100,
-              withWebp: { quality: 100 }
+              withWebp: { quality: 100 },
             },
           },
           {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_self",
-              rel: "nofollow"
-            }
+              rel: "nofollow",
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,

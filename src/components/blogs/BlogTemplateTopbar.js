@@ -5,7 +5,7 @@ import EmailIcon from "../../icons/email_v2.svg";
 import InformationModal from "../common/InformationModal";
 
 export default function BlogTemplateTopbar({ localPath }) {
-  const [contactOpen, setContactOpen] = useState(true);
+  const [contactOpen, setContactOpen] = useState(false);
   const handleOpenModal = () => {
     setContactOpen(true);
   };

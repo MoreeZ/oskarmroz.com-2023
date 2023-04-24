@@ -33,7 +33,7 @@
 }
 
 .nav-icon {
-  margin-right: 13px;
+  margin-right: 10px;
   height: 24px;
   width: 24px;
 }
@@ -87,7 +87,7 @@
   color: #a1ffa8;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 900px) {
   .header-container {
     height: 100px;
   }
@@ -218,6 +218,9 @@
 }
 
 @media only screen and (max-width: 1000px) {
+  .header-container .nav-list {
+    margin: 0px 60px;
+  }
   .nav-container {
     .checkbox,
     .hamburger-lines {

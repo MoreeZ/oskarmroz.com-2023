@@ -22,6 +22,10 @@ $secitionHeight: 380px;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    * {
+      width: 100%;
+    }
   }
 
   img {

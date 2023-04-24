@@ -254,7 +254,7 @@
   .landing-main-right .profile-card .socials {
     display: flex;
     justify-content: space-between;
-    gap: 35px;
+    gap: 40px;
     margin-top: 50px;
 
     .social {
@@ -325,6 +325,7 @@
         .socials {
           width: 100%;
           gap: normal;
+          padding: 0px 12px;
 
           .social {
             .social-icon {

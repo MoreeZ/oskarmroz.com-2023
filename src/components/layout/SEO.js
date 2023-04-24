@@ -12,8 +12,6 @@ export default function SEO({
       <html lang="en" />
       {/* ========== BASIC TAGS ========== */}
       <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width" />
-
       {/* ========== SEARCH ENGINE TAGS ========== */}
       <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
       <meta

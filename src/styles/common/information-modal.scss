@@ -18,12 +18,11 @@
   }
 
   .information-modal-content {
-    height: auto;
+    height: 400px;
     min-width: 300px;
     max-width: 800px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    
   }
 }

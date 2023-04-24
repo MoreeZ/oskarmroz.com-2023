@@ -1,10 +1,10 @@
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 import "../styles/blogs/blog-template.scss";
 import "prismjs/themes/prism-okaidia.min.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 import SEO from "../components/layout/SEO";
-import GithubIcon from "../icons/github.svg";
+import BlogTemplateTopbar from "../components/blogs/BlogTemplateTopbar";
 
 export default function Blogs({ data, children }) {
   const {
@@ -17,24 +17,7 @@ export default function Blogs({ data, children }) {
 
   return (
     <div className="blog-page">
-      <div className="blog-page-topbar">
-        <Link to="/blogs/" className="oskar-mroz">
-          {"<- more blogs"}
-        </Link>
-        <div className="socials">
-          <a
-            href={
-              "https://github.com/MoreeZ/oskarmroz.com-2023/blob/main/" +
-              localPath
-            }
-            target="_blank"
-            rel="noopener"
-          >
-            <GithubIcon className="social-icon" />
-          </a>
-        </div>
-      </div>
-
+      <BlogTemplateTopbar localPath={localPath} />
       <div className="blog-wrapper">
         <header className="blog-header">
           <h1>{title}</h1>

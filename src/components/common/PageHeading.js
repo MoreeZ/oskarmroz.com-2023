@@ -1,13 +1,13 @@
 import React from "react";
 import "../../styles/common/heading.scss";
 
-export default function Heading({ title }) {
+export default function PageHeading({ title }) {
   if (typeof window === "undefined") return null;
   const { pathname } = window.location;
-  
+
   const titleChars = title.split("");
   return (
-    <header className="default-header">
+    <>
       <h1 className="wave" aria-label={title}>
         {titleChars.map((char, index) => (
           <span
@@ -27,6 +27,6 @@ export default function Heading({ title }) {
       >
         <div className="zigzag"></div>
       </div>
-    </header>
+    </>
   );
 }

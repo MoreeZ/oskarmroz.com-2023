@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import Footer from "./Footer";
-import Header from "./Header";
+import NavHeader from "./NavHeader";
 import AOS from "aos";
-import SplashScreen from "../common/SplashScreen";
 import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../context/GlobalContextProvider";
-import Heading from "../common/Heading";
+import PageHeading from "../common/PageHeading";
 
 export default function DefaultPageLayout({ children, title }) {
   const dispatch = useContext(GlobalDispatchContext);
@@ -15,20 +14,24 @@ export default function DefaultPageLayout({ children, title }) {
   // Initialize AOS on every page.
   useEffect(() => {
     AOS.init();
-  //   let timer1 = setTimeout(() => dispatch({ type: "SET_ISLOADED" }), 700);
+    //   let timer1 = setTimeout(() => dispatch({ type: "SET_ISLOADED" }), 700);
 
-  //   return () => {
-  //     clearTimeout(timer1);
-  //   };
+    //   return () => {
+    //     clearTimeout(timer1);
+    //   };
   }, []);
 
   // if (!state?.isLoaded) return <SplashScreen />;
   return (
     <>
-      <Header />
-      <Heading title={title} />
+      <NavHeader />
+      <header className="default-header">
+        <PageHeading title={title} />
+      </header>
       <main>{children}</main>
-      <Footer />
+      <footer className="footer-container">
+        <Footer />
+      </footer>
     </>
   );
 }

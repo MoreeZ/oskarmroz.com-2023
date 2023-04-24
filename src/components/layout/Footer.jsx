@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-container">
+    <>
       <svg
         className="gradient-left"
         width="300"
@@ -52,6 +52,6 @@ export default function Footer() {
         <path d="M180 0L300 120L300 5.24537e-06L180 0Z" fill="#7B7B7B"></path>
         <path d="M240 0L300 60L300 2.62268e-06L240 0Z" fill="#989898"></path>
       </svg>
-    </footer>
+    </>
   );
 }

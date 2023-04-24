@@ -37,7 +37,7 @@ const NAV_ITEMS = [
   },
 ];
 
-export default function Header() {
+export default function NavHeader() {
   if (typeof window === "undefined") return null;
   const { pathname } = window.location;
   return (

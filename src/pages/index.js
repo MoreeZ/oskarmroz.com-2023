@@ -2,7 +2,6 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 // Components
 import DefaultPageLayout from "../components/layout/DefaultPageLayout";
-import Heading from "../components/common/Heading";
 import LandingMain from "../components/home/LandingMain";
 import LandingSection from "../components/home/LandingSection";
 // Icons

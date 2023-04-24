@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 // components
-import Heading from "../components/common/Heading";
 import DefaultPageLayout from "../components/layout/DefaultPageLayout";
 import PhotoCard from "../components/photography/PhotoCard";
 //styles

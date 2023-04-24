@@ -18,7 +18,7 @@ export default function SEO({
         name="description"
         content={
           description ||
-          "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+          "Oskar Mroz is a software developer from Ireland who specializes in React.js, React Native, Node.js, and other technologies. Check out his portfolio and blogs."
         }
       />
       <meta

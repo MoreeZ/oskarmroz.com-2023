@@ -8,7 +8,7 @@ export default function Heading({ title }) {
   const titleChars = title.split("");
   return (
     <header className="default-header">
-      <h1 className="wave">
+      <h1 className="wave" aria-label={title}>
         {titleChars.map((char, index) => (
           <span
             key={index}

@@ -44,8 +44,12 @@ export default function Blogs() {
     <DefaultPageLayout title="Blogs">
       <div className="blogs-page">
         <div className="blogs-list">
-          {blogsData.map((blog) => (
-            <BlogCard data={blog.frontmatter} />
+          {blogsData.map((blog, index) => (
+            <BlogCard
+              key={index}
+              data={blog.frontmatter}
+              alt={blog.frontmatter.slug}
+            />
           ))}
         </div>
       </div>

@@ -5,6 +5,7 @@ export default function SEO({
   description,
   keywords,
   robots,
+  canonical,
   openGraphData,
 }) {
   return (
@@ -12,6 +13,7 @@ export default function SEO({
       <html lang="en" />
       {/* ========== BASIC TAGS ========== */}
       <meta charSet="utf-8" />
+      <link rel="canonical" href={canonical || "https://oskarmroz.com/"} />
       {/* ========== SEARCH ENGINE TAGS ========== */}
       <title>{title || "Oskar Mroz - Software Developer from Ireland"}</title>
       <meta

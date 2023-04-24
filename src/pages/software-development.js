@@ -327,28 +327,24 @@ export default function SoftwareDevelopment() {
   return (
     <DefaultPageLayout title="Software Development">
       <div className="software-page">
-        <h2
-          className="divider-heading"
-          data-aos="zoom-in"
-          data-aos-offset="-40"
-        >
-          Current Projects
-        </h2>
+        <h2 className="divider-heading">Current Projects</h2>
         <div className="software-projects-list">
           {CURRENT_PROJECTS_DATA.map((data, index) => (
-            <SoftwareCard data={data} key={index} />
+            <SoftwareCard
+              data={data}
+              key={index}
+              alt={data.heading + " icon"}
+            />
           ))}
         </div>
-        <h2
-          className="divider-heading"
-          data-aos="zoom-in"
-          data-aos-offset="-40"
-        >
-          Past Projects
-        </h2>
+        <h2 className="divider-heading">Past Projects</h2>
         <div className="software-projects-list">
           {PAST_PROJECTS_DATA.map((data, index) => (
-            <SoftwareCard data={data} key={index} />
+            <SoftwareCard
+              data={data}
+              key={index}
+              alt={data.heading + " icon"}
+            />
           ))}
         </div>
       </div>

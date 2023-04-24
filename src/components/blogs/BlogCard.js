@@ -3,12 +3,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import ChevronRight from "../../icons/chevron-right.svg";
 
-export default function BlogCard({ data }) {
+export default function BlogCard({ data, alt }) {
   const image = getImage(data.previewImage);
   return (
     <div className="blog-card">
       <div className="blog-card-preview">
-        <GatsbyImage image={image} alt={data.alt} />
+        <GatsbyImage image={image} alt={alt} />
       </div>
       <div className="blog-card-content">
         <div className="blog-card-date">

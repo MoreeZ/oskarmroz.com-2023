@@ -6,18 +6,9 @@ export default function InformationModal({ content, isOpen, setIsOpen }) {
   };
   if (isOpen)
     return (
-      <div
-        className="information-modal"
-        onClick={closeModal}
-        data-aos="fade-in"
-        data-aos-duration="200"
-      >
+      <div className="information-modal" onClick={closeModal}>
         <div className="information-modal-overlay"></div>
-        <div
-          className="information-modal-content"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-        >
+        <div className="information-modal-content">
           {content}
           <div className="close-button">×</div>
         </div>

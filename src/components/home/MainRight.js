@@ -59,9 +59,6 @@ export default function MainRight() {
           />
           <div
             className="this-is-me"
-            data-aos-once="true"
-            data-aos="fade-in"
-            data-aos-delay="3000"
           >
             <div className="text">This is me :)</div>
             <PointArrowIcon className="point-arrow" />
@@ -74,9 +71,6 @@ export default function MainRight() {
               className="social"
               href={social.link}
               target="_blank"
-              // data-aos-once="true"
-              // data-aos="fade-up"
-              // data-aos-delay={100 + 100 * index}
             >
               {social.icon}
               <p className="text">{social.text}</p>

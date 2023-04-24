@@ -2,7 +2,7 @@
 import "./src/styles/global/styles.scss";
 import "./src/styles/common/splash-screen.scss";
 import "./src/styles/common/information-modal.scss";
-// import "./src/styles/dist/aos.css";
+import "./src/styles/dist/aos.css";
 
 // Global state
 import React from "react";

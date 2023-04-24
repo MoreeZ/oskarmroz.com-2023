@@ -13,7 +13,7 @@ export default function DefaultPageLayout({ children, title }) {
   const state = useContext(GlobalStateContext);
   // Initialize AOS on every page.
   useEffect(() => {
-    // AOS.init();
+    AOS.init();
     //   let timer1 = setTimeout(() => dispatch({ type: "SET_ISLOADED" }), 700);
 
     //   return () => {

@@ -78,6 +78,9 @@ export default function NavHeader() {
                   (pathname === item.href ? " active" : "")
                 }
                 to={item.href}
+                // data-aos-once="true"
+                // data-aos="fade-down"
+                // data-aos-delay={0 + index * 100}
               >
                 {item.icon}
                 <span className="nav-text">{item.text}</span>

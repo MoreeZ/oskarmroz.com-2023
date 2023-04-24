@@ -15,7 +15,7 @@ import InstagramIcon from "../icons/instagram.svg";
 import TwitterLogoIcon from "../icons/twitter-logo.svg";
 import SEO from "../components/layout/SEO";
 
-export default function SoftwareDevelopment() {
+export default function SoftwareDevelopment({ location }) {
   const imageData = useStaticQuery(graphql`
     {
       clove: file(relativePath: { eq: "clove_icon.png" }) {
@@ -325,7 +325,7 @@ export default function SoftwareDevelopment() {
   ];
 
   return (
-    <DefaultPageLayout title="Software Development">
+    <DefaultPageLayout title="Software Development" location={location}>
       <div className="software-page">
         <h2
           className="divider-heading"

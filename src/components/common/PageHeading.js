@@ -1,21 +1,20 @@
 import React from "react";
 import "../../styles/common/heading.scss";
 
-export default function PageHeading({ title }) {
-  if (typeof window === "undefined") return null;
-  const { pathname } = window.location;
+export default function PageHeading({ title, location }) {
+  const { pathname } = location || { pathname: "" };
 
   const titleChars = title.split("");
   return (
-    <>
+    <header className="default-header">
       <h1 className="wave" aria-label={title}>
         {titleChars.map((char, index) => (
           <span
             key={index}
             style={{ "--i": index + 1 }}
-            // data-aos-once="true"
-            // data-aos="fade-in"
-            // data-aos-delay={600 + index * 50}
+            data-aos-once="true"
+            data-aos="fade-in"
+            data-aos-delay={300 + index * 50}
           >
             {char === " " ? <span>&nbsp;</span> : char}
           </span>
@@ -27,6 +26,6 @@ export default function PageHeading({ title }) {
       >
         <div className="zigzag"></div>
       </div>
-    </>
+    </header>
   );
 }

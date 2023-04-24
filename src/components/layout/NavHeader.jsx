@@ -37,9 +37,8 @@ const NAV_ITEMS = [
   },
 ];
 
-export default function NavHeader() {
-  if (typeof window === "undefined") return null;
-  const { pathname } = window.location;
+export default function NavHeader({ location }) {
+  const { pathname } = location || { pathname: "" };
   return (
     <div className="header-container" name="navbar">
       <div className="nav-list">

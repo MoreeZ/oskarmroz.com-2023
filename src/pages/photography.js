@@ -9,7 +9,7 @@ import "../styles/photography/photography-card.scss";
 import "../styles/common/image-modal.scss";
 import SEO from "../components/layout/SEO";
 
-export default function Photography() {
+export default function Photography({ location }) {
   const imageData = useStaticQuery(graphql`
     {
       allFile(
@@ -38,7 +38,7 @@ export default function Photography() {
   const images = imageData.allFile.edges;
 
   return (
-    <DefaultPageLayout title="Photography">
+    <DefaultPageLayout title="Photography" location={location}>
       {/* body */}
       <div className="photography-page-content">
         {images.map((image, index) => (

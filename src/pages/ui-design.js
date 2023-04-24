@@ -9,7 +9,7 @@ import "../styles/ui-design/ui-design-card.scss";
 import "../styles/common/image-modal.scss";
 import SEO from "../components/layout/SEO";
 
-export default function UIDesign() {
+export default function UIDesign({ location }) {
   const imageData = useStaticQuery(graphql`
     {
       allFile(
@@ -38,7 +38,7 @@ export default function UIDesign() {
   `);
   const images = imageData.allFile.edges;
   return (
-    <DefaultPageLayout title="UI Design">
+    <DefaultPageLayout title="UI Design" location={location}>
       <div className="ui-design-page-content">
         {images.map((image, index) => (
           <DesignCard

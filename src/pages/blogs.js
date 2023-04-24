@@ -8,7 +8,7 @@ import BlogCard from "../components/blogs/BlogCard";
 import "../styles/blogs/blogs-page.scss";
 import "../styles/blogs/blogs-card.scss";
 
-export default function Blogs() {
+export default function Blogs({location}) {
   const {
     allMdx: { nodes: blogsData },
   } = useStaticQuery(graphql`
@@ -41,7 +41,7 @@ export default function Blogs() {
   `);
 
   return (
-    <DefaultPageLayout title="Blogs">
+    <DefaultPageLayout title="Blogs" location={location}>
       <div className="blogs-page">
         <div className="blogs-list">
           {blogsData.map((blog, index) => (

@@ -8,7 +8,7 @@ import {
 } from "../../context/GlobalContextProvider";
 import PageHeading from "../common/PageHeading";
 
-export default function DefaultPageLayout({ children, title }) {
+export default function DefaultPageLayout({ children, title, location }) {
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);
   // Initialize AOS on every page.
@@ -24,10 +24,8 @@ export default function DefaultPageLayout({ children, title }) {
   // if (!state?.isLoaded) return <SplashScreen />;
   return (
     <>
-      <NavHeader />
-      <header className="default-header">
-        <PageHeading title={title} />
-      </header>
+      <NavHeader location={location} />
+      <PageHeading title={title} location={location} />
       <main>{children}</main>
       <footer className="footer-container">
         <Footer />

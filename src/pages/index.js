@@ -13,7 +13,8 @@ import BlogsIcon from "../icons/blogs.svg";
 import "../styles/landing/section.scss";
 import SEO from "../components/layout/SEO";
 
-export default function IndexPage() {
+export default function IndexPage({ location }) {
+  console.log("location: ", location);
   const { softwareDevImage, uiDesignImage, photographyImage, blogsImage } =
     useStaticQuery(graphql`
       {
@@ -65,7 +66,7 @@ export default function IndexPage() {
     `);
 
   return (
-    <DefaultPageLayout title="About me">
+    <DefaultPageLayout title="About me" location={location}>
       <LandingMain />
       <LandingSection
         icon={<SoftwareIcon className="icon" />}

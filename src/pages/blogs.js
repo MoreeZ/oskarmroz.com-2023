@@ -42,8 +42,7 @@ export default function Blogs() {
   `);
 
   return (
-    <DefaultPageLayout>
-      <Heading title="Blogs" />
+    <DefaultPageLayout title="Blogs">
       <div className="blogs-page">
         <div className="blogs-list">
           {blogsData.map((blog) => (

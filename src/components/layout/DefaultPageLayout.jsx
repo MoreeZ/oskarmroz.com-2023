@@ -7,24 +7,26 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../context/GlobalContextProvider";
+import Heading from "../common/Heading";
 
-export default function DefaultPageLayout({ children }) {
+export default function DefaultPageLayout({ children, title }) {
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);
   // Initialize AOS on every page.
   useEffect(() => {
     AOS.init();
-    let timer1 = setTimeout(() => dispatch({ type: "SET_ISLOADED" }), 700);
+  //   let timer1 = setTimeout(() => dispatch({ type: "SET_ISLOADED" }), 700);
 
-    return () => {
-      clearTimeout(timer1);
-    };
+  //   return () => {
+  //     clearTimeout(timer1);
+  //   };
   }, []);
 
-  if (!state?.isLoaded) return <SplashScreen />;
+  // if (!state?.isLoaded) return <SplashScreen />;
   return (
     <>
       <Header />
+      <Heading title={title} />
       <main>{children}</main>
       <Footer />
     </>

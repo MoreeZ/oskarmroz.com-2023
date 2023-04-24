@@ -12,7 +12,7 @@ export default function MainLeft() {
   };
   return (
     <div className="landing-main-left">
-      <div className="typewriter monospace">
+      <p className="typewriter monospace">
         Hey there! I'm <span className="green-text">Oskar Mróz</span>, a{" "}
         <span className="green-text">Software Developer</span> from Ireland.
         I've been tinkering with code since I was 16. I'm a natural
@@ -30,7 +30,7 @@ export default function MainLeft() {
         <span className="green-text">photography</span> and{" "}
         <span className="green-text">blogging</span>. If you're curious, feel
         free to check out my latest work.
-      </div>
+      </p>
       <br />
       <button className="scroll-down" onClick={handleScrollDown}>
         Scroll down &nbsp;

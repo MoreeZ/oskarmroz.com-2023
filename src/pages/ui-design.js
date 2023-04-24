@@ -39,8 +39,7 @@ export default function UIDesign() {
   `);
   const images = imageData.allFile.edges;
   return (
-    <DefaultPageLayout>
-      <Heading title="UI Design" />
+    <DefaultPageLayout title="UI Design">
       <div className="ui-design-page-content">
         {images.map((image, index) => (
           <DesignCard

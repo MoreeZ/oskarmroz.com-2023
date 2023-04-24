@@ -326,8 +326,7 @@ export default function SoftwareDevelopment() {
   ];
 
   return (
-    <DefaultPageLayout>
-      <Heading title="Software Development" />
+    <DefaultPageLayout title="Software Development">
       <div className="software-page">
         <h2
           className="divider-heading"

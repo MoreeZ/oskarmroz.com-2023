@@ -66,8 +66,7 @@ export default function IndexPage() {
     `);
 
   return (
-    <DefaultPageLayout>
-      <Heading title="About me" />
+    <DefaultPageLayout title="About me">
       <LandingMain />
       <LandingSection
         icon={<SoftwareIcon className="icon" />}

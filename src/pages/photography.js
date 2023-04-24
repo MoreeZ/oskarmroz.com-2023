@@ -39,8 +39,7 @@ export default function Photography() {
   const images = imageData.allFile.edges;
 
   return (
-    <DefaultPageLayout>
-      <Heading title="Photography" />
+    <DefaultPageLayout title="Photography">
       {/* body */}
       <div className="photography-page-content">
         {images.map((image, index) => (

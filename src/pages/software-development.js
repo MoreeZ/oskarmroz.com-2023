@@ -362,7 +362,7 @@ export function Head() {
   return (
     <SEO
       title="Software Development: Oskar Mroz, Ireland"
-      description="Oskar Mroz is a software developer from Ireland who creates responsive and user-friendly websites and apps with React.js and React Native. He also has experience in backend development, databases, and cloud services. Explore his software development projects and learn more about his skills and tools."
+      description="Oskar Mroz is a software developer from Ireland who specializes in user-friendly websites and apps using React.js and React Native. Check out his projects."
     />
   );
 }

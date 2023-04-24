@@ -59,7 +59,7 @@ export function Head() {
   return (
     <SEO
       title="Blogs: Oskar Mroz, Ireland"
-      description="Oskar Mroz is a software developer from Ireland who also loves blogging. He writes about his experiences, insights, and opinions on various topics related to software development, UI design, photography, and more. Read his latest blog posts and join the discussion."
+      description="Oskar Mroz, a software developer from Ireland, Read his latest blogs about software development, UI design, & photography."
     />
   );
 }

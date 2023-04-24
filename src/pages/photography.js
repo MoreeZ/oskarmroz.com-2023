@@ -59,7 +59,7 @@ export function Head() {
   return (
     <SEO
       title="Photography: Oskar Mroz, Ireland"
-      description="Oskar Mroz is a software developer from Ireland who also has a passion for photography. He enjoys capturing stunning portraits, landscapes, and events with his camera. Browse his photography portfolio and see the world through his lens."
+      description="Oskar Mroz, a software developer from Ireland, is passionate about photography, particularly landscape and night photography. Check out his portfolio."
     />
   );
 }

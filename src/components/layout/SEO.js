@@ -9,6 +9,7 @@ export default function SEO({
 }) {
   return (
     <>
+      <html lang="en" />
       {/* ========== BASIC TAGS ========== */}
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width" />
@@ -43,7 +44,7 @@ export default function SEO({
         content={
           openGraphData?.description ||
           description ||
-          "Oskar Mroz is a software developer from Ireland who loves coding, UI design, photography, and blogging. He works with React.js, React Native, Node.js, and other technologies. Visit his website to see his portfolio and blog posts."
+          "Oskar Mroz is a software developer from Ireland who specializes in React.js, React Native, Node.js, and other technologies. Check out his portfolio and blogs."
         }
       />
 
@@ -63,6 +64,8 @@ export default function SEO({
         content={openGraphData?.url || "https://oskarmroz.com"}
       />
       <meta property="og:type" content={openGraphData?.type || "website"} />
+
+      <meta name="author" content="Oskar Mroz" />
     </>
   );
 }

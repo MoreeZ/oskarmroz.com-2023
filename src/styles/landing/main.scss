@@ -11,23 +11,24 @@
     flex-direction: column;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1100px) {
     padding: 40px 60px;
   }
 
   @media only screen and (max-width: 600px) {
-    padding: 40px 30px;
+    padding: 30px 20px;
   }
 
   /* =============== MAIN LEFT ================ */
   .landing-main-left {
     min-width: 650px;
-    width: 100%;
+    // width: 100%;
+    flex: 1;
     font-weight: 300;
     font-size: 20px;
     line-height: 28px;
     font-family: monospace;
-    min-height: 440px;
+    // min-height: 440px;
     padding-bottom: 30px;
   }
 
@@ -68,48 +69,53 @@
   }
 
   .typewriter {
-    --bgColor: #2d2e30;
-    --lines: 574;
-    --lineHeight: 28px;
-    --timePerLine: 0.12s;
-    --widthCh: 60;
-    --width: calc(var(--widthCh) * 1ch);
-    /* do not touch the time property!!! */
-    --time: calc(var(--lines) * var(--timePerLine));
-    animation: grow var(--time) steps(var(--lines));
-    animation-fill-mode: forwards;
-    animation-delay: 1.2s;
-    background: var(--bgColor);
-    line-height: var(--lineHeight);
-    max-height: var(--lineHeight);
-    overflow: hidden;
-    position: relative;
-    width: var(--width);
+    // --bgColor: #2d2e30;
+    // --lines: 574;
+    // --lineHeight: 28px;
+    // --timePerLine: 0.12s;
+    // --widthCh: 60;
+    // --width: calc(var(--widthCh) * 1ch);
+    // /* do not touch the time property!!! */
+    // --time: calc(var(--lines) * var(--timePerLine));
+    // animation: grow var(--time) steps(var(--lines));
+    // animation-fill-mode: forwards;
+    // animation-delay: 1.2s;
+    // background: var(--bgColor);
+    // line-height: var(--lineHeight);
+    // max-height: var(--lineHeight);
+    // overflow: hidden;
+    // position: relative;
+    // width: var(--width);
+    flex: 1;
+
+    // p {
+    //   margin-bottom: 0px;
+    // }
   }
 
-  .typewriter::before {
-    content: "";
-    animation: type var(--timePerLine) linear forwards,
-      carriageReturn var(--time) steps(var(--lines)) var(--lines);
-    animation-delay: 1.2s;
-    background: var(--bgColor);
-    border-left: 2px solid;
-    bottom: 0;
-    height: 2rem;
-    position: absolute;
-    right: 0;
-    width: 100%;
-  }
+  // .typewriter::before {
+  //   content: "";
+  //   animation: type var(--timePerLine) linear forwards,
+  //     carriageReturn var(--time) steps(var(--lines)) var(--lines);
+  //   animation-delay: 1.2s;
+  //   background: var(--bgColor);
+  //   border-left: 2px solid;
+  //   bottom: 0;
+  //   height: 2rem;
+  //   position: absolute;
+  //   right: 0;
+  //   width: 100%;
+  // }
 
-  .typewriter.monospace {
-    font-family: monospace, monospace;
-  }
+  // .typewriter.monospace {
+  //   font-family: monospace, monospace;
+  // }
 
-  .typewriter.monospace::before {
-    animation: type var(--timePerLine) steps(var(--widthCh)) infinite,
-      carriageReturn var(--time) steps(var(--lines)) var(--lines);
-    animation-delay: 1.2s;
-  }
+  // .typewriter.monospace::before {
+  //   animation: type var(--timePerLine) steps(var(--widthCh)) infinite,
+  //     carriageReturn var(--time) steps(var(--lines)) var(--lines);
+  //   animation-delay: 1.2s;
+  // }
 
   /* SCROLL DOWN BUTTON */
 
@@ -164,12 +170,12 @@
       font-size: 18px;
     }
 
-    .typewriter {
-      width: 100%;
-    }
+    // .typewriter {
+    //   width: 100%;
+    // }
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1100px) {
     .landing-main-left .scroll-down {
       display: none;
     }
@@ -177,8 +183,9 @@
 
   @media only screen and (max-width: 600px) {
     .landing-main-left {
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 18px;
+      line-height: 24px;
+      padding-bottom: 10px;
     }
   }
 
@@ -187,6 +194,7 @@
   .landing-main-right {
     position: relative;
     z-index: 1;
+    width: 430px;
 
     .profile-card {
       width: 400px;
@@ -313,7 +321,7 @@
   @media only screen and (max-width: 1339px) {
     .landing-main-right {
       display: flex;
-      width: 85%;
+      // width: 85%;
       align-items: center;
       justify-content: center;
 

@@ -75,6 +75,7 @@ export default function IndexPage({ location }) {
         title="Software Development"
         href="/software-development"
         id="software"
+        description="I love creating elegant and functional web applications using various frameworks and languages. Here are some of the projects that I’m proud of."
       />
       <LandingSection
         icon={<UiDesginIcon className="icon" />}
@@ -83,6 +84,7 @@ export default function IndexPage({ location }) {
         title="UI Design"
         href="/ui-design"
         id="ui-design"
+        description="I believe that a good user interface is essential for a successful web application. Here are some of the UI designs that I’ve created."
       />
       <LandingSection
         icon={<PhotographyIcon className="icon" />}
@@ -91,6 +93,7 @@ export default function IndexPage({ location }) {
         title="Photography"
         href="/photography"
         id="photography"
+        description="I enjoy taking photos with my camera, capturing the stunning landscapes and the vibrant city at night. Here are some of the photos that I’ve taken and edited."
       />
       <LandingSection
         icon={<BlogsIcon className="icon" />}
@@ -99,6 +102,7 @@ export default function IndexPage({ location }) {
         title="Blogs"
         href="/blogs"
         id="blogs"
+        description="I like writing blogs on topics that interest me. Mainly programming, design and personal rants. Here are some of the blogs that I’ve written and published."
       />
     </DefaultPageLayout>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import ChevronUp from "../../icons/chevron-up.svg";
 import "../../styles/layout/footer.scss";
-import { Link } from "gatsby";
 import { scroller } from "react-scroll";
 
 export default function Footer() {
@@ -36,7 +35,8 @@ export default function Footer() {
         <ChevronUp className="chevron-up" />
       </button>
       <div className="copyright">
-        Copyright 2023 Oskar Mroz etc. etc. as if this meant anything.
+        Copyright © 2023 Oskar Mroz. All rights reserved. If you copy my name I
+        will sue you. Cheers.
       </div>
       <svg
         className="gradient-right"

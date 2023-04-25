@@ -24,6 +24,7 @@ $secitionHeight: 380px;
     overflow: hidden;
 
     * {
+      height: $secitionHeight;
       width: 100%;
     }
   }

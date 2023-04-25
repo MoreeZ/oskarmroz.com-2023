@@ -29,15 +29,15 @@ export default function Footer() {
         <path d="M0 240L60 300H0V240Z" fill="#989898"></path>
       </svg>
 
-      <div className="funny-title">~~ Nothing useful here ~~</div>
+      <h3 className="funny-title">~~ Nothing useful here ~~</h3>
       <button className="scroll-to-top" onClick={scrollToTop}>
         <span>Take me back to the good stuff</span>
         <ChevronUp className="chevron-up" />
       </button>
-      <div className="copyright">
+      <p className="copyright">
         Copyright © 2023 Oskar Mroz. All rights reserved. If you copy my name I
         will sue you. Cheers.
-      </div>
+      </p>
       <svg
         className="gradient-right"
         width="300"

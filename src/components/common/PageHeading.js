@@ -12,9 +12,9 @@ export default function PageHeading({ title, location }) {
           <span
             key={index}
             style={{ "--i": index + 1 }}
-            data-aos-once="true"
-            data-aos="fade-in"
-            data-aos-delay={300 + index * 50}
+            // data-aos-once="true"
+            // data-aos="fade-in"
+            // data-aos-delay={300 + index * 50}
           >
             {char === " " ? <span>&nbsp;</span> : char}
           </span>

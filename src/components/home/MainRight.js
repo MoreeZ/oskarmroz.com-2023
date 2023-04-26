@@ -74,9 +74,9 @@ export default function MainRight() {
               className="social"
               href={social.link}
               target="_blank"
-              // data-aos-once="true"
-              // data-aos="fade-up"
-              // data-aos-delay={100 + 100 * index}
+              data-aos-once="true"
+              data-aos="fade-up"
+              data-aos-delay={100 + 100 * index}
             >
               {social.icon}
               <p className="text">{social.text}</p>

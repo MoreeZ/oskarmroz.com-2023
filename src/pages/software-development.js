@@ -329,8 +329,8 @@ export default function SoftwareDevelopment({ location }) {
       <div className="software-page">
         <h2
           className="divider-heading"
-          data-aos="zoom-in"
-          data-aos-offset="-40"
+          // data-aos="zoom-in"
+          // data-aos-offset="-40"
         >
           Current Projects
         </h2>
@@ -341,8 +341,8 @@ export default function SoftwareDevelopment({ location }) {
         </div>
         <h2
           className="divider-heading"
-          data-aos="zoom-in"
-          data-aos-offset="-40"
+          // data-aos="zoom-in"
+          // data-aos-offset="-40"
         >
           Past Projects
         </h2>

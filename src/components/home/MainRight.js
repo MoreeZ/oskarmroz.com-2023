@@ -18,7 +18,7 @@ export default function MainRight() {
     {
       icon: <LinkedinIcon className="social-icon" />,
       text: "Linkedin",
-      link: "https://www.linkedin.com/in/o-mroz/",
+      link: "https://www.linkedin.com/in/oskar-mroz/",
     },
     {
       icon: <DribbleIcon className="social-icon" />,

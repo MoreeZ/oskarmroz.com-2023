@@ -28,7 +28,7 @@ export default function MainRight() {
     {
       icon: <InstagramIcon className="social-icon" />,
       text: "Instagram",
-      link: "https://www.instagram.com/oskar_mroz/",
+      link: "https://www.instagram.com/oskar_mroz_photography/",
     },
   ];
   const { profile } = useStaticQuery(graphql`

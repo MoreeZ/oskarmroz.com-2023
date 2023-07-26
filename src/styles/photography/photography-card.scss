@@ -17,8 +17,8 @@ img {
   }
   @keyframes brightnessAnimation {
     to {
-      filter: brightness(120%) contrast(0.9);
-      -webkit-filter: brightness(120%) contrast(0.9);
+      filter: contrast(0.9);
+      -webkit-filter: contrast(0.9);
     }
   }
 }

@@ -121,8 +121,8 @@ export default function SoftwareDevelopment({ location }) {
     },
     {
       image: imageData.ldl,
-      alt: "Lon don Leon Logo",
-      heading: "Lón don Leon",
+      alt: "Mol an Óige Logo",
+      heading: "Mol an Óige",
       description: (
         <>
           I am currently working for Abair, a research laboratory in Trinity

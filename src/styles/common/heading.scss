@@ -56,7 +56,7 @@ $shadowcolor: #a1ffa8;
     background: linear-gradient(90deg, transparent 0, $backgroundcolor 0);
     // transform: translateX(100%);
     animation: zigzagReveal 3s linear forwards;
-    animation-delay: calc(0.35s + (0.05s * var(--chars))); // 0.65s + (0.05s * var(--chars))
+    animation-delay: calc(0.1s + (0.05s * var(--chars))); // 0.65s + (0.05s * var(--chars))
   }
 
   &::after {

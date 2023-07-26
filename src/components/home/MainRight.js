@@ -57,7 +57,7 @@ export default function MainRight() {
             alt="Profile picture of Oskar Mroz"
             loading="eager"
           />
-          <div
+          {/* <div
             className="this-is-me"
             data-aos-once="true"
             data-aos="fade-in"
@@ -65,7 +65,7 @@ export default function MainRight() {
           >
             <div className="text">This is me :)</div>
             <PointArrowIcon className="point-arrow" />
-          </div>
+          </div> */}
         </div>
         <div className="socials">
           {SOCIALS.map((social, index) => (

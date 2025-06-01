@@ -38,7 +38,7 @@ export default function Blogs({ data, children }) {
         <main className="blog-content">{children}</main>
       </div>
 
-      <footer>Copyright 2023 Oskar Mroz</footer>
+      <footer>Copyright 2025 Oskar Mroz</footer>
     </div>
   );
 }

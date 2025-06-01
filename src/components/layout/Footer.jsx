@@ -35,7 +35,7 @@ export default function Footer() {
         <ChevronUp className="chevron-up" />
       </button>
       <p className="copyright">
-        Copyright © 2023 Oskar Mroz. All rights reserved. If you copy my name I
+        Copyright © 2025 Oskar Mroz. All rights reserved. If you copy my name I
         will sue you. Cheers.
       </p>
       <svg

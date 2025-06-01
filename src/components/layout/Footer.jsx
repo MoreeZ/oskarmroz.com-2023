@@ -29,7 +29,7 @@ export default function Footer() {
         <path d="M0 240L60 300H0V240Z" fill="#989898"></path>
       </svg>
 
-      <h3 className="funny-title">~~ Nothing useful here ~~</h3>
+      <h3 className="funny-title">~~ Nothing here ~~</h3>
       <button className="scroll-to-top" onClick={scrollToTop}>
         <span>Take me back to the good stuff</span>
         <ChevronUp className="chevron-up" />

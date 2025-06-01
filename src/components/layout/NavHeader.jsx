@@ -30,11 +30,11 @@ const NAV_ITEMS = [
     icon: <PhotographyIcon className="nav-icon" />,
     href: "/photography/",
   },
-  {
-    text: "Blogs",
-    icon: <BlogsIcon className="nav-icon" />,
-    href: "/blogs/",
-  },
+  // {
+  //   text: "Blogs",
+  //   icon: <BlogsIcon className="nav-icon" />,
+  //   href: "/blogs/",
+  // },
 ];
 
 export default function NavHeader({ location }) {

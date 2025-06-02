@@ -18,7 +18,7 @@ import SEO from "../components/layout/SEO";
 export default function SoftwareDevelopment({ location }) {
   const imageData = useStaticQuery(graphql`
     {
-      clove: file(relativePath: { eq: "clove_icon.png" }) {
+      ldl: file(relativePath: { eq: "ldl_logo.png" }) {
         childImageSharp {
           gatsbyImageData(
             width: 170
@@ -28,7 +28,7 @@ export default function SoftwareDevelopment({ location }) {
           )
         }
       }
-      ldl: file(relativePath: { eq: "ldl_logo.png" }) {
+      mgnn: file(relativePath: { eq: "mgnn-logo.png" }) {
         childImageSharp {
           gatsbyImageData(
             width: 170
@@ -92,46 +92,81 @@ export default function SoftwareDevelopment({ location }) {
   `);
 
   const CURRENT_PROJECTS_DATA = [
+    // {
+    //   image: imageData.clove,
+    //   alt: "Clove Software Logo",
+    //   heading: "Clove Software",
+    //   description: (
+    //     <>
+    //       I am working on a startup developing and selling productivity
+    //       software. Some of our current products in development include{" "}
+    //       <a href="https://trackl.ie">Trackl.ie</a>,{" "}
+    //       <a href="https://taskl.ie">Taskl.ie</a>, and{" "}
+    //       <a href="https://ticketl.ie">Ticketl.ie</a>.
+    //     </>
+    //   ),
+    //   links: [
+    //     { icon: <WebIcon />, text: "Website", link: "https://clove.ie" },
+    //     {
+    //       icon: <LinkedinIcon />,
+    //       text: "LinkedIn",
+    //       link: "https://www.linkedin.com/company/clove-software",
+    //     },
+    //     {
+    //       icon: <GithubIcon />,
+    //       text: "Github",
+    //       link: "https://github.com/CloveSoftware",
+    //     },
+    //   ],
+    // },
     {
-      image: imageData.clove,
-      alt: "Clove Software Logo",
-      heading: "Clove Software",
+      image: imageData.ldl,
+      alt: "Meall an Óige Logo",
+      heading: "Meall an Óige",
       description: (
         <>
-          I am working on a startup developing and selling productivity
-          software. Some of our current products in development include{" "}
-          <a href="https://trackl.ie">Trackl.ie</a>,{" "}
-          <a href="https://taskl.ie">Taskl.ie</a>, and{" "}
-          <a href="https://ticketl.ie">Ticketl.ie</a>.
+          Meall an Óige is an interactive learning platform for young Irish
+          learners that builds early literacy through songs, games, and
+          native-speaker speech. It teaches key sound contrasts and
+          pronunciation using ABAIR technologies.
         </>
       ),
       links: [
-        { icon: <WebIcon />, text: "Website", link: "https://clove.ie" },
         {
-          icon: <LinkedinIcon />,
-          text: "LinkedIn",
-          link: "https://www.linkedin.com/company/clove-software",
+          icon: <WebIcon />,
+          text: "Meall an Óige Website",
+          link: "https://meallanoige.abair.ie",
         },
         {
           icon: <GithubIcon />,
           text: "Github",
-          link: "https://github.com/CloveSoftware",
+          link: "https://github.com/phonlab-tcd",
+        },
+        {
+          icon: <TwitterLogoIcon />,
+          text: "Twitter",
+          link: "https://twitter.com/phonetics_tcd",
         },
       ],
     },
     {
-      image: imageData.ldl,
-      alt: "Mol an Óige Logo",
-      heading: "Mol an Óige",
+      image: imageData.mgnn,
+      alt: "Míle Glór na nÓg",
+      heading: "Míle Glór na nÓg",
       description: (
         <>
-          I am currently working for Abair, a research laboratory in Trinity
-          College, Dublin. I am developing a React Native app teaching aspects
-          of Irish phonology to pre-literate children.
+          A web app for a campaign aimed at improving Irish speech recognition.
+          The campaign collects recordings of children reading Irish-language
+          stories aloud. The goal is to enhance speech technology for young
+          Irish speakers through daily contributions from fluent readers.
         </>
       ),
       links: [
-        { icon: <WebIcon />, text: "Abair Website", link: "https://abair.ie" },
+        {
+          icon: <WebIcon />,
+          text: "Míle Glór na nÓg",
+          link: "https://mileglornanog.abair.ie",
+        },
         {
           icon: <GithubIcon />,
           text: "Github",
@@ -150,9 +185,9 @@ export default function SoftwareDevelopment({ location }) {
       heading: "Luna Technology Society",
       description: (
         <>
-          I’m a part of a society is Poland that builds model rocket ships. My
-          roles include design and software development. I am currently
-          maintaining the official website.
+          Luna is a society of scientists who share the passion for advanced
+          technologies. The society works on building rockets, researching
+          biofeedback techniques and running workshops to promote space science.
         </>
       ),
       links: [

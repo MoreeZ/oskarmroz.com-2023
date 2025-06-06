@@ -26,7 +26,7 @@ export default function Blogs({ data, children }) {
               <em>{author}</em>
             </div>
             <div className="blog-date">
-              <em>Published: {new Date(date).toDateString()}</em>
+              <em>Published: {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</em>
             </div>
           </div>
           {featuredImage && (

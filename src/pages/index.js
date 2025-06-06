@@ -95,7 +95,7 @@ export default function IndexPage({ location }) {
         id="photography"
         description="I enjoy taking photos with my camera, capturing the stunning landscapes and the vibrant city at night. Here are some of the photos that I have taken and edited."
       />
-      {/*
+      
       <LandingSection
         icon={<BlogsIcon className="icon" />}
         image={blogsImage}
@@ -105,7 +105,7 @@ export default function IndexPage({ location }) {
         id="blogs"
         description="I like writing blogs on topics that interest me. Mainly programming, design and personal rants. Here are some of the blogs that I have written and published."
       />
-      */}
+     
     </DefaultPageLayout>
   );
 }

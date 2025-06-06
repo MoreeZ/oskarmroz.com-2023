@@ -88,6 +88,16 @@ export default function SoftwareDevelopment({ location }) {
           )
         }
       }
+      bartekciba: file(relativePath: { eq: "bartekciba_webpage_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 170
+            quality: 100
+            placeholder: NONE
+            layout: CONSTRAINED
+          )
+        }
+      }
     }
   `);
 
@@ -201,6 +211,31 @@ export default function SoftwareDevelopment({ location }) {
           icon: <InstagramIcon />,
           text: "Instagram",
           link: "https://www.instagram.com/lsdlunaspacedevelopment/?hl=en",
+        },
+      ],
+    },
+    {
+      image: imageData.bartekciba,
+      alt: "Bartek Ciba Face",
+      heading: "bartekciba.com",
+      description: (
+        <>
+          I developed an online presence for a successful bodybuilder launching
+          a personal training business. This digital platform helped establish
+          his brand identity and significantly increased their client base.
+        </>
+      ),
+      links: [
+        { icon: <WebIcon />, text: "Website", link: "https://bartekciba.com" },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/bartekciba.com",
+        },
+        {
+          icon: <InstagramIcon />,
+          text: "Instagram",
+          link: "https://www.instagram.com/bartekciba_fitness",
         },
       ],
     },

@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop --host 192.168.0.39",
-    "build": "gatsby build",
+    "build": "npm install --legacy-peer-deps && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "ghelp": "gatsby develop --help",

@@ -1,13 +1,4 @@
-// Set cache directory to be within the project
-const path = require('path');
-
 module.exports = {
-  // Set cache and public directories to be within the project
-  flags: {
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true
-  },
-  pathPrefix: '/',
   siteMetadata: {
     title: `Oskar Mroz`,
     siteUrl: `https://oskarmroz.com`,

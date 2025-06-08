@@ -8,13 +8,13 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby develop",
-    "start": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby develop --host 192.168.0.39",
-    "build": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby build",
-    "serve": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby serve",
-    "clean": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby clean",
-    "ghelp": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby develop --help",
-    "test": "cross-env GATSBY_CACHE_DIR=./.cache GATSBY_WORKER_POOL_WORKER_PATH=./.cache/worker gatsby build && gatsby serve --host 192.168.0.39"
+    "develop": "gatsby develop",
+    "start": "gatsby develop --host 192.168.0.39",
+    "build": "gatsby build --verbose",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "ghelp": "gatsby develop --help",
+    "test": "gatsby build && gatsby serve --host 192.168.0.39"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
@@ -44,8 +44,5 @@
     "react-scroll": "^1.9.3",
     "react-spinners": "^0.13.8",
     "sass": "^1.89.1"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
   }
 }

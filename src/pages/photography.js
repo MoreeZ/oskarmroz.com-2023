@@ -48,19 +48,16 @@ export default function Photography({ location }) {
           }
         }
       }
-      descriptions: allFile(
+      descriptions: allPlainText(
         filter: {
           relativeDirectory: { regex: "/photography/" }
           name: { eq: "description" }
-          extension: { eq: "txt" }
         }
       ) {
         edges {
           node {
             relativeDirectory
-            childPlainText {
-              content
-            }
+            content
           }
         }
       }
@@ -120,9 +117,9 @@ export default function Photography({ location }) {
     const pathParts = relativePath.split('/');
     const category = pathParts[pathParts.length - 1]; // Get the last part of the path (category name)
     
-    // Store the description content for this category using childPlainText
-    if (desc.node.childPlainText && desc.node.childPlainText.content) {
-      acc[category] = desc.node.childPlainText.content;
+    // Store the description content for this category using PlainText content
+    if (desc.node.content) {
+      acc[category] = desc.node.content;
     }
     return acc;
   }, {});

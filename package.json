@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "ghelp": "gatsby develop --help",
-    "test": "gatsby build && gatsby serve --host 192.168.0.39"
+    "test": "gatsby build && gatsby serve --host 192.168.0.39",
+    "cloudflare-build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=false gatsby build"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",

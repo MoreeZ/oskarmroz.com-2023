@@ -10,15 +10,113 @@ img {
   position: relative;
   filter: brightness(100%) contrast(1);
   -webkit-filter: brightness(100%) contrast(1);
-  padding-bottom: 10px;
-
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
   &:hover img {
-    animation: brightnessAnimation 0.2s forwards;
+    transform: scale(1.05);
+    filter: brightness(1.05);
   }
-  @keyframes brightnessAnimation {
-    to {
-      filter: contrast(0.9);
-      -webkit-filter: contrast(0.9);
+  
+  img {
+    transition: all 0.65s cubic-bezier(0.33, 0, 0.2, 1);
+    will-change: transform, filter;
+  }
+  
+  &.enter .photo-title-overlay {
+    animation: slideInUp 0.4s forwards cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  &.leave .photo-title-overlay {
+    animation: slideOutDown 0.4s forwards cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .photo-title-overlay {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .title-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      
+      .title-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+      }
     }
+    
+    .decorative-line {
+      width: 40%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(161, 255, 168, 0.8), transparent);
+      margin-top: 8px;
+      animation: expandLine 0.5s forwards;
+      transform-origin: center;
+    }
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 40%;
+    opacity: 1;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    text-shadow: 0 0 10px rgba(161, 255, 168, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(161, 255, 168, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(161, 255, 168, 0.5);
   }
 }

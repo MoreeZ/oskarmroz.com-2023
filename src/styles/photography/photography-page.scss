@@ -1,29 +1,151 @@
-.photography-page-content {
-  // page layout
-  width: 100%;
-  padding: 40px 120px;
-  // content layout
-  line-height: 0;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 3px;
-  -moz-column-count: 3;
-  -moz-column-gap: 3px;
-  column-count: 3;
-  column-gap: 10px;
-
-  // fancy bg
+.photography-page-wrapper {
+  // fancy bg for the entire photography section
   background-color: #2d2e30;
   opacity: 1;
   background-image: radial-gradient(#a1ffa8 0.9px, transparent 0.9px),
     radial-gradient(#a1ffa8 0.9px, #2d2e30 0.9px);
   background-size: 36px 36px;
   background-position: 0 0, 18px 18px;
+  padding-top: 20px;
+}
 
-  @media only screen and (max-width: 1200px) {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
+.photography-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 20px 0;
+  padding: 0 20px;
+  
+  .category-btn {
+    background-color: #3a3b3d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    
+    &:hover {
+      background-color: #4a4b4d;
+    }
+    
+    &.active {
+      background: linear-gradient(45deg, #a1ffa8, #4caf50);
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.category-description {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  text-align: center;
+  
+  p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-left: 3px solid #a1ffa8;
+  }
+}
+
+.photography-page-content {
+  // page layout
+  width: 100%;
+  padding: 0 120px 40px;
+  margin-top: 20px;
+  
+  // Masonry grid styles
+  .masonry-grid {
+    width: 100%;
+    display: flex;
+    margin-left: -10px; /* gutter size offset */
+  }
+  
+  .masonry-grid-column {
+    padding-left: 10px; /* gutter size */
+    background-clip: padding-box;
+  }
+  
+  .masonry-item {
+    margin-bottom: 0px; /* Set vertical gap equal to horizontal gap */
+    
+    // Ensure images maintain their aspect ratio
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 20px;
+    column-span: all;
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-left-color: #1db954; // Green color to match your theme
+      animation: spin 1s linear infinite;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+  
+  .end-message, .empty-state {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    column-span: all;
+    
+    p {
+      color: #666;
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
     column-count: 2;
   }
+
+  @media only screen and (max-width: 600px) {
+    column-count: 1;
+  }
+
   @media only screen and (max-width: 800px) {
     -moz-column-count: 1;
     -webkit-column-count: 1;

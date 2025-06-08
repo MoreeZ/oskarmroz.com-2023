@@ -25,9 +25,11 @@ export default function Photography({ location }) {
           relativeDirectory: { regex: "/photography\\/.*|\\/photography$/" }
           extension: { regex: "/(png|jpeg|jpg)/" }
           # Exclude any cache or processed files
-          base: { regex: "/^(?!\\.).*/" }
+          base: { regex: "/^(?!\\.).*$/" }
           # Ensure we're only getting actual image files
           sourceInstanceName: { eq: "images" }
+          # Exclude any processed versions or duplicates
+          absolutePath: { regex: "/^(?!.*\\.cache).*$/" }
         }
         sort: { modifiedTime: DESC }
       ) {
@@ -68,6 +70,13 @@ export default function Photography({ location }) {
   // Images are already sorted by modifiedTime DESC from the GraphQL query
   // Track unique images to prevent duplicates
   const processedImagePaths = new Set();
+  const processedImageNames = new Set();
+  
+  // First pass: collect all unique image names to help with deduplication
+  data.images.edges.forEach(image => {
+    const name = image.node.name;
+    processedImageNames.add(name);
+  });
   
   const imagesByCategory = data.images.edges.reduce((acc, image) => {
     const relativePath = image.node.relativeDirectory;
@@ -165,8 +174,30 @@ export default function Photography({ location }) {
     const endIndex = startIndex + IMAGES_PER_PAGE;
     const newImages = filteredImages.slice(startIndex, endIndex);
     
+    // Track loaded images to prevent duplicates
+    const loadedImageIds = new Set();
+    
     if (newImages.length > 0) {
-      setVisibleImages(prev => [...prev, ...newImages]);
+      // Add only unique images that haven't been loaded yet
+      setVisibleImages(prev => {
+        // Create a set of existing image IDs
+        prev.forEach(img => {
+          const imgId = `${img.node.relativeDirectory}/${img.node.name}`;
+          loadedImageIds.add(imgId);
+        });
+        
+        // Filter out any duplicates
+        const uniqueNewImages = newImages.filter(img => {
+          const imgId = `${img.node.relativeDirectory}/${img.node.name}`;
+          if (loadedImageIds.has(imgId)) {
+            return false;
+          }
+          loadedImageIds.add(imgId);
+          return true;
+        });
+        
+        return [...prev, ...uniqueNewImages];
+      });
       setPage(currentPage + 1);
     }
     

@@ -1,0 +1,23 @@
+.blog-figure {
+  margin: 2rem 0;
+  
+  img, .gatsby-image-wrapper {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                filter 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+  }
+  
+  .blog-figure-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+}

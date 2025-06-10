@@ -3,8 +3,10 @@ import React from "react";
 import "../styles/blogs/blog-template.scss";
 import "prismjs/themes/prism-okaidia.min.css";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { MDXProvider } from "@mdx-js/react";
 import SEO from "../components/layout/SEO";
 import BlogTemplateTopbar from "../components/blogs/BlogTemplateTopbar";
+import Figure from "../components/common/Figure";
 
 export default function Blogs({ data, children }) {
   const {
@@ -14,6 +16,12 @@ export default function Blogs({ data, children }) {
   const localPath = [
     ...internal.contentFilePath.split("/opt/buildhome/repo/"),
   ].pop();
+
+  // Define components to be available in MDX
+  const components = {
+    Figure,
+    // You can add more components here as needed
+  };
 
   return (
     <div className="blog-page">
@@ -35,7 +43,11 @@ export default function Blogs({ data, children }) {
             />
           )}
         </header>
-        <main className="blog-content">{children}</main>
+        <main className="blog-content">
+          <MDXProvider components={components}>
+            {children}
+          </MDXProvider>
+        </main>
       </div>
 
       <footer>Copyright 2025 Oskar Mroz</footer>
@@ -48,15 +60,22 @@ export function Head({
     mdx: { frontmatter: blogData },
   },
 }) {
+  // Create openGraphData with or without image based on featuredImage availability
+  const openGraphData = {
+    title: blogData.title,
+    type: "article",
+  };
+  
+  // Only add image property if featuredImage exists
+  if (blogData.featuredImage) {
+    openGraphData.image = blogData.featuredImage.publicURL;
+  }
+
   return (
     <SEO
       title={blogData.title}
       description={blogData.description}
-      openGraphData={{
-        image: blogData.featuredImage.publicURL,
-        title: blogData.title,
-        type: "article",
-      }}
+      openGraphData={openGraphData}
     />
   );
 }

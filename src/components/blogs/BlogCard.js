@@ -4,12 +4,14 @@ import { Link } from "gatsby";
 import ChevronRight from "../../icons/chevron-right.svg";
 
 export default function BlogCard({ data, alt }) {
-  const image = getImage(data.previewImage);
+  const image = data.previewImage ? getImage(data.previewImage) : null;
   return (
     <div className="blog-card">
-      <div className="blog-card-preview">
-        <GatsbyImage image={image} alt={alt} />
-      </div>
+      {image && (
+        <div className="blog-card-preview">
+          <GatsbyImage image={image} alt={alt} />
+        </div>
+      )}
       <div className="blog-card-content">
         <div className="blog-card-date">
           {new Date(data.date).toDateString()}

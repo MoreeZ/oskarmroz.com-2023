@@ -48,6 +48,16 @@ export default function SoftwareDevelopment({ location }) {
           )
         }
       }
+      qisun: file(relativePath: { eq: "qisun_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 170
+            quality: 100
+            placeholder: NONE
+            layout: CONSTRAINED
+          )
+        }
+      }
       rap: file(relativePath: { eq: "rap_icon.png" }) {
         childImageSharp {
           gatsbyImageData(
@@ -190,6 +200,35 @@ export default function SoftwareDevelopment({ location }) {
       ],
     },
     {
+      image: imageData.qisun,
+      alt: "Qi Sun Official Logo",
+      heading: "Qi Sun Official",
+      description: (
+        <>
+          A personal website I developed for a professional writer. The site
+          serves as a platform to showcase their work, connect with readers, and
+          establish a professional online presence.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://qisunofficial.com",
+        },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/qisun-website",
+        },
+        {
+          icon: <LinkedinIcon />,
+          text: "LinkedIn",
+          link: "https://www.linkedin.com/in/qi-sun-706b34350",
+        },
+      ],
+    },
+    {
       image: imageData.luna,
       alt: "Luna Technology Society Logo",
       heading: "Luna Technology Society",
@@ -243,31 +282,26 @@ export default function SoftwareDevelopment({ location }) {
 
   const PAST_PROJECTS_DATA = [
     {
-      image: imageData.rap,
-      alt: "Random Anime Picker App",
-      heading: "Random Anime Picker App",
+      image: imageData.riverpeople,
+      alt: "River People Logo PNG",
+      heading: "River People Ecuador Website",
       description: (
         <>
-          I developed an app for anime fans that helped them choose their next
-          anime from "MyAnimeList" database. It received thousands of downloads
-          and positive reviews, but stopped working due to changes in the API.
+          I maintained, improved and managed the company website for a period of
+          three months. During that time I drastically boosted the company web
+          presence and website search engine rankings.
         </>
       ),
       links: [
         {
-          icon: <PlayStoreIcon />,
-          text: "Google Play",
-          link: "https://play.google.com/store/apps/details?id=com.randomanimepicker&hl=en&gl=US&pli=1",
-        },
-        {
           icon: <WebIcon />,
           text: "Website",
-          link: "https://randomanimepicker.web.app",
+          link: "https://riverpeopleecuador.com",
         },
         {
-          icon: <GithubIcon />,
-          text: "Github",
-          link: "https://github.com/MoreeZ/random_anime_and_manga_picker_android",
+          icon: <InstagramIcon />,
+          text: "Instagram",
+          link: "https://www.instagram.com/riverpeopleecuador",
         },
       ],
     },
@@ -297,54 +331,6 @@ export default function SoftwareDevelopment({ location }) {
       ],
     },
     {
-      image: imageData.formula,
-      alt: "Formula Trinity Logo PNG",
-      heading: "Formula Trinity Website",
-      description: (
-        <>
-          I maintained and optimized the society website for a short period. I
-          actively updated website information. I also optimized page loading
-          times by reducing server response time.
-        </>
-      ),
-      links: [
-        {
-          icon: <WebIcon />,
-          text: "Website",
-          link: "https://formulatrinity.com",
-        },
-        {
-          icon: <InstagramIcon />,
-          text: "Instagram",
-          link: "https://www.instagram.com/formulatrinity",
-        },
-      ],
-    },
-    {
-      image: imageData.riverpeople,
-      alt: "River People Logo PNG",
-      heading: "River People Ecuador Website",
-      description: (
-        <>
-          I maintained, improved and managed the company website for a period of
-          three months. During that time I drastically boosted the company web
-          presence and website search engine rankings.
-        </>
-      ),
-      links: [
-        {
-          icon: <WebIcon />,
-          text: "Website",
-          link: "https://riverpeopleecuador.com",
-        },
-        {
-          icon: <InstagramIcon />,
-          text: "Instagram",
-          link: "https://www.instagram.com/riverpeopleecuador",
-        },
-      ],
-    },
-    {
       image: null,
       alt: "Lavista Canoa",
       heading: "Lavista Canoa Webpage",
@@ -369,6 +355,30 @@ export default function SoftwareDevelopment({ location }) {
       ],
     },
     {
+      image: imageData.formula,
+      alt: "Formula Trinity Logo PNG",
+      heading: "Formula Trinity Website",
+      description: (
+        <>
+          I maintained and optimized the society website for a short period. I
+          actively updated website information. I also optimized page loading
+          times by reducing server response time.
+        </>
+      ),
+      links: [
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://formulatrinity.com",
+        },
+        {
+          icon: <InstagramIcon />,
+          text: "Instagram",
+          link: "https://www.instagram.com/formulatrinity",
+        },
+      ],
+    },
+    {
       image: null,
       alt: "APM AUTOMOTIVE",
       heading: "APM AUTOMOTIVE",
@@ -389,6 +399,35 @@ export default function SoftwareDevelopment({ location }) {
           icon: <GithubIcon />,
           text: "Github",
           link: "https://github.com/MoreeZ/apm-automotive",
+        },
+      ],
+    },
+    {
+      image: imageData.rap,
+      alt: "Random Anime Picker App",
+      heading: "Random Anime Picker App",
+      description: (
+        <>
+          I developed an app for anime fans that helped them choose their next
+          anime from "MyAnimeList" database. It received thousands of downloads
+          and positive reviews, but stopped working due to changes in the API.
+        </>
+      ),
+      links: [
+        {
+          icon: <PlayStoreIcon />,
+          text: "Google Play",
+          link: "https://play.google.com/store/apps/details?id=com.randomanimepicker&hl=en&gl=US&pli=1",
+        },
+        {
+          icon: <WebIcon />,
+          text: "Website",
+          link: "https://randomanimepicker.web.app",
+        },
+        {
+          icon: <GithubIcon />,
+          text: "Github",
+          link: "https://github.com/MoreeZ/random_anime_and_manga_picker_android",
         },
       ],
     },
